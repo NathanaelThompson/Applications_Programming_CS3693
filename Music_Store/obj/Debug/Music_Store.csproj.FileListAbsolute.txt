@@ -1,0 +1,12 @@
+c:\users\tyler\documents\visual studio 2013\Projects\Music_Store\Music_Store\bin\Debug\Music_Store.exe.config
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\Music_Store.exe.config
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\Music_Store.exe
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\Music_Store.pdb
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csprojResolveAssemblyReference.cache
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.Dashboard.resources
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.Login.resources
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.Properties.Resources.resources
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.SearchScreen.resources
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csproj.GenerateResource.Cache
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.exe
+C:\Users\Tyler\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.pdb
