@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Music_Store
 {
-    public partial class Login : Form
+    public partial class formLogin : Form
     {
-        public Login()
+        public formLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
         }
 
 

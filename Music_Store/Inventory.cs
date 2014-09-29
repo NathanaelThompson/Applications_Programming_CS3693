@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Music_Store
 {
-    public partial class formSearchScreen : Form
+    public partial class formInventory : Form
     {
-        public formSearchScreen()
+        public formInventory()
         {
             InitializeComponent();
+        }
+
+        private void menuArtist_Opening(object sender, CancelEventArgs e)
+        {
+            miDeleteArtist.Enabled = (gridArtist.SelectedRows.Count == 1);
         }
     }
 }

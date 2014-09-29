@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Music_Store
 {
-    public partial class formSearchScreen : Form
+    public partial class formCheckout : Form
     {
-        public formSearchScreen()
+        public formCheckout()
         {
             InitializeComponent();
         }
