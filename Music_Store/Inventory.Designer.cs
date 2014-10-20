@@ -31,27 +31,77 @@
             this.components = new System.ComponentModel.Container();
             this.tcInventory = new System.Windows.Forms.TabControl();
             this.tabArtist = new System.Windows.Forms.TabPage();
+            this.gbAddArtist = new System.Windows.Forms.GroupBox();
+            this.btnAddArtist = new System.Windows.Forms.Button();
+            this.lblArtistName = new System.Windows.Forms.Label();
+            this.txtArtistName = new System.Windows.Forms.TextBox();
+            this.gvArtist = new System.Windows.Forms.DataGridView();
+            this.menuArtist = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miDeleteArtist = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAlbums = new System.Windows.Forms.TabPage();
             this.tabGenre = new System.Windows.Forms.TabPage();
             this.tabCustomer = new System.Windows.Forms.TabPage();
             this.tabEmployee = new System.Windows.Forms.TabPage();
-            this.gridArtist = new System.Windows.Forms.DataGridView();
-            this.gbAddArtist = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblArtistName = new System.Windows.Forms.Label();
-            this.btnAddArtist = new System.Windows.Forms.Button();
-            this.gbUpdateArtist = new System.Windows.Forms.GroupBox();
+            this.gbAddAlbum = new System.Windows.Forms.GroupBox();
+            this.btnAddAlbum = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtAlbumName = new System.Windows.Forms.TextBox();
+            this.gvAlbums = new System.Windows.Forms.DataGridView();
+            this.cbAlbumArtist = new System.Windows.Forms.ComboBox();
+            this.cbAlbumGenre = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtAlbumPrice = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.udAlbumQty = new System.Windows.Forms.NumericUpDown();
+            this.gbAddGenre = new System.Windows.Forms.GroupBox();
+            this.btnAddGenre = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtGenreName = new System.Windows.Forms.TextBox();
+            this.gvGenres = new System.Windows.Forms.DataGridView();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.txtGenreDesc = new System.Windows.Forms.TextBox();
+            this.gbAddCustomer = new System.Windows.Forms.GroupBox();
+            this.txtCustomerLastName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.menuArtist = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.miDeleteArtist = new System.Windows.Forms.ToolStripMenuItem();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCustomerFirstName = new System.Windows.Forms.TextBox();
+            this.gvCustomers = new System.Windows.Forms.DataGridView();
+            this.txtCustomerPhone = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCustomerEmail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.gbAddEmployee = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.gvEmployees = new System.Windows.Forms.DataGridView();
+            this.dtDemployeeHireDate = new System.Windows.Forms.DateTimePicker();
+            this.cbEmployeeAdmin = new System.Windows.Forms.CheckBox();
             this.tcInventory.SuspendLayout();
             this.tabArtist.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridArtist)).BeginInit();
             this.gbAddArtist.SuspendLayout();
-            this.gbUpdateArtist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvArtist)).BeginInit();
             this.menuArtist.SuspendLayout();
+            this.tabAlbums.SuspendLayout();
+            this.tabGenre.SuspendLayout();
+            this.tabCustomer.SuspendLayout();
+            this.tabEmployee.SuspendLayout();
+            this.gbAddAlbum.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAlbums)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udAlbumQty)).BeginInit();
+            this.gbAddGenre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvGenres)).BeginInit();
+            this.gbAddCustomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomers)).BeginInit();
+            this.gbAddEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // tcInventory
@@ -70,9 +120,8 @@
             // 
             // tabArtist
             // 
-            this.tabArtist.Controls.Add(this.gbUpdateArtist);
             this.tabArtist.Controls.Add(this.gbAddArtist);
-            this.tabArtist.Controls.Add(this.gridArtist);
+            this.tabArtist.Controls.Add(this.gvArtist);
             this.tabArtist.Location = new System.Drawing.Point(4, 22);
             this.tabArtist.Name = "tabArtist";
             this.tabArtist.Padding = new System.Windows.Forms.Padding(3);
@@ -81,60 +130,11 @@
             this.tabArtist.Text = "Artists";
             this.tabArtist.UseVisualStyleBackColor = true;
             // 
-            // tabAlbums
-            // 
-            this.tabAlbums.Location = new System.Drawing.Point(4, 22);
-            this.tabAlbums.Name = "tabAlbums";
-            this.tabAlbums.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlbums.Size = new System.Drawing.Size(776, 536);
-            this.tabAlbums.TabIndex = 1;
-            this.tabAlbums.Text = "Albums";
-            this.tabAlbums.UseVisualStyleBackColor = true;
-            // 
-            // tabGenre
-            // 
-            this.tabGenre.Location = new System.Drawing.Point(4, 22);
-            this.tabGenre.Name = "tabGenre";
-            this.tabGenre.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenre.Size = new System.Drawing.Size(776, 536);
-            this.tabGenre.TabIndex = 2;
-            this.tabGenre.Text = "Genres";
-            this.tabGenre.UseVisualStyleBackColor = true;
-            // 
-            // tabCustomer
-            // 
-            this.tabCustomer.Location = new System.Drawing.Point(4, 22);
-            this.tabCustomer.Name = "tabCustomer";
-            this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomer.Size = new System.Drawing.Size(776, 536);
-            this.tabCustomer.TabIndex = 3;
-            this.tabCustomer.Text = "Customers";
-            this.tabCustomer.UseVisualStyleBackColor = true;
-            // 
-            // tabEmployee
-            // 
-            this.tabEmployee.Location = new System.Drawing.Point(4, 22);
-            this.tabEmployee.Name = "tabEmployee";
-            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(776, 536);
-            this.tabEmployee.TabIndex = 4;
-            this.tabEmployee.Text = "Employees";
-            this.tabEmployee.UseVisualStyleBackColor = true;
-            // 
-            // gridArtist
-            // 
-            this.gridArtist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridArtist.ContextMenuStrip = this.menuArtist;
-            this.gridArtist.Location = new System.Drawing.Point(3, 6);
-            this.gridArtist.Name = "gridArtist";
-            this.gridArtist.Size = new System.Drawing.Size(465, 522);
-            this.gridArtist.TabIndex = 0;
-            // 
             // gbAddArtist
             // 
             this.gbAddArtist.Controls.Add(this.btnAddArtist);
             this.gbAddArtist.Controls.Add(this.lblArtistName);
-            this.gbAddArtist.Controls.Add(this.textBox1);
+            this.gbAddArtist.Controls.Add(this.txtArtistName);
             this.gbAddArtist.Location = new System.Drawing.Point(474, 6);
             this.gbAddArtist.Name = "gbAddArtist";
             this.gbAddArtist.Size = new System.Drawing.Size(296, 129);
@@ -142,12 +142,15 @@
             this.gbAddArtist.TabStop = false;
             this.gbAddArtist.Text = "Add Artist";
             // 
-            // textBox1
+            // btnAddArtist
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 0;
+            this.btnAddArtist.Location = new System.Drawing.Point(180, 85);
+            this.btnAddArtist.Name = "btnAddArtist";
+            this.btnAddArtist.Size = new System.Drawing.Size(80, 30);
+            this.btnAddArtist.TabIndex = 2;
+            this.btnAddArtist.Text = "Add Artist";
+            this.btnAddArtist.UseVisualStyleBackColor = true;
+            this.btnAddArtist.Click += new System.EventHandler(this.btnAddArtist_Click);
             // 
             // lblArtistName
             // 
@@ -158,65 +161,477 @@
             this.lblArtistName.TabIndex = 1;
             this.lblArtistName.Text = "Artist Name";
             // 
-            // btnAddArtist
+            // txtArtistName
             // 
-            this.btnAddArtist.Location = new System.Drawing.Point(180, 85);
-            this.btnAddArtist.Name = "btnAddArtist";
-            this.btnAddArtist.Size = new System.Drawing.Size(80, 30);
-            this.btnAddArtist.TabIndex = 2;
-            this.btnAddArtist.Text = "Add Artist";
-            this.btnAddArtist.UseVisualStyleBackColor = true;
+            this.txtArtistName.Location = new System.Drawing.Point(105, 29);
+            this.txtArtistName.Name = "txtArtistName";
+            this.txtArtistName.Size = new System.Drawing.Size(150, 20);
+            this.txtArtistName.TabIndex = 0;
             // 
-            // gbUpdateArtist
+            // gvArtist
             // 
-            this.gbUpdateArtist.Controls.Add(this.button1);
-            this.gbUpdateArtist.Controls.Add(this.label1);
-            this.gbUpdateArtist.Controls.Add(this.textBox2);
-            this.gbUpdateArtist.Location = new System.Drawing.Point(474, 141);
-            this.gbUpdateArtist.Name = "gbUpdateArtist";
-            this.gbUpdateArtist.Size = new System.Drawing.Size(296, 138);
-            this.gbUpdateArtist.TabIndex = 2;
-            this.gbUpdateArtist.TabStop = false;
-            this.gbUpdateArtist.Text = "Update Artist";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Artist Name";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(105, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(180, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Update Artist";
-            this.button1.UseVisualStyleBackColor = true;
+            this.gvArtist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvArtist.ContextMenuStrip = this.menuArtist;
+            this.gvArtist.Location = new System.Drawing.Point(3, 6);
+            this.gvArtist.Name = "gvArtist";
+            this.gvArtist.RowHeadersVisible = false;
+            this.gvArtist.Size = new System.Drawing.Size(465, 522);
+            this.gvArtist.TabIndex = 0;
             // 
             // menuArtist
             // 
             this.menuArtist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miDeleteArtist});
             this.menuArtist.Name = "menuArtist";
-            this.menuArtist.Size = new System.Drawing.Size(153, 48);
+            this.menuArtist.Size = new System.Drawing.Size(143, 26);
             this.menuArtist.Opening += new System.ComponentModel.CancelEventHandler(this.menuArtist_Opening);
             // 
             // miDeleteArtist
             // 
             this.miDeleteArtist.Name = "miDeleteArtist";
-            this.miDeleteArtist.Size = new System.Drawing.Size(152, 22);
+            this.miDeleteArtist.Size = new System.Drawing.Size(142, 22);
             this.miDeleteArtist.Text = "Delete Artrist";
+            // 
+            // tabAlbums
+            // 
+            this.tabAlbums.Controls.Add(this.gbAddAlbum);
+            this.tabAlbums.Controls.Add(this.gvAlbums);
+            this.tabAlbums.Location = new System.Drawing.Point(4, 22);
+            this.tabAlbums.Name = "tabAlbums";
+            this.tabAlbums.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAlbums.Size = new System.Drawing.Size(776, 536);
+            this.tabAlbums.TabIndex = 1;
+            this.tabAlbums.Text = "Albums";
+            this.tabAlbums.UseVisualStyleBackColor = true;
+            // 
+            // tabGenre
+            // 
+            this.tabGenre.Controls.Add(this.gbAddGenre);
+            this.tabGenre.Controls.Add(this.gvGenres);
+            this.tabGenre.Location = new System.Drawing.Point(4, 22);
+            this.tabGenre.Name = "tabGenre";
+            this.tabGenre.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGenre.Size = new System.Drawing.Size(776, 536);
+            this.tabGenre.TabIndex = 2;
+            this.tabGenre.Text = "Genres";
+            this.tabGenre.UseVisualStyleBackColor = true;
+            // 
+            // tabCustomer
+            // 
+            this.tabCustomer.Controls.Add(this.gbAddCustomer);
+            this.tabCustomer.Controls.Add(this.gvCustomers);
+            this.tabCustomer.Location = new System.Drawing.Point(4, 22);
+            this.tabCustomer.Name = "tabCustomer";
+            this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCustomer.Size = new System.Drawing.Size(776, 536);
+            this.tabCustomer.TabIndex = 3;
+            this.tabCustomer.Text = "Customers";
+            this.tabCustomer.UseVisualStyleBackColor = true;
+            // 
+            // tabEmployee
+            // 
+            this.tabEmployee.Controls.Add(this.gbAddEmployee);
+            this.tabEmployee.Controls.Add(this.gvEmployees);
+            this.tabEmployee.Location = new System.Drawing.Point(4, 22);
+            this.tabEmployee.Name = "tabEmployee";
+            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmployee.Size = new System.Drawing.Size(776, 536);
+            this.tabEmployee.TabIndex = 4;
+            this.tabEmployee.Text = "Employees";
+            this.tabEmployee.UseVisualStyleBackColor = true;
+            // 
+            // gbAddAlbum
+            // 
+            this.gbAddAlbum.Controls.Add(this.udAlbumQty);
+            this.gbAddAlbum.Controls.Add(this.label6);
+            this.gbAddAlbum.Controls.Add(this.label5);
+            this.gbAddAlbum.Controls.Add(this.label4);
+            this.gbAddAlbum.Controls.Add(this.label2);
+            this.gbAddAlbum.Controls.Add(this.txtAlbumPrice);
+            this.gbAddAlbum.Controls.Add(this.cbAlbumGenre);
+            this.gbAddAlbum.Controls.Add(this.cbAlbumArtist);
+            this.gbAddAlbum.Controls.Add(this.btnAddAlbum);
+            this.gbAddAlbum.Controls.Add(this.label3);
+            this.gbAddAlbum.Controls.Add(this.txtAlbumName);
+            this.gbAddAlbum.Location = new System.Drawing.Point(476, 7);
+            this.gbAddAlbum.Name = "gbAddAlbum";
+            this.gbAddAlbum.Size = new System.Drawing.Size(296, 317);
+            this.gbAddAlbum.TabIndex = 4;
+            this.gbAddAlbum.TabStop = false;
+            this.gbAddAlbum.Text = "Add Album";
+            // 
+            // btnAddAlbum
+            // 
+            this.btnAddAlbum.Location = new System.Drawing.Point(175, 262);
+            this.btnAddAlbum.Name = "btnAddAlbum";
+            this.btnAddAlbum.Size = new System.Drawing.Size(80, 30);
+            this.btnAddAlbum.TabIndex = 2;
+            this.btnAddAlbum.Text = "Add Album";
+            this.btnAddAlbum.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Album Name";
+            // 
+            // txtAlbumName
+            // 
+            this.txtAlbumName.Location = new System.Drawing.Point(105, 29);
+            this.txtAlbumName.Name = "txtAlbumName";
+            this.txtAlbumName.Size = new System.Drawing.Size(150, 20);
+            this.txtAlbumName.TabIndex = 0;
+            // 
+            // gvAlbums
+            // 
+            this.gvAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvAlbums.ContextMenuStrip = this.menuArtist;
+            this.gvAlbums.Location = new System.Drawing.Point(5, 7);
+            this.gvAlbums.Name = "gvAlbums";
+            this.gvAlbums.RowHeadersVisible = false;
+            this.gvAlbums.Size = new System.Drawing.Size(465, 522);
+            this.gvAlbums.TabIndex = 3;
+            // 
+            // cbAlbumArtist
+            // 
+            this.cbAlbumArtist.FormattingEnabled = true;
+            this.cbAlbumArtist.Location = new System.Drawing.Point(105, 73);
+            this.cbAlbumArtist.Name = "cbAlbumArtist";
+            this.cbAlbumArtist.Size = new System.Drawing.Size(150, 21);
+            this.cbAlbumArtist.TabIndex = 3;
+            // 
+            // cbAlbumGenre
+            // 
+            this.cbAlbumGenre.FormattingEnabled = true;
+            this.cbAlbumGenre.Location = new System.Drawing.Point(105, 124);
+            this.cbAlbumGenre.Name = "cbAlbumGenre";
+            this.cbAlbumGenre.Size = new System.Drawing.Size(150, 21);
+            this.cbAlbumGenre.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Genre";
+            // 
+            // txtAlbumPrice
+            // 
+            this.txtAlbumPrice.Location = new System.Drawing.Point(105, 173);
+            this.txtAlbumPrice.Name = "txtAlbumPrice";
+            this.txtAlbumPrice.Size = new System.Drawing.Size(150, 20);
+            this.txtAlbumPrice.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 224);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Quantity";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 173);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Price";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Artist";
+            // 
+            // udAlbumQty
+            // 
+            this.udAlbumQty.Location = new System.Drawing.Point(105, 222);
+            this.udAlbumQty.Name = "udAlbumQty";
+            this.udAlbumQty.Size = new System.Drawing.Size(47, 20);
+            this.udAlbumQty.TabIndex = 11;
+            // 
+            // gbAddGenre
+            // 
+            this.gbAddGenre.Controls.Add(this.txtGenreDesc);
+            this.gbAddGenre.Controls.Add(this.lblDesc);
+            this.gbAddGenre.Controls.Add(this.btnAddGenre);
+            this.gbAddGenre.Controls.Add(this.label7);
+            this.gbAddGenre.Controls.Add(this.txtGenreName);
+            this.gbAddGenre.Location = new System.Drawing.Point(476, 7);
+            this.gbAddGenre.Name = "gbAddGenre";
+            this.gbAddGenre.Size = new System.Drawing.Size(296, 243);
+            this.gbAddGenre.TabIndex = 3;
+            this.gbAddGenre.TabStop = false;
+            this.gbAddGenre.Text = "Add Genre";
+            // 
+            // btnAddGenre
+            // 
+            this.btnAddGenre.Location = new System.Drawing.Point(175, 189);
+            this.btnAddGenre.Name = "btnAddGenre";
+            this.btnAddGenre.Size = new System.Drawing.Size(80, 30);
+            this.btnAddGenre.TabIndex = 2;
+            this.btnAddGenre.Text = "Add Genre";
+            this.btnAddGenre.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Genre Name";
+            // 
+            // txtGenreName
+            // 
+            this.txtGenreName.Location = new System.Drawing.Point(105, 29);
+            this.txtGenreName.Name = "txtGenreName";
+            this.txtGenreName.Size = new System.Drawing.Size(150, 20);
+            this.txtGenreName.TabIndex = 0;
+            // 
+            // gvGenres
+            // 
+            this.gvGenres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvGenres.ContextMenuStrip = this.menuArtist;
+            this.gvGenres.Location = new System.Drawing.Point(5, 7);
+            this.gvGenres.Name = "gvGenres";
+            this.gvGenres.RowHeadersVisible = false;
+            this.gvGenres.Size = new System.Drawing.Size(465, 522);
+            this.gvGenres.TabIndex = 2;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(22, 78);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(60, 13);
+            this.lblDesc.TabIndex = 3;
+            this.lblDesc.Text = "Description";
+            // 
+            // txtGenreDesc
+            // 
+            this.txtGenreDesc.Location = new System.Drawing.Point(105, 75);
+            this.txtGenreDesc.Multiline = true;
+            this.txtGenreDesc.Name = "txtGenreDesc";
+            this.txtGenreDesc.Size = new System.Drawing.Size(150, 94);
+            this.txtGenreDesc.TabIndex = 4;
+            // 
+            // gbAddCustomer
+            // 
+            this.gbAddCustomer.Controls.Add(this.txtCustomerEmail);
+            this.gbAddCustomer.Controls.Add(this.label10);
+            this.gbAddCustomer.Controls.Add(this.txtCustomerPhone);
+            this.gbAddCustomer.Controls.Add(this.label9);
+            this.gbAddCustomer.Controls.Add(this.txtCustomerLastName);
+            this.gbAddCustomer.Controls.Add(this.label1);
+            this.gbAddCustomer.Controls.Add(this.button1);
+            this.gbAddCustomer.Controls.Add(this.label8);
+            this.gbAddCustomer.Controls.Add(this.txtCustomerFirstName);
+            this.gbAddCustomer.Location = new System.Drawing.Point(476, 7);
+            this.gbAddCustomer.Name = "gbAddCustomer";
+            this.gbAddCustomer.Size = new System.Drawing.Size(296, 259);
+            this.gbAddCustomer.TabIndex = 5;
+            this.gbAddCustomer.TabStop = false;
+            this.gbAddCustomer.Text = "Add Customer";
+            // 
+            // txtCustomerLastName
+            // 
+            this.txtCustomerLastName.Location = new System.Drawing.Point(105, 75);
+            this.txtCustomerLastName.Name = "txtCustomerLastName";
+            this.txtCustomerLastName.Size = new System.Drawing.Size(150, 20);
+            this.txtCustomerLastName.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Last Name";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(162, 207);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 30);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add Customer";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "First Name";
+            // 
+            // txtCustomerFirstName
+            // 
+            this.txtCustomerFirstName.Location = new System.Drawing.Point(105, 29);
+            this.txtCustomerFirstName.Name = "txtCustomerFirstName";
+            this.txtCustomerFirstName.Size = new System.Drawing.Size(150, 20);
+            this.txtCustomerFirstName.TabIndex = 0;
+            // 
+            // gvCustomers
+            // 
+            this.gvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvCustomers.ContextMenuStrip = this.menuArtist;
+            this.gvCustomers.Location = new System.Drawing.Point(5, 7);
+            this.gvCustomers.Name = "gvCustomers";
+            this.gvCustomers.RowHeadersVisible = false;
+            this.gvCustomers.Size = new System.Drawing.Size(465, 522);
+            this.gvCustomers.TabIndex = 4;
+            // 
+            // txtCustomerPhone
+            // 
+            this.txtCustomerPhone.Location = new System.Drawing.Point(105, 117);
+            this.txtCustomerPhone.Name = "txtCustomerPhone";
+            this.txtCustomerPhone.Size = new System.Drawing.Size(150, 20);
+            this.txtCustomerPhone.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 120);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Phone Number";
+            // 
+            // txtCustomerEmail
+            // 
+            this.txtCustomerEmail.Location = new System.Drawing.Point(105, 161);
+            this.txtCustomerEmail.Name = "txtCustomerEmail";
+            this.txtCustomerEmail.Size = new System.Drawing.Size(150, 20);
+            this.txtCustomerEmail.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 164);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Email Address";
+            // 
+            // gbAddEmployee
+            // 
+            this.gbAddEmployee.Controls.Add(this.cbEmployeeAdmin);
+            this.gbAddEmployee.Controls.Add(this.dtDemployeeHireDate);
+            this.gbAddEmployee.Controls.Add(this.label11);
+            this.gbAddEmployee.Controls.Add(this.label12);
+            this.gbAddEmployee.Controls.Add(this.textBox3);
+            this.gbAddEmployee.Controls.Add(this.label13);
+            this.gbAddEmployee.Controls.Add(this.btnAddEmployee);
+            this.gbAddEmployee.Controls.Add(this.label14);
+            this.gbAddEmployee.Controls.Add(this.textBox4);
+            this.gbAddEmployee.Location = new System.Drawing.Point(476, 7);
+            this.gbAddEmployee.Name = "gbAddEmployee";
+            this.gbAddEmployee.Size = new System.Drawing.Size(296, 259);
+            this.gbAddEmployee.TabIndex = 7;
+            this.gbAddEmployee.TabStop = false;
+            this.gbAddEmployee.Text = "Add Employee";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(22, 164);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Admin";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(22, 120);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Date Hired";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(105, 75);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(150, 20);
+            this.textBox3.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(22, 78);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Password";
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.Location = new System.Drawing.Point(162, 207);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(93, 30);
+            this.btnAddEmployee.TabIndex = 2;
+            this.btnAddEmployee.Text = "Add Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(19, 32);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Login ID";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(105, 29);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(150, 20);
+            this.textBox4.TabIndex = 0;
+            // 
+            // gvEmployees
+            // 
+            this.gvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvEmployees.ContextMenuStrip = this.menuArtist;
+            this.gvEmployees.Location = new System.Drawing.Point(5, 7);
+            this.gvEmployees.Name = "gvEmployees";
+            this.gvEmployees.RowHeadersVisible = false;
+            this.gvEmployees.Size = new System.Drawing.Size(465, 522);
+            this.gvEmployees.TabIndex = 6;
+            // 
+            // dtDemployeeHireDate
+            // 
+            this.dtDemployeeHireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDemployeeHireDate.Location = new System.Drawing.Point(105, 120);
+            this.dtDemployeeHireDate.Name = "dtDemployeeHireDate";
+            this.dtDemployeeHireDate.Size = new System.Drawing.Size(150, 20);
+            this.dtDemployeeHireDate.TabIndex = 9;
+            // 
+            // cbEmployeeAdmin
+            // 
+            this.cbEmployeeAdmin.AutoSize = true;
+            this.cbEmployeeAdmin.Location = new System.Drawing.Point(105, 164);
+            this.cbEmployeeAdmin.Name = "cbEmployeeAdmin";
+            this.cbEmployeeAdmin.Size = new System.Drawing.Size(15, 14);
+            this.cbEmployeeAdmin.TabIndex = 10;
+            this.cbEmployeeAdmin.UseVisualStyleBackColor = true;
             // 
             // formInventory
             // 
@@ -230,12 +645,27 @@
             this.Text = "Manage Inventory";
             this.tcInventory.ResumeLayout(false);
             this.tabArtist.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridArtist)).EndInit();
             this.gbAddArtist.ResumeLayout(false);
             this.gbAddArtist.PerformLayout();
-            this.gbUpdateArtist.ResumeLayout(false);
-            this.gbUpdateArtist.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvArtist)).EndInit();
             this.menuArtist.ResumeLayout(false);
+            this.tabAlbums.ResumeLayout(false);
+            this.tabGenre.ResumeLayout(false);
+            this.tabCustomer.ResumeLayout(false);
+            this.tabEmployee.ResumeLayout(false);
+            this.gbAddAlbum.ResumeLayout(false);
+            this.gbAddAlbum.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAlbums)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.udAlbumQty)).EndInit();
+            this.gbAddGenre.ResumeLayout(false);
+            this.gbAddGenre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvGenres)).EndInit();
+            this.gbAddCustomer.ResumeLayout(false);
+            this.gbAddCustomer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomers)).EndInit();
+            this.gbAddEmployee.ResumeLayout(false);
+            this.gbAddEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,15 +679,53 @@
         private System.Windows.Forms.TabPage tabCustomer;
         private System.Windows.Forms.TabPage tabEmployee;
         private System.Windows.Forms.GroupBox gbAddArtist;
-        private System.Windows.Forms.DataGridView gridArtist;
+        private System.Windows.Forms.DataGridView gvArtist;
         private System.Windows.Forms.Button btnAddArtist;
         private System.Windows.Forms.Label lblArtistName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox gbUpdateArtist;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtArtistName;
         private System.Windows.Forms.ContextMenuStrip menuArtist;
         private System.Windows.Forms.ToolStripMenuItem miDeleteArtist;
+        private System.Windows.Forms.GroupBox gbAddAlbum;
+        private System.Windows.Forms.Button btnAddAlbum;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtAlbumName;
+        private System.Windows.Forms.DataGridView gvAlbums;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtAlbumPrice;
+        private System.Windows.Forms.ComboBox cbAlbumGenre;
+        private System.Windows.Forms.ComboBox cbAlbumArtist;
+        private System.Windows.Forms.NumericUpDown udAlbumQty;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox gbAddGenre;
+        private System.Windows.Forms.TextBox txtGenreDesc;
+        private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.Button btnAddGenre;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtGenreName;
+        private System.Windows.Forms.DataGridView gvGenres;
+        private System.Windows.Forms.GroupBox gbAddCustomer;
+        private System.Windows.Forms.TextBox txtCustomerEmail;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtCustomerPhone;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCustomerLastName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCustomerFirstName;
+        private System.Windows.Forms.DataGridView gvCustomers;
+        private System.Windows.Forms.GroupBox gbAddEmployee;
+        private System.Windows.Forms.CheckBox cbEmployeeAdmin;
+        private System.Windows.Forms.DateTimePicker dtDemployeeHireDate;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView gvEmployees;
     }
 }

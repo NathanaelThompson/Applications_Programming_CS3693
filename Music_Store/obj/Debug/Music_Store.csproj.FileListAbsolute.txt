@@ -23,3 +23,11 @@ C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Progra
 C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.Properties.Resources.resources
 C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formSearchScreen.resources
 C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csproj.GenerateResource.Cache
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.dll
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\System.Data.SQLite.dll
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.xml
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\bin\Debug\System.Data.SQLite.xml

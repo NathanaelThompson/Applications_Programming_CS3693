@@ -51,6 +51,7 @@
             this.btnCheckout.TabIndex = 0;
             this.btnCheckout.Text = "Checkout ";
             this.btnCheckout.UseVisualStyleBackColor = true;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // btnSearch
             // 
@@ -61,6 +62,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnInventory
             // 
@@ -71,6 +73,7 @@
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // lblLogInStatus
             // 
@@ -103,7 +106,7 @@
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(152, 22);
+            this.miClose.Size = new System.Drawing.Size(103, 22);
             this.miClose.Text = "Close";
             // 
             // viewToolStripMenuItem
@@ -119,19 +122,19 @@
             // miCheckout
             // 
             this.miCheckout.Name = "miCheckout";
-            this.miCheckout.Size = new System.Drawing.Size(152, 22);
+            this.miCheckout.Size = new System.Drawing.Size(128, 22);
             this.miCheckout.Text = "Checkout ";
             // 
             // miInventory
             // 
             this.miInventory.Name = "miInventory";
-            this.miInventory.Size = new System.Drawing.Size(152, 22);
+            this.miInventory.Size = new System.Drawing.Size(128, 22);
             this.miInventory.Text = "Inventory";
             // 
             // miSearch
             // 
             this.miSearch.Name = "miSearch";
-            this.miSearch.Size = new System.Drawing.Size(152, 22);
+            this.miSearch.Size = new System.Drawing.Size(128, 22);
             this.miSearch.Text = "Search DB";
             // 
             // formDashboard

@@ -12,9 +12,10 @@ namespace Music_Store
 {
     public partial class formCheckout : Form
     {
-        public formCheckout()
+        public formCheckout(string username)
         {
             InitializeComponent();
+            lblLogInStatus.Text = "Logged in as[" + username + "]";
         }
     }
 }

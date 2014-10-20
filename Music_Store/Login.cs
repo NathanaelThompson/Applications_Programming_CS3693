@@ -12,14 +12,19 @@ namespace Music_Store
 {
     public partial class formLogin : Form
     {
+        private formDashboard dashboard;
+
         public formLogin()
         {
             InitializeComponent();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            dashboard = new formDashboard(txtUserName.Text);
+            dashboard.Show();
+            this.Hide();
         }
 
 

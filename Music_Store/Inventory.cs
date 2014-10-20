@@ -15,11 +15,24 @@ namespace Music_Store
         public formInventory()
         {
             InitializeComponent();
+            gvArtist.DataSource = ConnectionManager.ArtistView();
+            gvAlbums.DataSource = ConnectionManager.AlbumView();
+            gvCustomers.DataSource = ConnectionManager.CustomerView();
+            gvEmployees.DataSource = ConnectionManager.EmployeeView();
+            gvGenres.DataSource = ConnectionManager.GenreView();
+            
         }
 
         private void menuArtist_Opening(object sender, CancelEventArgs e)
         {
-            miDeleteArtist.Enabled = (gridArtist.SelectedRows.Count == 1);
+            miDeleteArtist.Enabled = (gvArtist.SelectedRows.Count == 1);
         }
+
+        private void btnAddArtist_Click(object sender, EventArgs e)
+        {
+            ConnectionManager.addArtist(txtArtistName.Text);
+        }
+
+
     }
 }
