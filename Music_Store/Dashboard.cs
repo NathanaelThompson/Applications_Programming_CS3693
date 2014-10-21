@@ -48,6 +48,11 @@ namespace Music_Store
             Application.Exit();
         }
 
+        private void miClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
 
     }
 }
