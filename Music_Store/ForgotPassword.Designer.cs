@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.passwordForgotLayout1 = new System.Windows.Forms.GroupBox();
+            this.forgotPasswordErrorLabel = new System.Windows.Forms.Label();
+            this.forgotPasswordUsernameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.passwordForgotContinueButton1 = new System.Windows.Forms.Button();
-            this.forgotPasswordUsernameTextBox = new System.Windows.Forms.TextBox();
-            this.forgotPasswordErrorLabel = new System.Windows.Forms.Label();
             this.passwordForgotLayout1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,22 @@
             this.passwordForgotLayout1.TabIndex = 0;
             this.passwordForgotLayout1.TabStop = false;
             this.passwordForgotLayout1.Text = "Enter User Name";
+            // 
+            // forgotPasswordErrorLabel
+            // 
+            this.forgotPasswordErrorLabel.AutoSize = true;
+            this.forgotPasswordErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.forgotPasswordErrorLabel.Location = new System.Drawing.Point(221, 161);
+            this.forgotPasswordErrorLabel.Name = "forgotPasswordErrorLabel";
+            this.forgotPasswordErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.forgotPasswordErrorLabel.TabIndex = 3;
+            // 
+            // forgotPasswordUsernameTextBox
+            // 
+            this.forgotPasswordUsernameTextBox.Location = new System.Drawing.Point(221, 58);
+            this.forgotPasswordUsernameTextBox.Name = "forgotPasswordUsernameTextBox";
+            this.forgotPasswordUsernameTextBox.Size = new System.Drawing.Size(169, 20);
+            this.forgotPasswordUsernameTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -68,22 +84,6 @@
             this.passwordForgotContinueButton1.UseVisualStyleBackColor = true;
             this.passwordForgotContinueButton1.Click += new System.EventHandler(this.passwordForgotContinueButton1_Click);
             // 
-            // forgotPasswordUsernameTextBox
-            // 
-            this.forgotPasswordUsernameTextBox.Location = new System.Drawing.Point(221, 58);
-            this.forgotPasswordUsernameTextBox.Name = "forgotPasswordUsernameTextBox";
-            this.forgotPasswordUsernameTextBox.Size = new System.Drawing.Size(169, 20);
-            this.forgotPasswordUsernameTextBox.TabIndex = 2;
-            // 
-            // forgotPasswordErrorLabel
-            // 
-            this.forgotPasswordErrorLabel.AutoSize = true;
-            this.forgotPasswordErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.forgotPasswordErrorLabel.Location = new System.Drawing.Point(221, 161);
-            this.forgotPasswordErrorLabel.Name = "forgotPasswordErrorLabel";
-            this.forgotPasswordErrorLabel.Size = new System.Drawing.Size(0, 13);
-            this.forgotPasswordErrorLabel.TabIndex = 3;
-            // 
             // ForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,7 +91,7 @@
             this.ClientSize = new System.Drawing.Size(504, 261);
             this.Controls.Add(this.passwordForgotLayout1);
             this.Name = "ForgotPassword";
-            this.Text = "ForgotPassword";
+            this.Text = "Forgot Password";
             this.passwordForgotLayout1.ResumeLayout(false);
             this.passwordForgotLayout1.PerformLayout();
             this.ResumeLayout(false);

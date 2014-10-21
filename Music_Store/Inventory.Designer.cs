@@ -38,6 +38,7 @@
             this.gvArtist = new System.Windows.Forms.DataGridView();
             this.menuArtist = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.miDeleteArtist = new System.Windows.Forms.ToolStripMenuItem();
+            this.miEditArtist = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAlbums = new System.Windows.Forms.TabPage();
             this.gbAddAlbum = new System.Windows.Forms.GroupBox();
             this.udAlbumQty = new System.Windows.Forms.NumericUpDown();
@@ -74,6 +75,14 @@
             this.gvCustomers = new System.Windows.Forms.DataGridView();
             this.tabEmployee = new System.Windows.Forms.TabPage();
             this.gbAddEmployee = new System.Windows.Forms.GroupBox();
+            this.txtEmployeeAnswer = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbEmployeSeqQuestions = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtEmployeeFirstName = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtEmployeeLastName = new System.Windows.Forms.TextBox();
             this.chkEmployeeAdmin = new System.Windows.Forms.CheckBox();
             this.dtDemployeeHireDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -115,7 +124,7 @@
             this.tcInventory.Location = new System.Drawing.Point(0, 0);
             this.tcInventory.Name = "tcInventory";
             this.tcInventory.SelectedIndex = 0;
-            this.tcInventory.Size = new System.Drawing.Size(784, 562);
+            this.tcInventory.Size = new System.Drawing.Size(834, 562);
             this.tcInventory.TabIndex = 0;
             // 
             // tabArtist
@@ -125,17 +134,18 @@
             this.tabArtist.Location = new System.Drawing.Point(4, 22);
             this.tabArtist.Name = "tabArtist";
             this.tabArtist.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArtist.Size = new System.Drawing.Size(776, 536);
+            this.tabArtist.Size = new System.Drawing.Size(826, 536);
             this.tabArtist.TabIndex = 0;
             this.tabArtist.Text = "Artists";
             this.tabArtist.UseVisualStyleBackColor = true;
             // 
             // gbAddArtist
             // 
+            this.gbAddArtist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbAddArtist.Controls.Add(this.btnAddArtist);
             this.gbAddArtist.Controls.Add(this.lblArtistName);
             this.gbAddArtist.Controls.Add(this.txtArtistName);
-            this.gbAddArtist.Location = new System.Drawing.Point(474, 6);
+            this.gbAddArtist.Location = new System.Drawing.Point(524, 6);
             this.gbAddArtist.Name = "gbAddArtist";
             this.gbAddArtist.Size = new System.Drawing.Size(296, 129);
             this.gbAddArtist.TabIndex = 1;
@@ -147,7 +157,7 @@
             this.btnAddArtist.Location = new System.Drawing.Point(180, 85);
             this.btnAddArtist.Name = "btnAddArtist";
             this.btnAddArtist.Size = new System.Drawing.Size(80, 30);
-            this.btnAddArtist.TabIndex = 2;
+            this.btnAddArtist.TabIndex = 1;
             this.btnAddArtist.Text = "Add Artist";
             this.btnAddArtist.UseVisualStyleBackColor = true;
             this.btnAddArtist.Click += new System.EventHandler(this.btnAddArtist_Click);
@@ -170,20 +180,34 @@
             // 
             // gvArtist
             // 
+            this.gvArtist.AllowUserToAddRows = false;
+            this.gvArtist.AllowUserToDeleteRows = false;
+            this.gvArtist.AllowUserToOrderColumns = true;
+            this.gvArtist.AllowUserToResizeColumns = false;
+            this.gvArtist.AllowUserToResizeRows = false;
+            this.gvArtist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvArtist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvArtist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvArtist.ContextMenuStrip = this.menuArtist;
             this.gvArtist.Location = new System.Drawing.Point(3, 6);
+            this.gvArtist.MultiSelect = false;
             this.gvArtist.Name = "gvArtist";
+            this.gvArtist.ReadOnly = true;
             this.gvArtist.RowHeadersVisible = false;
-            this.gvArtist.Size = new System.Drawing.Size(465, 522);
+            this.gvArtist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvArtist.ShowEditingIcon = false;
+            this.gvArtist.Size = new System.Drawing.Size(515, 522);
             this.gvArtist.TabIndex = 0;
             // 
             // menuArtist
             // 
             this.menuArtist.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miDeleteArtist});
+            this.miDeleteArtist,
+            this.miEditArtist});
             this.menuArtist.Name = "menuArtist";
-            this.menuArtist.Size = new System.Drawing.Size(143, 26);
+            this.menuArtist.Size = new System.Drawing.Size(143, 48);
             this.menuArtist.Opening += new System.ComponentModel.CancelEventHandler(this.menuArtist_Opening);
             // 
             // miDeleteArtist
@@ -191,6 +215,13 @@
             this.miDeleteArtist.Name = "miDeleteArtist";
             this.miDeleteArtist.Size = new System.Drawing.Size(142, 22);
             this.miDeleteArtist.Text = "Delete Artrist";
+            this.miDeleteArtist.Click += new System.EventHandler(this.miDeleteArtist_Click);
+            // 
+            // miEditArtist
+            // 
+            this.miEditArtist.Name = "miEditArtist";
+            this.miEditArtist.Size = new System.Drawing.Size(142, 22);
+            this.miEditArtist.Text = "Edit Artist";
             // 
             // tabAlbums
             // 
@@ -199,13 +230,14 @@
             this.tabAlbums.Location = new System.Drawing.Point(4, 22);
             this.tabAlbums.Name = "tabAlbums";
             this.tabAlbums.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlbums.Size = new System.Drawing.Size(776, 536);
+            this.tabAlbums.Size = new System.Drawing.Size(826, 536);
             this.tabAlbums.TabIndex = 1;
             this.tabAlbums.Text = "Albums";
             this.tabAlbums.UseVisualStyleBackColor = true;
             // 
             // gbAddAlbum
             // 
+            this.gbAddAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbAddAlbum.Controls.Add(this.udAlbumQty);
             this.gbAddAlbum.Controls.Add(this.label6);
             this.gbAddAlbum.Controls.Add(this.label5);
@@ -217,7 +249,7 @@
             this.gbAddAlbum.Controls.Add(this.btnAddAlbum);
             this.gbAddAlbum.Controls.Add(this.label3);
             this.gbAddAlbum.Controls.Add(this.txtAlbumName);
-            this.gbAddAlbum.Location = new System.Drawing.Point(476, 7);
+            this.gbAddAlbum.Location = new System.Drawing.Point(526, 7);
             this.gbAddAlbum.Name = "gbAddAlbum";
             this.gbAddAlbum.Size = new System.Drawing.Size(296, 317);
             this.gbAddAlbum.TabIndex = 4;
@@ -229,7 +261,7 @@
             this.udAlbumQty.Location = new System.Drawing.Point(105, 222);
             this.udAlbumQty.Name = "udAlbumQty";
             this.udAlbumQty.Size = new System.Drawing.Size(47, 20);
-            this.udAlbumQty.TabIndex = 11;
+            this.udAlbumQty.TabIndex = 4;
             // 
             // label6
             // 
@@ -272,7 +304,7 @@
             this.txtAlbumPrice.Location = new System.Drawing.Point(105, 173);
             this.txtAlbumPrice.Name = "txtAlbumPrice";
             this.txtAlbumPrice.Size = new System.Drawing.Size(150, 20);
-            this.txtAlbumPrice.TabIndex = 5;
+            this.txtAlbumPrice.TabIndex = 3;
             // 
             // cbAlbumGenre
             // 
@@ -280,7 +312,7 @@
             this.cbAlbumGenre.Location = new System.Drawing.Point(105, 124);
             this.cbAlbumGenre.Name = "cbAlbumGenre";
             this.cbAlbumGenre.Size = new System.Drawing.Size(150, 21);
-            this.cbAlbumGenre.TabIndex = 4;
+            this.cbAlbumGenre.TabIndex = 2;
             // 
             // cbAlbumArtist
             // 
@@ -288,14 +320,14 @@
             this.cbAlbumArtist.Location = new System.Drawing.Point(105, 73);
             this.cbAlbumArtist.Name = "cbAlbumArtist";
             this.cbAlbumArtist.Size = new System.Drawing.Size(150, 21);
-            this.cbAlbumArtist.TabIndex = 3;
+            this.cbAlbumArtist.TabIndex = 1;
             // 
             // btnAddAlbum
             // 
             this.btnAddAlbum.Location = new System.Drawing.Point(175, 262);
             this.btnAddAlbum.Name = "btnAddAlbum";
             this.btnAddAlbum.Size = new System.Drawing.Size(80, 30);
-            this.btnAddAlbum.TabIndex = 2;
+            this.btnAddAlbum.TabIndex = 5;
             this.btnAddAlbum.Text = "Add Album";
             this.btnAddAlbum.UseVisualStyleBackColor = true;
             this.btnAddAlbum.Click += new System.EventHandler(this.btnAddAlbum_Click);
@@ -318,12 +350,24 @@
             // 
             // gvAlbums
             // 
+            this.gvAlbums.AllowUserToAddRows = false;
+            this.gvAlbums.AllowUserToDeleteRows = false;
+            this.gvAlbums.AllowUserToOrderColumns = true;
+            this.gvAlbums.AllowUserToResizeColumns = false;
+            this.gvAlbums.AllowUserToResizeRows = false;
+            this.gvAlbums.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvAlbums.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvAlbums.ContextMenuStrip = this.menuArtist;
             this.gvAlbums.Location = new System.Drawing.Point(5, 7);
+            this.gvAlbums.MultiSelect = false;
             this.gvAlbums.Name = "gvAlbums";
+            this.gvAlbums.ReadOnly = true;
             this.gvAlbums.RowHeadersVisible = false;
-            this.gvAlbums.Size = new System.Drawing.Size(465, 522);
+            this.gvAlbums.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvAlbums.Size = new System.Drawing.Size(515, 522);
             this.gvAlbums.TabIndex = 3;
             // 
             // tabGenre
@@ -333,19 +377,20 @@
             this.tabGenre.Location = new System.Drawing.Point(4, 22);
             this.tabGenre.Name = "tabGenre";
             this.tabGenre.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGenre.Size = new System.Drawing.Size(776, 536);
+            this.tabGenre.Size = new System.Drawing.Size(826, 536);
             this.tabGenre.TabIndex = 2;
             this.tabGenre.Text = "Genres";
             this.tabGenre.UseVisualStyleBackColor = true;
             // 
             // gbAddGenre
             // 
+            this.gbAddGenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbAddGenre.Controls.Add(this.txtGenreDesc);
             this.gbAddGenre.Controls.Add(this.lblDesc);
             this.gbAddGenre.Controls.Add(this.btnAddGenre);
             this.gbAddGenre.Controls.Add(this.label7);
             this.gbAddGenre.Controls.Add(this.txtGenreName);
-            this.gbAddGenre.Location = new System.Drawing.Point(476, 7);
+            this.gbAddGenre.Location = new System.Drawing.Point(526, 7);
             this.gbAddGenre.Name = "gbAddGenre";
             this.gbAddGenre.Size = new System.Drawing.Size(296, 243);
             this.gbAddGenre.TabIndex = 3;
@@ -358,7 +403,7 @@
             this.txtGenreDesc.Multiline = true;
             this.txtGenreDesc.Name = "txtGenreDesc";
             this.txtGenreDesc.Size = new System.Drawing.Size(150, 94);
-            this.txtGenreDesc.TabIndex = 4;
+            this.txtGenreDesc.TabIndex = 1;
             // 
             // lblDesc
             // 
@@ -397,12 +442,24 @@
             // 
             // gvGenres
             // 
+            this.gvGenres.AllowUserToAddRows = false;
+            this.gvGenres.AllowUserToDeleteRows = false;
+            this.gvGenres.AllowUserToOrderColumns = true;
+            this.gvGenres.AllowUserToResizeColumns = false;
+            this.gvGenres.AllowUserToResizeRows = false;
+            this.gvGenres.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvGenres.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvGenres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvGenres.ContextMenuStrip = this.menuArtist;
             this.gvGenres.Location = new System.Drawing.Point(5, 7);
+            this.gvGenres.MultiSelect = false;
             this.gvGenres.Name = "gvGenres";
+            this.gvGenres.ReadOnly = true;
             this.gvGenres.RowHeadersVisible = false;
-            this.gvGenres.Size = new System.Drawing.Size(465, 522);
+            this.gvGenres.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvGenres.Size = new System.Drawing.Size(515, 522);
             this.gvGenres.TabIndex = 2;
             // 
             // tabCustomer
@@ -412,13 +469,14 @@
             this.tabCustomer.Location = new System.Drawing.Point(4, 22);
             this.tabCustomer.Name = "tabCustomer";
             this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomer.Size = new System.Drawing.Size(776, 536);
+            this.tabCustomer.Size = new System.Drawing.Size(826, 536);
             this.tabCustomer.TabIndex = 3;
             this.tabCustomer.Text = "Customers";
             this.tabCustomer.UseVisualStyleBackColor = true;
             // 
             // gbAddCustomer
             // 
+            this.gbAddCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbAddCustomer.Controls.Add(this.txtCustomerEmail);
             this.gbAddCustomer.Controls.Add(this.label10);
             this.gbAddCustomer.Controls.Add(this.txtCustomerPhone);
@@ -428,7 +486,7 @@
             this.gbAddCustomer.Controls.Add(this.btnAddCustomer);
             this.gbAddCustomer.Controls.Add(this.label8);
             this.gbAddCustomer.Controls.Add(this.txtCustomerFirstName);
-            this.gbAddCustomer.Location = new System.Drawing.Point(476, 7);
+            this.gbAddCustomer.Location = new System.Drawing.Point(526, 7);
             this.gbAddCustomer.Name = "gbAddCustomer";
             this.gbAddCustomer.Size = new System.Drawing.Size(296, 259);
             this.gbAddCustomer.TabIndex = 5;
@@ -440,7 +498,7 @@
             this.txtCustomerEmail.Location = new System.Drawing.Point(105, 161);
             this.txtCustomerEmail.Name = "txtCustomerEmail";
             this.txtCustomerEmail.Size = new System.Drawing.Size(150, 20);
-            this.txtCustomerEmail.TabIndex = 8;
+            this.txtCustomerEmail.TabIndex = 3;
             // 
             // label10
             // 
@@ -456,7 +514,7 @@
             this.txtCustomerPhone.Location = new System.Drawing.Point(105, 117);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.Size = new System.Drawing.Size(150, 20);
-            this.txtCustomerPhone.TabIndex = 6;
+            this.txtCustomerPhone.TabIndex = 2;
             // 
             // label9
             // 
@@ -472,7 +530,7 @@
             this.txtCustomerLastName.Location = new System.Drawing.Point(105, 75);
             this.txtCustomerLastName.Name = "txtCustomerLastName";
             this.txtCustomerLastName.Size = new System.Drawing.Size(150, 20);
-            this.txtCustomerLastName.TabIndex = 4;
+            this.txtCustomerLastName.TabIndex = 1;
             // 
             // label1
             // 
@@ -488,7 +546,7 @@
             this.btnAddCustomer.Location = new System.Drawing.Point(162, 207);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(93, 30);
-            this.btnAddCustomer.TabIndex = 2;
+            this.btnAddCustomer.TabIndex = 4;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
@@ -511,12 +569,23 @@
             // 
             // gvCustomers
             // 
+            this.gvCustomers.AllowUserToAddRows = false;
+            this.gvCustomers.AllowUserToDeleteRows = false;
+            this.gvCustomers.AllowUserToOrderColumns = true;
+            this.gvCustomers.AllowUserToResizeColumns = false;
+            this.gvCustomers.AllowUserToResizeRows = false;
+            this.gvCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvCustomers.ContextMenuStrip = this.menuArtist;
             this.gvCustomers.Location = new System.Drawing.Point(5, 7);
+            this.gvCustomers.MultiSelect = false;
             this.gvCustomers.Name = "gvCustomers";
+            this.gvCustomers.ReadOnly = true;
             this.gvCustomers.RowHeadersVisible = false;
-            this.gvCustomers.Size = new System.Drawing.Size(465, 522);
+            this.gvCustomers.Size = new System.Drawing.Size(515, 522);
             this.gvCustomers.TabIndex = 4;
             // 
             // tabEmployee
@@ -526,13 +595,22 @@
             this.tabEmployee.Location = new System.Drawing.Point(4, 22);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(776, 536);
+            this.tabEmployee.Size = new System.Drawing.Size(826, 536);
             this.tabEmployee.TabIndex = 4;
             this.tabEmployee.Text = "Employees";
             this.tabEmployee.UseVisualStyleBackColor = true;
             // 
             // gbAddEmployee
             // 
+            this.gbAddEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbAddEmployee.Controls.Add(this.txtEmployeeAnswer);
+            this.gbAddEmployee.Controls.Add(this.label18);
+            this.gbAddEmployee.Controls.Add(this.cbEmployeSeqQuestions);
+            this.gbAddEmployee.Controls.Add(this.label17);
+            this.gbAddEmployee.Controls.Add(this.label16);
+            this.gbAddEmployee.Controls.Add(this.txtEmployeeFirstName);
+            this.gbAddEmployee.Controls.Add(this.label15);
+            this.gbAddEmployee.Controls.Add(this.txtEmployeeLastName);
             this.gbAddEmployee.Controls.Add(this.chkEmployeeAdmin);
             this.gbAddEmployee.Controls.Add(this.dtDemployeeHireDate);
             this.gbAddEmployee.Controls.Add(this.label11);
@@ -542,34 +620,100 @@
             this.gbAddEmployee.Controls.Add(this.btnAddEmployee);
             this.gbAddEmployee.Controls.Add(this.label14);
             this.gbAddEmployee.Controls.Add(this.txtEmployeeLogin);
-            this.gbAddEmployee.Location = new System.Drawing.Point(476, 7);
+            this.gbAddEmployee.Location = new System.Drawing.Point(526, 7);
             this.gbAddEmployee.Name = "gbAddEmployee";
-            this.gbAddEmployee.Size = new System.Drawing.Size(296, 259);
+            this.gbAddEmployee.Size = new System.Drawing.Size(296, 405);
             this.gbAddEmployee.TabIndex = 7;
             this.gbAddEmployee.TabStop = false;
             this.gbAddEmployee.Text = "Add Employee";
             // 
+            // txtEmployeeAnswer
+            // 
+            this.txtEmployeeAnswer.Location = new System.Drawing.Point(116, 228);
+            this.txtEmployeeAnswer.Name = "txtEmployeeAnswer";
+            this.txtEmployeeAnswer.PasswordChar = '*';
+            this.txtEmployeeAnswer.Size = new System.Drawing.Size(150, 20);
+            this.txtEmployeeAnswer.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(29, 231);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(45, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Answer:";
+            // 
+            // cbEmployeSeqQuestions
+            // 
+            this.cbEmployeSeqQuestions.FormattingEnabled = true;
+            this.cbEmployeSeqQuestions.Location = new System.Drawing.Point(116, 182);
+            this.cbEmployeSeqQuestions.Name = "cbEmployeSeqQuestions";
+            this.cbEmployeSeqQuestions.Size = new System.Drawing.Size(150, 21);
+            this.cbEmployeSeqQuestions.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 185);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(90, 13);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Security Question";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(30, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(57, 13);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "First Name";
+            // 
+            // txtEmployeeFirstName
+            // 
+            this.txtEmployeeFirstName.Location = new System.Drawing.Point(116, 19);
+            this.txtEmployeeFirstName.Name = "txtEmployeeFirstName";
+            this.txtEmployeeFirstName.Size = new System.Drawing.Size(150, 20);
+            this.txtEmployeeFirstName.TabIndex = 0;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(30, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(58, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Last Name";
+            // 
+            // txtEmployeeLastName
+            // 
+            this.txtEmployeeLastName.Location = new System.Drawing.Point(117, 54);
+            this.txtEmployeeLastName.Name = "txtEmployeeLastName";
+            this.txtEmployeeLastName.Size = new System.Drawing.Size(150, 20);
+            this.txtEmployeeLastName.TabIndex = 1;
+            // 
             // chkEmployeeAdmin
             // 
             this.chkEmployeeAdmin.AutoSize = true;
-            this.chkEmployeeAdmin.Location = new System.Drawing.Point(105, 164);
+            this.chkEmployeeAdmin.Location = new System.Drawing.Point(117, 316);
             this.chkEmployeeAdmin.Name = "chkEmployeeAdmin";
             this.chkEmployeeAdmin.Size = new System.Drawing.Size(15, 14);
-            this.chkEmployeeAdmin.TabIndex = 10;
+            this.chkEmployeeAdmin.TabIndex = 7;
             this.chkEmployeeAdmin.UseVisualStyleBackColor = true;
             // 
             // dtDemployeeHireDate
             // 
             this.dtDemployeeHireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDemployeeHireDate.Location = new System.Drawing.Point(105, 120);
+            this.dtDemployeeHireDate.Location = new System.Drawing.Point(117, 272);
             this.dtDemployeeHireDate.Name = "dtDemployeeHireDate";
             this.dtDemployeeHireDate.Size = new System.Drawing.Size(150, 20);
-            this.dtDemployeeHireDate.TabIndex = 9;
+            this.dtDemployeeHireDate.TabIndex = 6;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 164);
+            this.label11.Location = new System.Drawing.Point(30, 317);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 7;
@@ -578,7 +722,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(22, 120);
+            this.label12.Location = new System.Drawing.Point(30, 272);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(58, 13);
             this.label12.TabIndex = 5;
@@ -586,16 +730,16 @@
             // 
             // txtEmployeePass
             // 
-            this.txtEmployeePass.Location = new System.Drawing.Point(105, 75);
+            this.txtEmployeePass.Location = new System.Drawing.Point(117, 135);
             this.txtEmployeePass.Name = "txtEmployeePass";
             this.txtEmployeePass.PasswordChar = '*';
             this.txtEmployeePass.Size = new System.Drawing.Size(150, 20);
-            this.txtEmployeePass.TabIndex = 4;
+            this.txtEmployeePass.TabIndex = 3;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(22, 78);
+            this.label13.Location = new System.Drawing.Point(30, 138);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 13);
             this.label13.TabIndex = 3;
@@ -603,10 +747,10 @@
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(162, 207);
+            this.btnAddEmployee.Location = new System.Drawing.Point(174, 359);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(93, 30);
-            this.btnAddEmployee.TabIndex = 2;
+            this.btnAddEmployee.TabIndex = 8;
             this.btnAddEmployee.Text = "Add Employee";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
@@ -614,7 +758,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 32);
+            this.label14.Location = new System.Drawing.Point(30, 92);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 13);
             this.label14.TabIndex = 1;
@@ -622,31 +766,43 @@
             // 
             // txtEmployeeLogin
             // 
-            this.txtEmployeeLogin.Location = new System.Drawing.Point(105, 29);
+            this.txtEmployeeLogin.Location = new System.Drawing.Point(117, 89);
             this.txtEmployeeLogin.Name = "txtEmployeeLogin";
             this.txtEmployeeLogin.Size = new System.Drawing.Size(150, 20);
-            this.txtEmployeeLogin.TabIndex = 0;
+            this.txtEmployeeLogin.TabIndex = 2;
             // 
             // gvEmployees
             // 
+            this.gvEmployees.AllowUserToAddRows = false;
+            this.gvEmployees.AllowUserToDeleteRows = false;
+            this.gvEmployees.AllowUserToOrderColumns = true;
+            this.gvEmployees.AllowUserToResizeColumns = false;
+            this.gvEmployees.AllowUserToResizeRows = false;
+            this.gvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvEmployees.ContextMenuStrip = this.menuArtist;
             this.gvEmployees.Location = new System.Drawing.Point(5, 7);
+            this.gvEmployees.MultiSelect = false;
             this.gvEmployees.Name = "gvEmployees";
+            this.gvEmployees.ReadOnly = true;
             this.gvEmployees.RowHeadersVisible = false;
-            this.gvEmployees.Size = new System.Drawing.Size(465, 522);
+            this.gvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvEmployees.Size = new System.Drawing.Size(515, 522);
             this.gvEmployees.TabIndex = 6;
             // 
             // formInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(834, 562);
             this.Controls.Add(this.tcInventory);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "formInventory";
             this.Text = "Manage Inventory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formInventory_FormClosing);
             this.tcInventory.ResumeLayout(false);
             this.tabArtist.ResumeLayout(false);
             this.gbAddArtist.ResumeLayout(false);
@@ -731,5 +887,14 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtEmployeeLogin;
         private System.Windows.Forms.DataGridView gvEmployees;
+        private System.Windows.Forms.TextBox txtEmployeeAnswer;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cbEmployeSeqQuestions;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtEmployeeFirstName;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtEmployeeLastName;
+        private System.Windows.Forms.ToolStripMenuItem miEditArtist;
     }
 }

@@ -64,53 +64,20 @@ namespace Music_Store
             }
         }
 
-        public static void addEmployee(string login, string password, string dateHired, string isAdmin)
+        public static void addEmployee(string login, string sqID, string password, string dateHired, 
+            string isAdmin, string answer, string firstname, string lastname)
         {
             using(SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "INSERT INTO Employee (LoginID, Password, DateHired, isAdmin) VALUES ('" +
-                    login + "','" + password + "','" + dateHired + "','" + isAdmin + "')";
+                cmd.CommandText = "insert into employee (loginID, SecuerityQuestionId, Password, DateHired, isAdmin, " +
+                    "SecurityQuestionAns, FirstName, LastName) Vvalues ('" + login + "','" + sqID + "','" + password + "','" +
+                    "','" + dateHired + "','" + isAdmin + "','" + answer + "','" + firstname + "','" + lastname + "')";
                 cmd.ExecuteNonQuery();
             }
         }
 
-        //public static int getGenreId(string name)
-        //{
-        //    using(SQLiteConnection conn = getConnection())
-        //    {
-        //        SQLiteCommand cmd = conn.CreateCommand();
-        //        cmd.CommandText = "SELECT GenreID FROM Genre WHERE Name = '" + name + "'";
-        //        return (int)cmd.ExecuteScalar();
-        //    }
-        //}
-
-        //public static int getArtistId(string name)
-        //{
-        //    using(SQLiteConnection conn = getConnection())
-        //    {
-        //        SQLiteCommand cmd = conn.CreateCommand();
-        //        cmd.CommandText = "SELECT ArtistID FROM Artist WHERE = '" + name + "'";
-        //        return (int)cmd.ExecuteScalar();
-        //    }
-        //}
-
-        public static DataTable CustomerView()
-        {
-            SQLiteDataAdapter ad;
-            DataTable dt = new DataTable();
-            using(SQLiteConnection conn = getConnection())
-            {
-                SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Customer";
-                ad = new SQLiteDataAdapter(cmd);
-                ad.Fill(dt);
-            }
-
-            return dt;
-        }
-
-        public static DataTable ArtistView()
+        public static DataTable ArtistComboBox()
         {
             SQLiteDataAdapter ad;
             DataTable dt = new DataTable();
@@ -125,22 +92,7 @@ namespace Music_Store
             return dt;
         }
 
-        public static DataTable AlbumView()
-        {
-            SQLiteDataAdapter ad;
-            DataTable dt = new DataTable();
-            using (SQLiteConnection conn = getConnection())
-            {
-                SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Album";
-                ad = new SQLiteDataAdapter(cmd);
-                ad.Fill(dt);
-            }
-
-            return dt;
-        }
-
-        public static DataTable GenreView()
+        public static DataTable GenreComboBox()
         {
             SQLiteDataAdapter ad;
             DataTable dt = new DataTable();
@@ -155,6 +107,84 @@ namespace Music_Store
             return dt;
         }
 
+        public static DataTable SecurityQuestionComboBox()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM Security_Questions";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable CustomerView()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select customer.firstName as 'First Name', customer.lastName as 'Last Name', " + 
+                    "customer.emailAddress as 'Email Address', customer.phoneNumber as 'Phone #'from customer order by customer.firstName";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable ArtistView()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select Artist.name as 'Artist', count(Album.albumID) as '# Albums' from Artist " + 
+                    "join Album on Artist.artistID = Album.artistId group by Artist.name";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable AlbumView()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select Album.title as 'Album', Artist.name as 'Artist', Genre.name as 'Genre',  Album.price, Album.quantity " +
+                    "from Artist join Album on Artist.artistID = Album.artistId join Genre on Album.genreId = Genre.genreID order by Artist.name";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable GenreView()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select Genre.name as 'Genre', Genre.desc as 'Description' from Genre order by Genre.name";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
         public static DataTable EmployeeView()
         {
             SQLiteDataAdapter ad;
@@ -162,7 +192,26 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Employee";
+                cmd.CommandText = "select employee.lastName as 'Last Name', employee.firstName as 'First Name', " +
+                    "employee.LoginID as 'Login ID', employee.dateHired as 'Date Hired', employee.IsAdmin as 'Admin', " +
+                    "count(musicOrder.employeeId) as '# Sales' from employee left join musicOrder " +
+                    " on employee.employeeID = musicOrder.employeeId group by employee.lastName";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable CustomerSearch(string number)
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select customer.LastName, customer.firstName, customer.emailAddress, " +
+                    "customer.customerID from customer where customer.phoneNumber = '" + number + "'";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }

@@ -13,6 +13,7 @@ namespace Music_Store
     public partial class formLogin : Form
     {
         private formDashboard dashboard;
+        private ForgotPassword forgotPasswordForm;
 
         public formLogin()
         {
@@ -22,19 +23,16 @@ namespace Music_Store
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            dashboard = new formDashboard(txtUserName.Text);
+            dashboard = new formDashboard(txtUserName.Text, this);
             dashboard.Show();
             this.Hide();
         }
 
         private void forgotPasswordButton_Click(object sender, EventArgs e)
         {
-            ForgotPassword forgotPasswordForm = new ForgotPassword(txtUserName.Text.Trim());
+            forgotPasswordForm = new ForgotPassword(txtUserName.Text.Trim());
             forgotPasswordForm.Show();
-            
         }
-
-
 
     }
 }

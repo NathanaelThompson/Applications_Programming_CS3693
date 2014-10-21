@@ -16,5 +16,11 @@ namespace Music_Store
         {
             InitializeComponent();
         }
+
+        private void formSearchScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

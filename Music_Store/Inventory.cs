@@ -28,13 +28,17 @@ namespace Music_Store
             gvGenres.DataSource = ConnectionManager.GenreView();
 
             //combo box datasources
-            cbAlbumArtist.DataSource = ConnectionManager.ArtistView();
+            cbAlbumArtist.DataSource = ConnectionManager.ArtistComboBox();
             cbAlbumArtist.DisplayMember = "Name";
             cbAlbumArtist.ValueMember = "ArtistID";
 
-            cbAlbumGenre.DataSource = ConnectionManager.GenreView();
+            cbAlbumGenre.DataSource = ConnectionManager.GenreComboBox();
             cbAlbumGenre.DisplayMember = "Name";
             cbAlbumGenre.ValueMember = "GenreID";
+
+            cbEmployeSeqQuestions.DataSource = ConnectionManager.SecurityQuestionComboBox();
+            cbEmployeSeqQuestions.DisplayMember = "Question";
+            cbEmployeSeqQuestions.ValueMember = "SecurityQuestionID";
         }
 
         private void ReloadData()
@@ -46,24 +50,28 @@ namespace Music_Store
             gvGenres.DataSource = null;
             cbAlbumGenre.DataSource = null;
             cbAlbumArtist.DataSource = null;
+            cbEmployeSeqQuestions.DataSource = null;
             InitDataSource();
         }
 
         private void menuArtist_Opening(object sender, CancelEventArgs e)
         {
             miDeleteArtist.Enabled = (gvArtist.SelectedRows.Count == 1);
+            miEditArtist.Enabled = (gvArtist.SelectedRows.Count == 1);
         }
 
         private void btnAddArtist_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addArtist(txtArtistName.Text);
+            ConnectionManager.addArtist(txtArtistName.Text.Trim());
             txtArtistName.Clear();
             ReloadData();
         }
 
         private void btnAddAlbum_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addAlbum(cbAlbumArtist.SelectedValue.ToString(), cbAlbumGenre.SelectedValue.ToString(), txtAlbumName.Text, txtAlbumPrice.Text, udAlbumQty.Value.ToString());
+            ConnectionManager.addAlbum(cbAlbumArtist.SelectedValue.ToString(), cbAlbumGenre.SelectedValue.ToString(),
+                txtAlbumName.Text.Trim(), txtAlbumPrice.Text.Trim(), udAlbumQty.Value.ToString());
+
             txtAlbumName.Clear();
             txtAlbumPrice.Clear();
             cbAlbumArtist.SelectedIndex = 0;
@@ -74,7 +82,7 @@ namespace Music_Store
 
         private void btnAddGenre_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addGenre(txtGenreName.Text, txtGenreDesc.Text);
+            ConnectionManager.addGenre(txtGenreName.Text.Trim(), txtGenreDesc.Text.Trim());
             txtGenreName.Clear();
             txtGenreDesc.Clear();
             ReloadData();
@@ -84,22 +92,42 @@ namespace Music_Store
         {
             int admin = chkEmployeeAdmin.Checked ? 1 : 0;
 
-            ConnectionManager.addEmployee(txtEmployeeLogin.Text, txtEmployeePass.Text, dtDemployeeHireDate.Value.ToString(), admin.ToString());
+            ConnectionManager.addEmployee(txtEmployeeLogin.Text.Trim(), cbEmployeSeqQuestions.SelectedValue.ToString(), 
+                txtEmployeePass.Text.Trim(), dtDemployeeHireDate.Value.ToString(), admin.ToString(), 
+                txtEmployeeAnswer.Text.Trim(), txtEmployeeFirstName.Text.Trim(),
+                txtEmployeeLastName.Text); 
+
             txtEmployeePass.Clear();
             txtEmployeeLogin.Clear();
             chkEmployeeAdmin.Checked = false;
+            txtEmployeeAnswer.Clear();
+            txtEmployeeFirstName.Clear();
+            txtEmployeeLastName.Clear();
             dtDemployeeHireDate.Value = DateTime.Now;
             ReloadData();
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addCustomer(txtCustomerFirstName.Text, txtCustomerLastName.Text, txtCustomerEmail.Text, txtCustomerPhone.Text);
+            ConnectionManager.addCustomer(txtCustomerFirstName.Text.Trim(), txtCustomerLastName.Text.Trim(),
+                txtCustomerEmail.Text.Trim(), txtCustomerPhone.Text.Trim());
+
             txtCustomerEmail.Clear();
             txtCustomerPhone.Clear();
             txtCustomerFirstName.Clear();
             txtCustomerLastName.Clear();
             ReloadData();
+        }
+
+        private void miDeleteArtist_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formInventory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
 
 

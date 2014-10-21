@@ -30,16 +30,16 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbSeachBox = new System.Windows.Forms.GroupBox();
-            this.lblSearchFor = new System.Windows.Forms.Label();
-            this.rbArtist = new System.Windows.Forms.RadioButton();
-            this.rbEmployee = new System.Windows.Forms.RadioButton();
-            this.rbCustomer = new System.Windows.Forms.RadioButton();
-            this.rbOrder = new System.Windows.Forms.RadioButton();
-            this.rdGenre = new System.Windows.Forms.RadioButton();
-            this.rbAlbums = new System.Windows.Forms.RadioButton();
-            this.lblSearchTerm = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSearchTerm = new System.Windows.Forms.Label();
+            this.rbAlbums = new System.Windows.Forms.RadioButton();
+            this.rdGenre = new System.Windows.Forms.RadioButton();
+            this.rbOrder = new System.Windows.Forms.RadioButton();
+            this.rbCustomer = new System.Windows.Forms.RadioButton();
+            this.rbEmployee = new System.Windows.Forms.RadioButton();
+            this.rbArtist = new System.Windows.Forms.RadioButton();
+            this.lblSearchFor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbSeachBox.SuspendLayout();
             this.SuspendLayout();
@@ -73,69 +73,30 @@
             this.gbSeachBox.TabStop = false;
             this.gbSeachBox.Text = "Seach Information";
             // 
-            // lblSearchFor
+            // btnSearch
             // 
-            this.lblSearchFor.AutoSize = true;
-            this.lblSearchFor.Location = new System.Drawing.Point(24, 33);
-            this.lblSearchFor.Name = "lblSearchFor";
-            this.lblSearchFor.Size = new System.Drawing.Size(62, 13);
-            this.lblSearchFor.TabIndex = 0;
-            this.lblSearchFor.Text = "Search For:";
+            this.btnSearch.Location = new System.Drawing.Point(419, 60);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(80, 30);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // rbArtist
+            // textBox1
             // 
-            this.rbArtist.AutoSize = true;
-            this.rbArtist.Location = new System.Drawing.Point(92, 31);
-            this.rbArtist.Name = "rbArtist";
-            this.rbArtist.Size = new System.Drawing.Size(53, 17);
-            this.rbArtist.TabIndex = 1;
-            this.rbArtist.TabStop = true;
-            this.rbArtist.Text = "Artists";
-            this.rbArtist.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(104, 66);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 8;
             // 
-            // rbEmployee
+            // lblSearchTerm
             // 
-            this.rbEmployee.AutoSize = true;
-            this.rbEmployee.Location = new System.Drawing.Point(423, 31);
-            this.rbEmployee.Name = "rbEmployee";
-            this.rbEmployee.Size = new System.Drawing.Size(76, 17);
-            this.rbEmployee.TabIndex = 2;
-            this.rbEmployee.TabStop = true;
-            this.rbEmployee.Text = "Employees";
-            this.rbEmployee.UseVisualStyleBackColor = true;
-            // 
-            // rbCustomer
-            // 
-            this.rbCustomer.AutoSize = true;
-            this.rbCustomer.Location = new System.Drawing.Point(343, 31);
-            this.rbCustomer.Name = "rbCustomer";
-            this.rbCustomer.Size = new System.Drawing.Size(74, 17);
-            this.rbCustomer.TabIndex = 3;
-            this.rbCustomer.TabStop = true;
-            this.rbCustomer.Text = "Customers";
-            this.rbCustomer.UseVisualStyleBackColor = true;
-            // 
-            // rbOrder
-            // 
-            this.rbOrder.AutoSize = true;
-            this.rbOrder.Location = new System.Drawing.Point(281, 31);
-            this.rbOrder.Name = "rbOrder";
-            this.rbOrder.Size = new System.Drawing.Size(56, 17);
-            this.rbOrder.TabIndex = 4;
-            this.rbOrder.TabStop = true;
-            this.rbOrder.Text = "Orders";
-            this.rbOrder.UseVisualStyleBackColor = true;
-            // 
-            // rdGenre
-            // 
-            this.rdGenre.AutoSize = true;
-            this.rdGenre.Location = new System.Drawing.Point(216, 31);
-            this.rdGenre.Name = "rdGenre";
-            this.rdGenre.Size = new System.Drawing.Size(59, 17);
-            this.rdGenre.TabIndex = 5;
-            this.rdGenre.TabStop = true;
-            this.rdGenre.Text = "Genres";
-            this.rdGenre.UseVisualStyleBackColor = true;
+            this.lblSearchTerm.AutoSize = true;
+            this.lblSearchTerm.Location = new System.Drawing.Point(24, 69);
+            this.lblSearchTerm.Name = "lblSearchTerm";
+            this.lblSearchTerm.Size = new System.Drawing.Size(71, 13);
+            this.lblSearchTerm.TabIndex = 7;
+            this.lblSearchTerm.Text = "Search Term:";
             // 
             // rbAlbums
             // 
@@ -148,30 +109,69 @@
             this.rbAlbums.Text = "Albums";
             this.rbAlbums.UseVisualStyleBackColor = true;
             // 
-            // lblSearchTerm
+            // rdGenre
             // 
-            this.lblSearchTerm.AutoSize = true;
-            this.lblSearchTerm.Location = new System.Drawing.Point(24, 69);
-            this.lblSearchTerm.Name = "lblSearchTerm";
-            this.lblSearchTerm.Size = new System.Drawing.Size(71, 13);
-            this.lblSearchTerm.TabIndex = 7;
-            this.lblSearchTerm.Text = "Search Term:";
+            this.rdGenre.AutoSize = true;
+            this.rdGenre.Location = new System.Drawing.Point(216, 31);
+            this.rdGenre.Name = "rdGenre";
+            this.rdGenre.Size = new System.Drawing.Size(59, 17);
+            this.rdGenre.TabIndex = 5;
+            this.rdGenre.TabStop = true;
+            this.rdGenre.Text = "Genres";
+            this.rdGenre.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // rbOrder
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 8;
+            this.rbOrder.AutoSize = true;
+            this.rbOrder.Location = new System.Drawing.Point(281, 31);
+            this.rbOrder.Name = "rbOrder";
+            this.rbOrder.Size = new System.Drawing.Size(56, 17);
+            this.rbOrder.TabIndex = 4;
+            this.rbOrder.TabStop = true;
+            this.rbOrder.Text = "Orders";
+            this.rbOrder.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
+            // rbCustomer
             // 
-            this.btnSearch.Location = new System.Drawing.Point(419, 60);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(80, 30);
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.rbCustomer.AutoSize = true;
+            this.rbCustomer.Location = new System.Drawing.Point(343, 31);
+            this.rbCustomer.Name = "rbCustomer";
+            this.rbCustomer.Size = new System.Drawing.Size(74, 17);
+            this.rbCustomer.TabIndex = 3;
+            this.rbCustomer.TabStop = true;
+            this.rbCustomer.Text = "Customers";
+            this.rbCustomer.UseVisualStyleBackColor = true;
+            // 
+            // rbEmployee
+            // 
+            this.rbEmployee.AutoSize = true;
+            this.rbEmployee.Location = new System.Drawing.Point(423, 31);
+            this.rbEmployee.Name = "rbEmployee";
+            this.rbEmployee.Size = new System.Drawing.Size(76, 17);
+            this.rbEmployee.TabIndex = 2;
+            this.rbEmployee.TabStop = true;
+            this.rbEmployee.Text = "Employees";
+            this.rbEmployee.UseVisualStyleBackColor = true;
+            // 
+            // rbArtist
+            // 
+            this.rbArtist.AutoSize = true;
+            this.rbArtist.Location = new System.Drawing.Point(92, 31);
+            this.rbArtist.Name = "rbArtist";
+            this.rbArtist.Size = new System.Drawing.Size(53, 17);
+            this.rbArtist.TabIndex = 1;
+            this.rbArtist.TabStop = true;
+            this.rbArtist.Text = "Artists";
+            this.rbArtist.UseVisualStyleBackColor = true;
+            // 
+            // lblSearchFor
+            // 
+            this.lblSearchFor.AutoSize = true;
+            this.lblSearchFor.Location = new System.Drawing.Point(24, 33);
+            this.lblSearchFor.Name = "lblSearchFor";
+            this.lblSearchFor.Size = new System.Drawing.Size(62, 13);
+            this.lblSearchFor.TabIndex = 0;
+            this.lblSearchFor.Text = "Search For:";
             // 
             // formSearchScreen
             // 
@@ -184,6 +184,7 @@
             this.MaximizeBox = false;
             this.Name = "formSearchScreen";
             this.Text = "Database Search";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formSearchScreen_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbSeachBox.ResumeLayout(false);
             this.gbSeachBox.PerformLayout();

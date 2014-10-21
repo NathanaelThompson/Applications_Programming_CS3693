@@ -106,7 +106,7 @@
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(152, 22);
+            this.miClose.Size = new System.Drawing.Size(103, 22);
             this.miClose.Text = "Close";
             this.miClose.Click += new System.EventHandler(this.miClose_Click);
             // 
@@ -153,7 +153,7 @@
             this.MaximizeBox = false;
             this.Name = "formDashboard";
             this.Text = "Employee Dashboard";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formDashboard_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDashboard_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

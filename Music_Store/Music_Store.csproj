@@ -67,6 +67,12 @@
     <Compile Include="Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerSeach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerSeach.Designer.cs">
+      <DependentUpon>CustomerSeach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="SQLiteAsync.cs" />
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSeach.resx">
+      <DependentUpon>CustomerSeach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
