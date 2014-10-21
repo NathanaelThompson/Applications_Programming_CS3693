@@ -27,6 +27,13 @@ namespace Music_Store
             this.Hide();
         }
 
+        private void forgotPasswordButton_Click(object sender, EventArgs e)
+        {
+            ForgotPassword forgotPasswordForm = new ForgotPassword(txtUserName.Text.Trim());
+            forgotPasswordForm.Show();
+            
+        }
+
 
 
     }

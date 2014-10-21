@@ -175,5 +175,23 @@ namespace Music_Store
             return true;
         }
 
+        public static bool checkEmployeeUsername(string username)
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM Employee WHERE LoginID='"+username+"'";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

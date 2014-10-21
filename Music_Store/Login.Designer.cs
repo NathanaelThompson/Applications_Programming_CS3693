@@ -33,7 +33,7 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.forgotPasswordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -78,21 +78,22 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // button1
+            // forgotPasswordButton
             // 
-            this.button1.Location = new System.Drawing.Point(148, 131);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Forgot Password?";
-            this.button1.UseVisualStyleBackColor = true;
+            this.forgotPasswordButton.Location = new System.Drawing.Point(148, 131);
+            this.forgotPasswordButton.Name = "forgotPasswordButton";
+            this.forgotPasswordButton.Size = new System.Drawing.Size(101, 30);
+            this.forgotPasswordButton.TabIndex = 5;
+            this.forgotPasswordButton.Text = "Forgot Password?";
+            this.forgotPasswordButton.UseVisualStyleBackColor = true;
+            this.forgotPasswordButton.Click += new System.EventHandler(this.forgotPasswordButton_Click);
             // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 181);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.forgotPasswordButton);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
@@ -113,7 +114,7 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button forgotPasswordButton;
     }
 }
 

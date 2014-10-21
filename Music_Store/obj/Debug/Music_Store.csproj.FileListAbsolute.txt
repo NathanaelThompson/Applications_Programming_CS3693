@@ -52,3 +52,4 @@ C:\Users\Mohil\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\
 C:\Users\Mohil\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.Properties.Resources.resources
 C:\Users\Mohil\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formSearchScreen.resources
 C:\Users\Mohil\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csproj.GenerateResource.Cache
+C:\Users\Mohil\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.ForgotPassword.resources
