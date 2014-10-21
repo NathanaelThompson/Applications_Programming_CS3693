@@ -24,7 +24,7 @@ namespace Music_Store
 
             login = owner;
             search = new formSearchScreen();
-            checkout = new formCheckout(userLoggedIn);
+            checkout = new formCheckout(username);
             inv = new formInventory();
 
             userLoggedIn = username;
@@ -58,6 +58,21 @@ namespace Music_Store
             checkout.Dispose();
             inv.Dispose();
             login.Dispose();
+        }
+
+        private void miCheckout_Click(object sender, EventArgs e)
+        {
+            btnCheckout.PerformClick();
+        }
+
+        private void miInventory_Click(object sender, EventArgs e)
+        {
+            btnInventory.PerformClick();
+        }
+
+        private void miSearch_Click(object sender, EventArgs e)
+        {
+            btnSearch.PerformClick();
         }
 
 

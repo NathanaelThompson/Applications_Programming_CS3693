@@ -12,12 +12,17 @@ namespace Music_Store
 {
     public partial class formCustomerSearch : Form
     {
-        formCheckout checkout;
+        private formCheckout checkout;
 
         public formCustomerSearch(formCheckout owner)
         {
             checkout = owner;
             InitializeComponent();
+            
+            lvSearchResults.Columns.Add("Last Name", 70);
+            lvSearchResults.Columns.Add("First Name", 70);
+            lvSearchResults.Columns.Add("Email Address", 140);
+            lvSearchResults.Columns.Add("CID", 40);
         }
 
         private void btnSeach_Click(object sender, EventArgs e)
@@ -38,9 +43,10 @@ namespace Music_Store
             }
         }
 
-        private void lbCustomerSearch_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void lvSearchResults_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            checkout.setCustomerID(lvSearchResults.SelectedItems[0].SubItems[3].Text);
+            this.Close();
         }
 
         private void formCustomerSearch_FormClosing(object sender, FormClosingEventArgs e)

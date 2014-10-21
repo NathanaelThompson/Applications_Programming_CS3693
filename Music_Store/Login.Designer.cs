@@ -39,69 +39,83 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(29, 37);
+            this.lblUserName.Location = new System.Drawing.Point(30, 40);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(63, 13);
+            this.lblUserName.Size = new System.Drawing.Size(83, 17);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "User Name:";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(29, 88);
+            this.lblPassword.Location = new System.Drawing.Point(40, 100);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.Size = new System.Drawing.Size(73, 17);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password:";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(126, 34);
+            this.txtUserName.Location = new System.Drawing.Point(121, 39);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(150, 20);
+            this.txtUserName.Size = new System.Drawing.Size(251, 23);
             this.txtUserName.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(126, 85);
+            this.txtPassword.Location = new System.Drawing.Point(121, 97);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(150, 20);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(251, 23);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(43, 131);
+            this.btnLogin.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Location = new System.Drawing.Point(80, 155);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(80, 30);
+            this.btnLogin.Size = new System.Drawing.Size(100, 50);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // forgotPasswordButton
             // 
-            this.forgotPasswordButton.Location = new System.Drawing.Point(148, 131);
+            this.forgotPasswordButton.BackColor = System.Drawing.Color.Salmon;
+            this.forgotPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.forgotPasswordButton.Location = new System.Drawing.Point(230, 155);
+            this.forgotPasswordButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.forgotPasswordButton.Name = "forgotPasswordButton";
-            this.forgotPasswordButton.Size = new System.Drawing.Size(101, 30);
+            this.forgotPasswordButton.Size = new System.Drawing.Size(100, 50);
             this.forgotPasswordButton.TabIndex = 5;
             this.forgotPasswordButton.Text = "Forgot Password?";
-            this.forgotPasswordButton.UseVisualStyleBackColor = true;
+            this.forgotPasswordButton.UseVisualStyleBackColor = false;
             this.forgotPasswordButton.Click += new System.EventHandler(this.forgotPasswordButton_Click);
             // 
             // formLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 181);
+            this.ClientSize = new System.Drawing.Size(419, 236);
             this.Controls.Add(this.forgotPasswordButton);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserName);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Login";
             this.ResumeLayout(false);
             this.PerformLayout();

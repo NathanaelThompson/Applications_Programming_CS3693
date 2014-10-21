@@ -44,43 +44,53 @@
             // 
             // btnCheckout
             // 
+            this.btnCheckout.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckout.Location = new System.Drawing.Point(240, 90);
+            this.btnCheckout.Location = new System.Drawing.Point(243, 83);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(150, 150);
+            this.btnCheckout.Size = new System.Drawing.Size(200, 200);
             this.btnCheckout.TabIndex = 0;
             this.btnCheckout.Text = "Checkout ";
-            this.btnCheckout.UseVisualStyleBackColor = true;
+            this.btnCheckout.UseVisualStyleBackColor = false;
             this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(40, 90);
+            this.btnSearch.Location = new System.Drawing.Point(13, 83);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(150, 150);
+            this.btnSearch.Size = new System.Drawing.Size(200, 200);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnInventory
             // 
+            this.btnInventory.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventory.Location = new System.Drawing.Point(440, 90);
+            this.btnInventory.Location = new System.Drawing.Point(471, 83);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(150, 150);
+            this.btnInventory.Size = new System.Drawing.Size(200, 200);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
-            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.UseVisualStyleBackColor = false;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // lblLogInStatus
             // 
             this.lblLogInStatus.AutoSize = true;
-            this.lblLogInStatus.Location = new System.Drawing.Point(499, 36);
+            this.lblLogInStatus.Location = new System.Drawing.Point(505, 27);
+            this.lblLogInStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogInStatus.Name = "lblLogInStatus";
-            this.lblLogInStatus.Size = new System.Drawing.Size(125, 13);
+            this.lblLogInStatus.Size = new System.Drawing.Size(166, 17);
             this.lblLogInStatus.TabIndex = 3;
             this.lblLogInStatus.Text = "Logged In As [username]";
             // 
@@ -91,7 +101,8 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(636, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,35 +134,41 @@
             // miCheckout
             // 
             this.miCheckout.Name = "miCheckout";
-            this.miCheckout.Size = new System.Drawing.Size(128, 22);
+            this.miCheckout.Size = new System.Drawing.Size(152, 22);
             this.miCheckout.Text = "Checkout ";
+            this.miCheckout.Click += new System.EventHandler(this.miCheckout_Click);
             // 
             // miInventory
             // 
             this.miInventory.Name = "miInventory";
-            this.miInventory.Size = new System.Drawing.Size(128, 22);
+            this.miInventory.Size = new System.Drawing.Size(152, 22);
             this.miInventory.Text = "Inventory";
+            this.miInventory.Click += new System.EventHandler(this.miInventory_Click);
             // 
             // miSearch
             // 
             this.miSearch.Name = "miSearch";
-            this.miSearch.Size = new System.Drawing.Size(128, 22);
+            this.miSearch.Size = new System.Drawing.Size(152, 22);
             this.miSearch.Text = "Search DB";
+            this.miSearch.Click += new System.EventHandler(this.miSearch_Click);
             // 
             // formDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 321);
+            this.ClientSize = new System.Drawing.Size(684, 331);
             this.Controls.Add(this.lblLogInStatus);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnCheckout);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "formDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Employee Dashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDashboard_FormClosing);
             this.menuStrip1.ResumeLayout(false);

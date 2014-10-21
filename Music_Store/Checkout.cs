@@ -19,7 +19,7 @@ namespace Music_Store
         {
             search = new formCustomerSearch(this);
             InitializeComponent();
-            lblLogInStatus.Text = "Logged in as[" + username + "]";
+            lblLogInStatus.Text = "Logged in as [" + username + "]";
             lblLogInStatus.ForeColor = Color.Red;
         }
 
@@ -31,6 +31,7 @@ namespace Music_Store
         public void setCustomerID(string id)
         {
             txtCustomer.Text = id;
+            gbSale.Enabled = true;
         }
 
         private void formCheckout_FormClosing(object sender, FormClosingEventArgs e)
