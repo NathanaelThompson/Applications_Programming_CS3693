@@ -22,6 +22,7 @@ namespace Music_Store
             InitializeComponent();
             userLoggedIn = username;
             lblLogInStatus.Text = "Logged in as [" + userLoggedIn + "]";
+            lblLogInStatus.ForeColor = Color.Red;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -40,6 +41,11 @@ namespace Music_Store
         {
             inv = new formInventory();
             inv.Show();
+        }
+
+        private void formDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
 

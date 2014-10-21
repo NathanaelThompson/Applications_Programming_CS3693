@@ -16,6 +16,7 @@ namespace Music_Store
         {
             InitializeComponent();
             lblLogInStatus.Text = "Logged in as[" + username + "]";
+            lblLogInStatus.ForeColor = Color.Red;
         }
     }
 }

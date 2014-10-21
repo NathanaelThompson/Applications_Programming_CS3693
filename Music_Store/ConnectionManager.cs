@@ -30,12 +30,70 @@ namespace Music_Store
              }
         }
 
-        //public void addAlbum();
-        //public void addGenre();
-        //public void addOrder();
-        //public void addCustomer();
-        //public void addEmployee();
-        //public void addToCart();
+        public static void addAlbum(string artistID, string genreID, string title, string price, string quantity)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO Album (ArtistId, GenreId, Title, Price, Quantity) VALUES ('" +
+                    artistID + "','" + genreID + "','" + title + "','" + price + "','" + quantity + "')";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void addGenre(string name, string desc)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO Genre (Name, Desc) VALUES ('" +
+                    name + "','" + desc + "')";
+                cmd.ExecuteNonQuery();
+            }
+           
+        }
+
+        public static void addCustomer(string firstName, string lastName, string email, string phone)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO Customer (Firstname, Lastname, EmailAddress, PhoneNumber) VALUES ('" +
+                    firstName + "','" + lastName + "','" + email + "','" + phone + "')";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void addEmployee(string login, string password, string dateHired, string isAdmin)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO Employee (LoginID, Password, DateHired, isAdmin) VALUES ('" +
+                    login + "','" + password + "','" + dateHired + "','" + isAdmin + "')";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        //public static int getGenreId(string name)
+        //{
+        //    using(SQLiteConnection conn = getConnection())
+        //    {
+        //        SQLiteCommand cmd = conn.CreateCommand();
+        //        cmd.CommandText = "SELECT GenreID FROM Genre WHERE Name = '" + name + "'";
+        //        return (int)cmd.ExecuteScalar();
+        //    }
+        //}
+
+        //public static int getArtistId(string name)
+        //{
+        //    using(SQLiteConnection conn = getConnection())
+        //    {
+        //        SQLiteCommand cmd = conn.CreateCommand();
+        //        cmd.CommandText = "SELECT ArtistID FROM Artist WHERE = '" + name + "'";
+        //        return (int)cmd.ExecuteScalar();
+        //    }
+        //}
 
         public static DataTable CustomerView()
         {

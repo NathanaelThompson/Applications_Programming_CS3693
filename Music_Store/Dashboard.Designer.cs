@@ -152,6 +152,7 @@
             this.MaximizeBox = false;
             this.Name = "formDashboard";
             this.Text = "Employee Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formDashboard_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
