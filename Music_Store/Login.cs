@@ -23,9 +23,18 @@ namespace Music_Store
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            dashboard = new formDashboard(txtUserName.Text, this);
-            dashboard.Show();
-            this.Hide();
+            if (ConnectionManager.checkCredentials(txtUserName.Text, txtPassword.Text))
+            {
+                dashboard = new formDashboard(txtUserName.Text, this);
+                dashboard.Show();
+                this.Hide();
+                lblErrorMessage.Visible = false;
+            }
+            else
+            {
+                lblErrorMessage.Text = "Incorrect username and/or password";
+                lblErrorMessage.Visible = true;
+            }
         }
 
         private void forgotPasswordButton_Click(object sender, EventArgs e)

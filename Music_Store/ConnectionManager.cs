@@ -20,6 +20,7 @@ namespace Music_Store
             return connection;
         }
 
+//Inserts
         public static void addArtist(string name)
         {
             using(SQLiteConnection conn = getConnection())
@@ -77,6 +78,28 @@ namespace Music_Store
             }
         }
 
+        public static void AddToCart(string cartID, string albumID)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO Cart (CartID, AlbumId) VALUES ('" + cartID + "','" + albumID + "')";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void AddNewOrder(string customerID, string cartID, string employeeID, string total, string orderDate)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO MusicOrder (CustomerId, CartId, EmployeeId, Total, OrderDate) VALUES ('" + 
+                    customerID + "','" + cartID + "','" + employeeID + "','" + total + "','" + orderDate + "')";
+                cmd.ExecuteNonQuery();
+            }
+        }
+        
+//Combobox datasources
         public static DataTable ArtistComboBox()
         {
             SQLiteDataAdapter ad;
@@ -84,7 +107,22 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Artist";
+                cmd.CommandText = "SELECT * FROM Artist ORDER BY Name";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable AlbumComboBox(string artistID)
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM Album WHERE ArtistId = '" + artistID + "' ORDER BY Title";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -99,7 +137,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Genre";
+                cmd.CommandText = "SELECT * FROM Genre ORDER BY Name";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -122,6 +160,7 @@ namespace Music_Store
             return dt;
         }
 
+//Gridview/Listview datasources
         public static DataTable CustomerView()
         {
             SQLiteDataAdapter ad;
@@ -219,9 +258,61 @@ namespace Music_Store
             return dt;
         }
 
-        public bool checkCredentials(string username, string password)
+//Other queries
+        public static void UpdateQuantity(string albumID)
         {
-            return true;
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT Quantity FROM Album WHERE AlbumID = '" + albumID + "'";
+                int Qty = Int32.Parse(cmd.ExecuteScalar().ToString()) - 1;
+
+                cmd.CommandText = "UPDATE Album SET Quantity = '" + Qty + "' WHERE AlbumID = '" + albumID + "'";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static string GetEmployeeID(string login)
+        {
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT EmployeeID FROM Employee WHERE LoginID = '" + login + "'";
+                return cmd.ExecuteScalar().ToString();
+            }
+        }
+
+        public static string AlbumPrice(string albumID)
+        {
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT Price FROM Album where AlbumID = '" + albumID + "'";
+                return (string)cmd.ExecuteScalar();
+            }
+        }
+
+        public static int CartCount()
+        {
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT COUNT(DISTINCT CartID) FROM Cart";
+                return Int32.Parse(cmd.ExecuteScalar().ToString());
+            }
+        }
+
+        public static bool checkCredentials(string username, string password)
+        {
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT COUNT(*) FROM Employee WHERE LoginID = '" + username + "'AND Password = '" + password + "'";
+                if(Int32.Parse(cmd.ExecuteScalar().ToString()) == 1)
+                    return true;
+                else
+                    return false;
+            }
         }
 
         public static bool checkEmployeeUsername(string username)

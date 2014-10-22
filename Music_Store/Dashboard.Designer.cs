@@ -48,7 +48,7 @@
             this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckout.Location = new System.Drawing.Point(243, 83);
-            this.btnCheckout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckout.Name = "btnCheckout";
             this.btnCheckout.Size = new System.Drawing.Size(200, 200);
             this.btnCheckout.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(13, 83);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 200);
             this.btnSearch.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventory.Location = new System.Drawing.Point(471, 83);
-            this.btnInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(200, 200);
             this.btnInventory.TabIndex = 2;
@@ -134,21 +134,21 @@
             // miCheckout
             // 
             this.miCheckout.Name = "miCheckout";
-            this.miCheckout.Size = new System.Drawing.Size(152, 22);
+            this.miCheckout.Size = new System.Drawing.Size(128, 22);
             this.miCheckout.Text = "Checkout ";
             this.miCheckout.Click += new System.EventHandler(this.miCheckout_Click);
             // 
             // miInventory
             // 
             this.miInventory.Name = "miInventory";
-            this.miInventory.Size = new System.Drawing.Size(152, 22);
+            this.miInventory.Size = new System.Drawing.Size(128, 22);
             this.miInventory.Text = "Inventory";
             this.miInventory.Click += new System.EventHandler(this.miInventory_Click);
             // 
             // miSearch
             // 
             this.miSearch.Name = "miSearch";
-            this.miSearch.Size = new System.Drawing.Size(152, 22);
+            this.miSearch.Size = new System.Drawing.Size(128, 22);
             this.miSearch.Text = "Search DB";
             this.miSearch.Click += new System.EventHandler(this.miSearch_Click);
             // 
@@ -165,10 +165,10 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "formDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee Dashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDashboard_FormClosing);
             this.menuStrip1.ResumeLayout(false);

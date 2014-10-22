@@ -135,7 +135,7 @@
             this.tabArtist.Controls.Add(this.gvArtist);
             this.tabArtist.Location = new System.Drawing.Point(4, 25);
             this.tabArtist.Name = "tabArtist";
-            this.tabArtist.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabArtist.Padding = new System.Windows.Forms.Padding(3);
             this.tabArtist.Size = new System.Drawing.Size(976, 633);
             this.tabArtist.TabIndex = 0;
             this.tabArtist.Text = "Artists";
@@ -232,7 +232,7 @@
             this.tabAlbums.Controls.Add(this.gvAlbums);
             this.tabAlbums.Location = new System.Drawing.Point(4, 25);
             this.tabAlbums.Name = "tabAlbums";
-            this.tabAlbums.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAlbums.Padding = new System.Windows.Forms.Padding(3);
             this.tabAlbums.Size = new System.Drawing.Size(976, 633);
             this.tabAlbums.TabIndex = 1;
             this.tabAlbums.Text = "Albums";
@@ -261,10 +261,20 @@
             // udAlbumQty
             // 
             this.udAlbumQty.Location = new System.Drawing.Point(113, 190);
+            this.udAlbumQty.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.udAlbumQty.Name = "udAlbumQty";
             this.udAlbumQty.Size = new System.Drawing.Size(70, 23);
             this.udAlbumQty.TabIndex = 4;
             this.udAlbumQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.udAlbumQty.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label6
             // 
@@ -312,6 +322,8 @@
             // 
             // cbAlbumGenre
             // 
+            this.cbAlbumGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbAlbumGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbAlbumGenre.FormattingEnabled = true;
             this.cbAlbumGenre.Location = new System.Drawing.Point(113, 107);
             this.cbAlbumGenre.Name = "cbAlbumGenre";
@@ -320,6 +332,8 @@
             // 
             // cbAlbumArtist
             // 
+            this.cbAlbumArtist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbAlbumArtist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbAlbumArtist.FormattingEnabled = true;
             this.cbAlbumArtist.Location = new System.Drawing.Point(113, 67);
             this.cbAlbumArtist.Name = "cbAlbumArtist";
@@ -381,7 +395,7 @@
             this.tabGenre.Controls.Add(this.gvGenres);
             this.tabGenre.Location = new System.Drawing.Point(4, 25);
             this.tabGenre.Name = "tabGenre";
-            this.tabGenre.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabGenre.Padding = new System.Windows.Forms.Padding(3);
             this.tabGenre.Size = new System.Drawing.Size(976, 633);
             this.tabGenre.TabIndex = 2;
             this.tabGenre.Text = "Genres";
@@ -473,7 +487,7 @@
             this.tabCustomer.Controls.Add(this.gvCustomers);
             this.tabCustomer.Location = new System.Drawing.Point(4, 25);
             this.tabCustomer.Name = "tabCustomer";
-            this.tabCustomer.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
             this.tabCustomer.Size = new System.Drawing.Size(976, 633);
             this.tabCustomer.TabIndex = 3;
             this.tabCustomer.Text = "Customers";
@@ -600,7 +614,7 @@
             this.tabEmployee.Controls.Add(this.gvEmployees);
             this.tabEmployee.Location = new System.Drawing.Point(4, 25);
             this.tabEmployee.Name = "tabEmployee";
-            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
             this.tabEmployee.Size = new System.Drawing.Size(976, 633);
             this.tabEmployee.TabIndex = 4;
             this.tabEmployee.Text = "Employees";
@@ -806,7 +820,7 @@
             this.Controls.Add(this.tcInventory);
             this.MaximizeBox = false;
             this.Name = "formInventory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Inventory";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formInventory_FormClosing);
             this.tcInventory.ResumeLayout(false);

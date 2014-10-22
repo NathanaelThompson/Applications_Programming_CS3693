@@ -91,6 +91,7 @@
             this.ClientSize = new System.Drawing.Size(504, 261);
             this.Controls.Add(this.passwordForgotLayout1);
             this.Name = "ForgotPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forgot Password";
             this.passwordForgotLayout1.ResumeLayout(false);
             this.passwordForgotLayout1.PerformLayout();

@@ -19,14 +19,14 @@ namespace Music_Store
             checkout = owner;
             InitializeComponent();
             
-            lvSearchResults.Columns.Add("Last Name", 70);
-            lvSearchResults.Columns.Add("First Name", 70);
-            lvSearchResults.Columns.Add("Email Address", 140);
-            lvSearchResults.Columns.Add("CID", 40);
+            lvSearchResults.Columns.Add("Last Name", 80);
+            lvSearchResults.Columns.Add("First Name", 80);
+            lvSearchResults.Columns.Add("Email Address", 160);
         }
 
         private void btnSeach_Click(object sender, EventArgs e)
         {
+            lvSearchResults.Items.Clear();
             SearchCustomers();
         }
 
@@ -34,12 +34,21 @@ namespace Music_Store
         {
             DataTable results = ConnectionManager.CustomerSearch(txtPhoneNumber.Text.Trim());
 
-            for(int i = 0; i < results.Rows.Count; i++)
+            if (results.Rows.Count != 0)
             {
-                string[] items = {results.Rows[i][0].ToString(), results.Rows[i][1].ToString(), 
+                for (int i = 0; i < results.Rows.Count; i++)
+                {
+                    string[] items = {results.Rows[i][0].ToString(), results.Rows[i][1].ToString(), 
                                      results.Rows[i][2].ToString(), results.Rows[i][3].ToString()};
-                ListViewItem lv = new ListViewItem(items);
-                lvSearchResults.Items.Add(lv);
+                    ListViewItem lv = new ListViewItem(items);
+                    lvSearchResults.Items.Add(lv);
+                    lblError.Visible = false;
+                }
+            }
+            else
+            {
+                lblError.Text = "No customer found, add a new one.";
+                lblError.Visible = true;
             }
         }
 
@@ -53,6 +62,12 @@ namespace Music_Store
         {
             this.Hide();
             e.Cancel = true;
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

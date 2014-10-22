@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lvSearchResults = new System.Windows.Forms.ListView();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSeach
@@ -40,7 +41,7 @@
             this.btnSeach.BackColor = System.Drawing.Color.PaleGreen;
             this.btnSeach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeach.Location = new System.Drawing.Point(321, 14);
-            this.btnSeach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSeach.Margin = new System.Windows.Forms.Padding(4);
             this.btnSeach.Name = "btnSeach";
             this.btnSeach.Size = new System.Drawing.Size(100, 62);
             this.btnSeach.TabIndex = 1;
@@ -63,10 +64,11 @@
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(132, 33);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(161, 23);
             this.txtPhoneNumber.TabIndex = 0;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lvSearchResults
             // 
@@ -76,7 +78,7 @@
             this.lvSearchResults.FullRowSelect = true;
             this.lvSearchResults.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvSearchResults.Location = new System.Drawing.Point(13, 94);
-            this.lvSearchResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvSearchResults.Margin = new System.Windows.Forms.Padding(4);
             this.lvSearchResults.MultiSelect = false;
             this.lvSearchResults.Name = "lvSearchResults";
             this.lvSearchResults.Size = new System.Drawing.Size(408, 155);
@@ -85,20 +87,32 @@
             this.lvSearchResults.View = System.Windows.Forms.View.Details;
             this.lvSearchResults.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvSearchResults_MouseDoubleClick);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(16, 73);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(109, 17);
+            this.lblError.TabIndex = 4;
+            this.lblError.Text = "[Error Message]";
+            this.lblError.Visible = false;
+            // 
             // formCustomerSearch
             // 
             this.AcceptButton = this.btnSeach;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 262);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.lvSearchResults);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSeach);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formCustomerSearch";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search for Customer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCustomerSearch_FormClosing);
             this.ResumeLayout(false);
@@ -112,5 +126,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.ListView lvSearchResults;
+        private System.Windows.Forms.Label lblError;
     }
 }
