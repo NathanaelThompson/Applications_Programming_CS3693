@@ -25,13 +25,14 @@ namespace Music_Store
             currentUser = username;
             lblLogInStatus.ForeColor = Color.Red;
 
-            lvCart.Columns.Add("Arist", 115);
-            lvCart.Columns.Add("Album", 115);
+            lvCart.Columns.Add("Arist", 225);
+            lvCart.Columns.Add("Album", 225);
             lvCart.Columns.Add("Price", 50);
+            lvCart.Columns.Add("Quantity", 50);
+            lvCart.Columns.Add("Total Price", 50);
 
             numQuantity.Minimum = 1;
             numQuantity.Value = 1;
-
         }
 
         private void btnCustomerLookup_Click(object sender, EventArgs e)
@@ -50,12 +51,18 @@ namespace Music_Store
 
             initAlbums(cbArtist.SelectedValue.ToString());
             getAlbumPrice(cbAlbum.SelectedValue.ToString());
+            getAlbumArtwork(cbAlbum.SelectedValue.ToString());
         }
 
         private void getAlbumPrice(string albumID)
         {
             double price = double.Parse(ConnectionManager.AlbumPrice(albumID));
             txtAlbumPrice.Text = string.Format("{0:C}", price);
+        }
+
+        private void getAlbumArtwork(string albumID)
+        {
+            pbArtwork.ImageLocation = ConnectionManager.AlbumArtwork(albumID);
         }
 
         private void initAlbums(string artistID)
@@ -79,6 +86,7 @@ namespace Music_Store
         private void cbAlbum_SelectedIndexChanged(object sender, EventArgs e)
         {
             getAlbumPrice(cbAlbum.SelectedValue.ToString());
+            getAlbumArtwork(cbAlbum.SelectedValue.ToString());
         }
 
         private void UpdateTotals()
@@ -99,14 +107,14 @@ namespace Music_Store
             if (numQuantity.Value != 0)
             {
                 double amount = double.Parse(txtAlbumPrice.Text.Substring(1, txtAlbumPrice.Text.Length - 1));
-                amount *= (int)numQuantity.Value;
-
-                string[] items = new string[5];
+                
+                string[] items = new string[6];
                 items[0] = cbArtist.Text;
                 items[1] = cbAlbum.Text;
                 items[2] = string.Format("{0:C}", amount);
-                items[3] = cbAlbum.SelectedValue.ToString();
-                items[4] = numQuantity.Value.ToString();
+                items[3] = "x " + numQuantity.Value.ToString();
+                items[4] = string.Format("{0:C}", (amount * (int)numQuantity.Value));
+                items[5] = cbAlbum.SelectedValue.ToString();
 
                 ListViewItem lvItem = new ListViewItem(items);
                 lvCart.Items.Add(lvItem);
@@ -120,11 +128,11 @@ namespace Music_Store
             int currentCart = ConnectionManager.CartCount() + 1;
             foreach(ListViewItem item in lvCart.Items)
             {
-                int qty = Int32.Parse(item.SubItems[4].Text);
+                int qty = Int32.Parse(item.SubItems[3].Text.Substring(2,item.SubItems[3].Text.Length - 2));
                 for (int i = 0; i < qty; i++)
                 {
-                    ConnectionManager.AddToCart(currentCart.ToString(), item.SubItems[3].Text);
-                    ConnectionManager.UpdateQuantity(item.SubItems[3].Text);
+                    ConnectionManager.AddToCart(currentCart.ToString(), item.SubItems[5].Text);
+                    ConnectionManager.UpdateQuantity(item.SubItems[5].Text);
                 }
             }
             return currentCart;
@@ -161,6 +169,7 @@ namespace Music_Store
             string orderDate = DateTime.Now.Date.ToString("MM/dd/yyyy");
             ConnectionManager.AddNewOrder(customerID, cartID.ToString(), employeeID, Total, orderDate);
             MessageBox.Show("Order Processed");
+            ClearFields();
             this.Close();
         }
     }

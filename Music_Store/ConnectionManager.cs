@@ -292,6 +292,16 @@ namespace Music_Store
             }
         }
 
+        public static string AlbumArtwork(string albumID)
+        {
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT ImgPath FROM Album where AlbumID = '" + albumID + "'";
+                return (string)cmd.ExecuteScalar();
+            }
+        }
+
         public static int CartCount()
         {
             using (SQLiteConnection conn = getConnection())

@@ -50,13 +50,10 @@
             this.numQuantity = new System.Windows.Forms.NumericUpDown();
             this.pbArtwork = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblArtwork = new System.Windows.Forms.Label();
             this.cbArtist = new System.Windows.Forms.ComboBox();
-            this.lblError = new System.Windows.Forms.Label();
             this.lvCart = new System.Windows.Forms.ListView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnCheckout = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblLogInStatus = new System.Windows.Forms.Label();
             this.gbSale.SuspendLayout();
             this.gbTotal.SuspendLayout();
@@ -117,16 +114,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbSale.Controls.Add(this.gbTotal);
             this.gbSale.Controls.Add(this.groupBox1);
-            this.gbSale.Controls.Add(this.lblError);
-            this.gbSale.Controls.Add(this.lvCart);
-            this.gbSale.Controls.Add(this.btnCancel);
-            this.gbSale.Controls.Add(this.btnCheckout);
-            this.gbSale.Controls.Add(this.label5);
             this.gbSale.Enabled = false;
             this.gbSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSale.Location = new System.Drawing.Point(18, 92);
             this.gbSale.Name = "gbSale";
-            this.gbSale.Size = new System.Drawing.Size(854, 458);
+            this.gbSale.Size = new System.Drawing.Size(910, 472);
             this.gbSale.TabIndex = 4;
             this.gbSale.TabStop = false;
             this.gbSale.Text = "New Sale";
@@ -137,11 +129,13 @@
             this.gbTotal.Controls.Add(this.lblTotal);
             this.gbTotal.Controls.Add(this.txtSubtotal);
             this.gbTotal.Controls.Add(this.txtTotal);
+            this.gbTotal.Controls.Add(this.btnCheckout);
+            this.gbTotal.Controls.Add(this.btnCancel);
             this.gbTotal.Controls.Add(this.label6);
             this.gbTotal.Controls.Add(this.txtTax);
-            this.gbTotal.Location = new System.Drawing.Point(20, 288);
+            this.gbTotal.Location = new System.Drawing.Point(674, 30);
             this.gbTotal.Name = "gbTotal";
-            this.gbTotal.Size = new System.Drawing.Size(198, 150);
+            this.gbTotal.Size = new System.Drawing.Size(230, 436);
             this.gbTotal.TabIndex = 25;
             this.gbTotal.TabStop = false;
             this.gbTotal.Text = "Order Total";
@@ -173,7 +167,7 @@
             this.txtSubtotal.Location = new System.Drawing.Point(93, 28);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
-            this.txtSubtotal.Size = new System.Drawing.Size(80, 23);
+            this.txtSubtotal.Size = new System.Drawing.Size(120, 23);
             this.txtSubtotal.TabIndex = 23;
             this.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -185,7 +179,7 @@
             this.txtTotal.Location = new System.Drawing.Point(93, 108);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(80, 23);
+            this.txtTotal.Size = new System.Drawing.Size(120, 23);
             this.txtTotal.TabIndex = 20;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -206,7 +200,7 @@
             this.txtTax.Location = new System.Drawing.Point(93, 68);
             this.txtTax.Name = "txtTax";
             this.txtTax.ReadOnly = true;
-            this.txtTax.Size = new System.Drawing.Size(80, 23);
+            this.txtTax.Size = new System.Drawing.Size(120, 23);
             this.txtTax.TabIndex = 19;
             this.txtTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -215,17 +209,17 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnAddCart);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lvCart);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtAlbumPrice);
             this.groupBox1.Controls.Add(this.cbAlbum);
             this.groupBox1.Controls.Add(this.numQuantity);
             this.groupBox1.Controls.Add(this.pbArtwork);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.lblArtwork);
             this.groupBox1.Controls.Add(this.cbArtist);
             this.groupBox1.Location = new System.Drawing.Point(20, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(484, 235);
+            this.groupBox1.Size = new System.Drawing.Size(648, 436);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Album";
@@ -243,9 +237,9 @@
             // 
             this.btnAddCart.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCart.Location = new System.Drawing.Point(174, 143);
+            this.btnAddCart.Location = new System.Drawing.Point(103, 201);
             this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(60, 50);
+            this.btnAddCart.Size = new System.Drawing.Size(200, 50);
             this.btnAddCart.TabIndex = 6;
             this.btnAddCart.Text = "Add to Cart";
             this.btnAddCart.UseVisualStyleBackColor = false;
@@ -275,7 +269,7 @@
             this.txtAlbumPrice.Location = new System.Drawing.Point(84, 133);
             this.txtAlbumPrice.Name = "txtAlbumPrice";
             this.txtAlbumPrice.ReadOnly = true;
-            this.txtAlbumPrice.Size = new System.Drawing.Size(70, 23);
+            this.txtAlbumPrice.Size = new System.Drawing.Size(100, 23);
             this.txtAlbumPrice.TabIndex = 4;
             // 
             // cbAlbum
@@ -285,43 +279,35 @@
             this.cbAlbum.FormattingEnabled = true;
             this.cbAlbum.Location = new System.Drawing.Point(84, 83);
             this.cbAlbum.Name = "cbAlbum";
-            this.cbAlbum.Size = new System.Drawing.Size(150, 24);
+            this.cbAlbum.Size = new System.Drawing.Size(300, 24);
             this.cbAlbum.TabIndex = 3;
             this.cbAlbum.SelectedIndexChanged += new System.EventHandler(this.cbAlbum_SelectedIndexChanged);
             // 
             // numQuantity
             // 
-            this.numQuantity.Location = new System.Drawing.Point(84, 184);
+            this.numQuantity.Location = new System.Drawing.Point(284, 133);
             this.numQuantity.Name = "numQuantity";
-            this.numQuantity.Size = new System.Drawing.Size(70, 23);
+            this.numQuantity.Size = new System.Drawing.Size(100, 23);
             this.numQuantity.TabIndex = 5;
             this.numQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pbArtwork
             // 
-            this.pbArtwork.Location = new System.Drawing.Point(292, 53);
+            this.pbArtwork.Location = new System.Drawing.Point(403, 20);
             this.pbArtwork.Name = "pbArtwork";
-            this.pbArtwork.Size = new System.Drawing.Size(150, 150);
+            this.pbArtwork.Size = new System.Drawing.Size(230, 230);
+            this.pbArtwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArtwork.TabIndex = 10;
             this.pbArtwork.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 186);
+            this.label4.Location = new System.Drawing.Point(213, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quantity:";
-            // 
-            // lblArtwork
-            // 
-            this.lblArtwork.AutoSize = true;
-            this.lblArtwork.Location = new System.Drawing.Point(289, 33);
-            this.lblArtwork.Name = "lblArtwork";
-            this.lblArtwork.Size = new System.Drawing.Size(102, 17);
-            this.lblArtwork.TabIndex = 11;
-            this.lblArtwork.Text = "Album Artwork:";
             // 
             // cbArtist
             // 
@@ -330,28 +316,18 @@
             this.cbArtist.FormattingEnabled = true;
             this.cbArtist.Location = new System.Drawing.Point(84, 33);
             this.cbArtist.Name = "cbArtist";
-            this.cbArtist.Size = new System.Drawing.Size(150, 24);
+            this.cbArtist.Size = new System.Drawing.Size(300, 24);
             this.cbArtist.TabIndex = 2;
             this.cbArtist.SelectedIndexChanged += new System.EventHandler(this.cbArtist_SelectedIndexChanged);
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(17, 268);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(109, 17);
-            this.lblError.TabIndex = 21;
-            this.lblError.Text = "[Error Message]";
             // 
             // lvCart
             // 
             this.lvCart.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvCart.Location = new System.Drawing.Point(544, 49);
+            this.lvCart.Location = new System.Drawing.Point(23, 277);
             this.lvCart.MultiSelect = false;
             this.lvCart.Name = "lvCart";
             this.lvCart.Scrollable = false;
-            this.lvCart.Size = new System.Drawing.Size(280, 216);
+            this.lvCart.Size = new System.Drawing.Size(610, 153);
             this.lvCart.TabIndex = 20;
             this.lvCart.UseCompatibleStateImageBehavior = false;
             this.lvCart.View = System.Windows.Forms.View.Details;
@@ -361,7 +337,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Salmon;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(624, 307);
+            this.btnCancel.Location = new System.Drawing.Point(15, 166);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(200, 120);
             this.btnCancel.TabIndex = 7;
@@ -374,7 +350,7 @@
             this.btnCheckout.BackColor = System.Drawing.Color.PaleGreen;
             this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckout.Location = new System.Drawing.Point(262, 307);
+            this.btnCheckout.Location = new System.Drawing.Point(16, 310);
             this.btnCheckout.Name = "btnCheckout";
             this.btnCheckout.Size = new System.Drawing.Size(200, 120);
             this.btnCheckout.TabIndex = 8;
@@ -382,20 +358,12 @@
             this.btnCheckout.UseVisualStyleBackColor = false;
             this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(541, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Items in Cart:";
-            // 
             // lblLogInStatus
             // 
+            this.lblLogInStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLogInStatus.AutoSize = true;
             this.lblLogInStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogInStatus.Location = new System.Drawing.Point(706, 27);
+            this.lblLogInStatus.Location = new System.Drawing.Point(761, 27);
             this.lblLogInStatus.Name = "lblLogInStatus";
             this.lblLogInStatus.Size = new System.Drawing.Size(166, 17);
             this.lblLogInStatus.TabIndex = 5;
@@ -403,10 +371,9 @@
             // 
             // formCheckout
             // 
-            this.AcceptButton = this.btnCustomerLookup;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.ClientSize = new System.Drawing.Size(939, 576);
             this.Controls.Add(this.lblLogInStatus);
             this.Controls.Add(this.gbSale);
             this.Controls.Add(this.btnAddCustomer);
@@ -420,7 +387,6 @@
             this.Text = "Customer Checkout";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCheckout_FormClosing);
             this.gbSale.ResumeLayout(false);
-            this.gbSale.PerformLayout();
             this.gbTotal.ResumeLayout(false);
             this.gbTotal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -445,8 +411,6 @@
         private System.Windows.Forms.ComboBox cbArtist;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCheckout;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblArtwork;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblLogInStatus;
         private System.Windows.Forms.TextBox txtAlbumPrice;
@@ -456,7 +420,6 @@
         private System.Windows.Forms.ListView lvCart;
         private System.Windows.Forms.TextBox txtTax;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.Label label7;
