@@ -71,9 +71,9 @@ namespace Music_Store
             using(SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "insert into employee (loginID, SecuerityQuestionId, Password, DateHired, isAdmin, " +
-                    "SecurityQuestionAns, FirstName, LastName) Vvalues ('" + login + "','" + sqID + "','" + password + "','" +
-                    "','" + dateHired + "','" + isAdmin + "','" + answer + "','" + firstname + "','" + lastname + "')";
+                cmd.CommandText = "insert into Employee (loginID, Password, FirstName, LastName, DateHired, SecurityQuestionId, SecurityQuestionAns, IsAdmin)" +
+                    " Values ('" + login + "','" + password + "','" + firstname +
+                    "','" + lastname + "','" + dateHired + "','" + sqID + "','" + answer + "','" + isAdmin + "')";
                 cmd.ExecuteNonQuery();
             }
         }
