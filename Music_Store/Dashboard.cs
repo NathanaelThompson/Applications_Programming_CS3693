@@ -44,6 +44,7 @@ namespace Music_Store
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
+            inv.ReloadData();
             inv.Show();
         }
 

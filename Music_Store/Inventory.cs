@@ -41,7 +41,7 @@ namespace Music_Store
             cbEmployeSeqQuestions.ValueMember = "SecurityQuestionID";
         }
 
-        private void ReloadData()
+        public void ReloadData()
         {
             gvArtist.DataSource = null;
             gvAlbums.DataSource = null;
