@@ -234,7 +234,7 @@ namespace Music_Store
                 cmd.CommandText = "select employee.lastName as 'Last Name', employee.firstName as 'First Name', " +
                     "employee.LoginID as 'Login ID', employee.dateHired as 'Date Hired', employee.IsAdmin as 'Admin', " +
                     "count(musicOrder.employeeId) as '# Sales' from employee left join musicOrder " +
-                    " on employee.employeeID = musicOrder.employeeId group by employee.firstName";
+                    " on employee.employeeID = musicOrder.employeeId group by employee.LoginID";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
