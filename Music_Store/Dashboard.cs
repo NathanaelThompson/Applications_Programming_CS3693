@@ -30,6 +30,14 @@ namespace Music_Store
             userLoggedIn = username;
             lblLogInStatus.Text = "Logged in as [" + userLoggedIn + "]";
             lblLogInStatus.ForeColor = Color.Red;
+
+            if(!ConnectionManager.CheckAdminStatus(userLoggedIn))
+            {
+                btnInventory.Enabled = false;
+                btnReports.Enabled = false;
+                this.Size = new Size(this.Width, 350);
+            }
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

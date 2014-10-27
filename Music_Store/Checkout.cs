@@ -14,12 +14,14 @@ namespace Music_Store
     {
 
         private formCustomerSearch search;
+        private formAddCustomer addCustomer;
         private string currentUser;
 
 
         public formCheckout(string username)
         {
             search = new formCustomerSearch(this);
+            addCustomer = new formAddCustomer(this);
             InitializeComponent();
             lblLogInStatus.Text = "Logged in as [" + username + "]";
             currentUser = username;
@@ -171,6 +173,11 @@ namespace Music_Store
             MessageBox.Show("Order Processed");
             ClearFields();
             this.Close();
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            addCustomer.Show();
         }
     }
 }

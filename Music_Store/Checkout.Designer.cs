@@ -38,12 +38,15 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnCheckout = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTax = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddCart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lvCart = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAlbumPrice = new System.Windows.Forms.TextBox();
             this.cbAlbum = new System.Windows.Forms.ComboBox();
@@ -51,9 +54,6 @@
             this.pbArtwork = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbArtist = new System.Windows.Forms.ComboBox();
-            this.lvCart = new System.Windows.Forms.ListView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnCheckout = new System.Windows.Forms.Button();
             this.lblLogInStatus = new System.Windows.Forms.Label();
             this.gbSale.SuspendLayout();
             this.gbTotal.SuspendLayout();
@@ -106,6 +106,7 @@
             this.btnAddCustomer.TabIndex = 1;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // gbSale
             // 
@@ -183,6 +184,32 @@
             this.txtTotal.TabIndex = 20;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // btnCheckout
+            // 
+            this.btnCheckout.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckout.Location = new System.Drawing.Point(16, 310);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.Size = new System.Drawing.Size(200, 120);
+            this.btnCheckout.TabIndex = 8;
+            this.btnCheckout.Text = "Checkout";
+            this.btnCheckout.UseVisualStyleBackColor = false;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Salmon;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(15, 166);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(200, 120);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel Sale";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -254,6 +281,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Album:";
             // 
+            // lvCart
+            // 
+            this.lvCart.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvCart.Location = new System.Drawing.Point(23, 277);
+            this.lvCart.MultiSelect = false;
+            this.lvCart.Name = "lvCart";
+            this.lvCart.Scrollable = false;
+            this.lvCart.Size = new System.Drawing.Size(610, 153);
+            this.lvCart.TabIndex = 20;
+            this.lvCart.UseCompatibleStateImageBehavior = false;
+            this.lvCart.View = System.Windows.Forms.View.Details;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -319,44 +358,6 @@
             this.cbArtist.Size = new System.Drawing.Size(300, 24);
             this.cbArtist.TabIndex = 2;
             this.cbArtist.SelectedIndexChanged += new System.EventHandler(this.cbArtist_SelectedIndexChanged);
-            // 
-            // lvCart
-            // 
-            this.lvCart.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvCart.Location = new System.Drawing.Point(23, 277);
-            this.lvCart.MultiSelect = false;
-            this.lvCart.Name = "lvCart";
-            this.lvCart.Scrollable = false;
-            this.lvCart.Size = new System.Drawing.Size(610, 153);
-            this.lvCart.TabIndex = 20;
-            this.lvCart.UseCompatibleStateImageBehavior = false;
-            this.lvCart.View = System.Windows.Forms.View.Details;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Salmon;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(15, 166);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(200, 120);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel Sale";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnCheckout
-            // 
-            this.btnCheckout.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckout.Location = new System.Drawing.Point(16, 310);
-            this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(200, 120);
-            this.btnCheckout.TabIndex = 8;
-            this.btnCheckout.Text = "Checkout";
-            this.btnCheckout.UseVisualStyleBackColor = false;
-            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // lblLogInStatus
             // 

@@ -62,61 +62,112 @@ namespace Music_Store
 
         private void btnAddArtist_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addArtist(txtArtistName.Text.Trim());
-            txtArtistName.Clear();
-            ReloadData();
+            if (txtArtistName.Text.Trim().Length != 0)
+            {
+                ConnectionManager.addArtist(txtArtistName.Text.Trim());
+                txtArtistName.Clear();
+                ReloadData();
+                lblArtistName.Visible = false;
+            }
+            else
+            {
+                lblArtistName.Text = "Fields cannot be blank";
+                lblArtistName.Visible = true;
+            }
         }
 
         private void btnAddAlbum_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addAlbum(cbAlbumArtist.SelectedValue.ToString(), cbAlbumGenre.SelectedValue.ToString(),
-                txtAlbumName.Text.Trim(), txtAlbumPrice.Text.Trim(), udAlbumQty.Value.ToString());
+            if (txtAlbumName.Text.Trim().Length != 0 && txtAlbumPrice.Text.Trim().Length != 0)
+            {
+                ConnectionManager.addAlbum(cbAlbumArtist.SelectedValue.ToString(), cbAlbumGenre.SelectedValue.ToString(),
+                    txtAlbumName.Text.Trim(), txtAlbumPrice.Text.Trim(), udAlbumQty.Value.ToString());
 
-            txtAlbumName.Clear();
-            txtAlbumPrice.Clear();
-            cbAlbumArtist.SelectedIndex = 0;
-            cbAlbumGenre.SelectedIndex = 0;
-            udAlbumQty.Value = 0;
-            ReloadData();
+                txtAlbumName.Clear();
+                txtAlbumPrice.Clear();
+                cbAlbumArtist.SelectedIndex = 0;
+                cbAlbumGenre.SelectedIndex = 0;
+                udAlbumQty.Value = 0;
+                ReloadData();
+                lblAlbumError.Visible = false;
+            }
+            else
+            {
+                lblAlbumError.Text = "Fields cannot be blank";
+                lblAlbumError.Visible = true;
+            }
         }
 
         private void btnAddGenre_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addGenre(txtGenreName.Text.Trim(), txtGenreDesc.Text.Trim());
-            txtGenreName.Clear();
-            txtGenreDesc.Clear();
-            ReloadData();
+            if (txtGenreName.Text.Trim().Length != 0 && txtGenreDesc.Text.Trim().Length != 0)
+            {
+                ConnectionManager.addGenre(txtGenreName.Text.Trim(), txtGenreDesc.Text.Trim());
+                txtGenreName.Clear();
+                txtGenreDesc.Clear();
+                ReloadData();
+                lblGenreError.Visible = false;
+            }
+            else
+            {
+                lblGenreError.Text = "Fields cannot be blank";
+                lblGenreError.Visible = false;
+            }
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            int admin = chkEmployeeAdmin.Checked ? 1 : 0;
+            if (txtEmployeeFirstName.Text.Trim().Length != 0 && txtEmployeeLastName.Text.Trim().Length != 0
+                && txtEmployeePass.Text.Trim().Length != 0 && txtEmployeeAnswer.Text.Trim().Length != 0)
+            {
+                int admin = chkEmployeeAdmin.Checked ? 1 : 0;
+                string loginID = (txtEmployeeFirstName.Text[0] + txtEmployeeLastName.Text).ToLower();
+                int count = ConnectionManager.EmployeeCheck(loginID);
 
-            ConnectionManager.addEmployee(txtEmployeeLogin.Text.Trim(), cbEmployeSeqQuestions.SelectedValue.ToString(), 
-                txtEmployeePass.Text.Trim(), dtDemployeeHireDate.Value.ToString(), admin.ToString(), 
-                txtEmployeeAnswer.Text.Trim(), txtEmployeeFirstName.Text.Trim(),
-                txtEmployeeLastName.Text); 
+                if (count != 0)
+                    loginID = loginID + count.ToString();
 
-            txtEmployeePass.Clear();
-            txtEmployeeLogin.Clear();
-            chkEmployeeAdmin.Checked = false;
-            txtEmployeeAnswer.Clear();
-            txtEmployeeFirstName.Clear();
-            txtEmployeeLastName.Clear();
-            dtDemployeeHireDate.Value = DateTime.Now;
-            ReloadData();
+                ConnectionManager.addEmployee(loginID, cbEmployeSeqQuestions.SelectedValue.ToString(),
+                    txtEmployeePass.Text.Trim(), dtDemployeeHireDate.Value.ToString("MM/dd/yyyy"), admin.ToString(),
+                    txtEmployeeAnswer.Text.Trim(), txtEmployeeFirstName.Text.Trim(),
+                    txtEmployeeLastName.Text);
+
+                txtEmployeePass.Clear();
+                chkEmployeeAdmin.Checked = false;
+                txtEmployeeAnswer.Clear();
+                txtEmployeeFirstName.Clear();
+                txtEmployeeLastName.Clear();
+                dtDemployeeHireDate.Value = DateTime.Now;
+                ReloadData();
+                lblEmployeeError.Visible = false;
+            }
+            else
+            {
+                lblEmployeeError.Text = "Fields cannot be blank";
+                lblEmployeeError.Visible = true;
+            }
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            ConnectionManager.addCustomer(txtCustomerFirstName.Text.Trim(), txtCustomerLastName.Text.Trim(),
-                txtCustomerEmail.Text.Trim(), txtCustomerPhone.Text.Trim());
+            if (txtCustomerFirstName.Text.Trim().Length != 0 && txtCustomerLastName.Text.Trim().Length != 0
+                && txtCustomerEmail.Text.Trim().Length != 0 && txtCustomerPhone.Text.Trim().Length != 0)
+            {
+                ConnectionManager.addCustomer(txtCustomerFirstName.Text.Trim(), txtCustomerLastName.Text.Trim(),
+                    txtCustomerEmail.Text.Trim(), txtCustomerPhone.Text.Trim());
 
-            txtCustomerEmail.Clear();
-            txtCustomerPhone.Clear();
-            txtCustomerFirstName.Clear();
-            txtCustomerLastName.Clear();
-            ReloadData();
+                txtCustomerEmail.Clear();
+                txtCustomerPhone.Clear();
+                txtCustomerFirstName.Clear();
+                txtCustomerLastName.Clear();
+                ReloadData();
+                lblCustomerError.Visible = false;
+            }
+            else
+            {
+                lblCustomerError.Text = "Fields cannot be blank";
+                lblCustomerError.Visible = true;
+            }
         }
 
         private void miDeleteArtist_Click(object sender, EventArgs e)
@@ -130,6 +181,9 @@ namespace Music_Store
             e.Cancel = true;
         }
 
-
+        private void formInventory_VisibleChanged(object sender, EventArgs e)
+        {
+            ReloadData();
+        }
     }
 }

@@ -234,7 +234,7 @@ namespace Music_Store
                 cmd.CommandText = "select employee.lastName as 'Last Name', employee.firstName as 'First Name', " +
                     "employee.LoginID as 'Login ID', employee.dateHired as 'Date Hired', employee.IsAdmin as 'Admin', " +
                     "count(musicOrder.employeeId) as '# Sales' from employee left join musicOrder " +
-                    " on employee.employeeID = musicOrder.employeeId group by employee.LoginID";
+                    " on employee.employeeID = musicOrder.employeeId group by employee.EmployeeID";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -259,6 +259,40 @@ namespace Music_Store
         }
 
 //Other queries
+        public static string GetCustomerIDFromCreatedCustomer(string firstname, string lastname)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select CustomerID from Customer where FirstName = '" + firstname + "' and LastName = '" + lastname + "'";
+                return cmd.ExecuteScalar().ToString();
+            }
+        }
+
+        public static bool CheckAdminStatus(string employee)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select IsAdmin from Employee where LoginID = '" + employee + "'";
+                int result = Int32.Parse(cmd.ExecuteScalar().ToString());
+                if (result == 1)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        public static int EmployeeCheck(string login)
+        {
+            using(SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select count(*) from employee where employee.loginID like '" + login + "%'";
+                return Int32.Parse(cmd.ExecuteScalar().ToString());
+            }
+        }
+
         public static void UpdateQuantity(string albumID)
         {
             using(SQLiteConnection conn = getConnection())
