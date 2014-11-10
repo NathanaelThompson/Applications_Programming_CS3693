@@ -71,8 +71,8 @@ namespace Music_Store
             }
             else
             {
-                lblArtistName.Text = "Fields cannot be blank";
-                lblArtistName.Visible = true;
+                lblArtistError.Text = "Artist field cannot be blank.";
+                lblArtistError.Visible = true;
             }
         }
 
@@ -111,7 +111,7 @@ namespace Music_Store
             else
             {
                 lblGenreError.Text = "Fields cannot be blank";
-                lblGenreError.Visible = false;
+                lblGenreError.Visible = true;
             }
         }
 

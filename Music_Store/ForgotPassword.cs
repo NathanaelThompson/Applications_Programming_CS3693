@@ -28,6 +28,8 @@ namespace Music_Store
         private void passwordForgotContinueButton1_Click(object sender, EventArgs e)
         {
             bool checkEmployee = ConnectionManager.checkEmployeeUsername(forgotPasswordUsernameTextBox.Text.Trim());
+            string emailActual, emailToCheck;
+            emailToCheck = emailBox.Text;
             if (checkEmployee)
             {
                 passwordForgotLayout1.Visible = false;

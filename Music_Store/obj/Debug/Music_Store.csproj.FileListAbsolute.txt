@@ -56,3 +56,25 @@ C:\Users\Mohil\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\
 C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.ForgotPassword.resources
 C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formCustomerSearch.resources
 C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formAddCustomer.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\Music_Store.exe.config
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.exe
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.pdb
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\Music_Store.exe
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\Music_Store.pdb
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.dll
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\System.Data.SQLite.dll
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.xml
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\bin\Debug\System.Data.SQLite.xml
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csprojResolveAssemblyReference.cache
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formAddCustomer.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formCheckout.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formCustomerSearch.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formDashboard.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.ForgotPassword.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formInventory.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formLogin.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.Properties.Resources.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formSearchScreen.resources
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csproj.GenerateResource.Cache
