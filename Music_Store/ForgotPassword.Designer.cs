@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgotPassword));
             this.passwordForgotLayout1 = new System.Windows.Forms.GroupBox();
+            this.sendButton = new System.Windows.Forms.Button();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.answerBox = new System.Windows.Forms.TextBox();
             this.answerLbl = new System.Windows.Forms.Label();
@@ -40,8 +42,9 @@
             this.forgotPasswordUsernameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.passwordForgotContinueButton1 = new System.Windows.Forms.Button();
-            this.sendButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.passwordForgotLayout1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // passwordForgotLayout1
@@ -62,10 +65,21 @@
             this.passwordForgotLayout1.Margin = new System.Windows.Forms.Padding(4);
             this.passwordForgotLayout1.Name = "passwordForgotLayout1";
             this.passwordForgotLayout1.Padding = new System.Windows.Forms.Padding(4);
-            this.passwordForgotLayout1.Size = new System.Drawing.Size(640, 305);
+            this.passwordForgotLayout1.Size = new System.Drawing.Size(483, 260);
             this.passwordForgotLayout1.TabIndex = 0;
             this.passwordForgotLayout1.TabStop = false;
             this.passwordForgotLayout1.Text = "Enter User Name";
+            // 
+            // sendButton
+            // 
+            this.sendButton.Enabled = false;
+            this.sendButton.Location = new System.Drawing.Point(341, 203);
+            this.sendButton.Name = "sendButton";
+            this.sendButton.Size = new System.Drawing.Size(120, 28);
+            this.sendButton.TabIndex = 10;
+            this.sendButton.Text = "Send Password";
+            this.sendButton.UseVisualStyleBackColor = true;
+            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
             // emailBox
             // 
@@ -173,22 +187,22 @@
             this.passwordForgotContinueButton1.UseVisualStyleBackColor = true;
             this.passwordForgotContinueButton1.Click += new System.EventHandler(this.passwordForgotContinueButton1_Click);
             // 
-            // sendButton
+            // pictureBox1
             // 
-            this.sendButton.Enabled = false;
-            this.sendButton.Location = new System.Drawing.Point(341, 203);
-            this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(120, 28);
-            this.sendButton.TabIndex = 10;
-            this.sendButton.Text = "Send Password";
-            this.sendButton.UseVisualStyleBackColor = true;
-            this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(527, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 154);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // ForgotPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 340);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(710, 297);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwordForgotLayout1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ForgotPassword";
@@ -196,6 +210,7 @@
             this.Text = "Forgot Password";
             this.passwordForgotLayout1.ResumeLayout(false);
             this.passwordForgotLayout1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +230,7 @@
         private System.Windows.Forms.Label sqLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Button sendButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

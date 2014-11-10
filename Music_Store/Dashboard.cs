@@ -15,6 +15,7 @@ namespace Music_Store
         private formSearchScreen search;
         private formCheckout checkout;
         private formInventory inv;
+        private ReportGenerator rpg;
         private formLogin login;
         private string userLoggedIn;
 
@@ -26,6 +27,7 @@ namespace Music_Store
             search = new formSearchScreen();
             checkout = new formCheckout(username);
             inv = new formInventory();
+            rpg = new ReportGenerator();
 
             userLoggedIn = username;
             lblLogInStatus.Text = "Logged in as [" + userLoggedIn + "]";
@@ -55,7 +57,11 @@ namespace Music_Store
             inv.ReloadData();
             inv.Show();
         }
-
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            rpg = new ReportGenerator();
+            rpg.Show();
+        }
         private void miClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -67,6 +73,7 @@ namespace Music_Store
             checkout.Dispose();
             inv.Dispose();
             login.Dispose();
+            rpg.Dispose();
         }
 
         private void miCheckout_Click(object sender, EventArgs e)
@@ -82,6 +89,20 @@ namespace Music_Store
         private void miSearch_Click(object sender, EventArgs e)
         {
             btnSearch.PerformClick();
+        }
+
+        
+
+
+        //Ignore this...accidental double click
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnReports.PerformClick();
         }
 
 

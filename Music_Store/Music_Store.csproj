@@ -98,6 +98,12 @@
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGenerator.Designer.cs">
+      <DependentUpon>ReportGenerator.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportGenerator.resx">
+      <DependentUpon>ReportGenerator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchScreen.resx">
       <DependentUpon>SearchScreen.cs</DependentUpon>
     </EmbeddedResource>

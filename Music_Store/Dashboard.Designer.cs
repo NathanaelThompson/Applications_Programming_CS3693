@@ -40,6 +40,7 @@
             this.miSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,6 +101,7 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // miClose
             // 
@@ -113,7 +115,8 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miCheckout,
             this.miInventory,
-            this.miSearch});
+            this.miSearch,
+            this.reportsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.viewToolStripMenuItem.Text = "View";
@@ -165,6 +168,14 @@
             this.btnReports.TabIndex = 5;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            this.reportsToolStripMenuItem.Click += new System.EventHandler(this.reportsToolStripMenuItem_Click);
             // 
             // formDashboard
             // 
@@ -207,5 +218,7 @@
         private System.Windows.Forms.ToolStripMenuItem miSearch;
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
     }
 }

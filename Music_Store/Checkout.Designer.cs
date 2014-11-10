@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCheckout));
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.btnCustomerLookup = new System.Windows.Forms.Button();
@@ -67,7 +68,7 @@
             this.txtCustomer.Enabled = false;
             this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomer.Location = new System.Drawing.Point(163, 50);
-            this.txtCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(92, 26);
             this.txtCustomer.TabIndex = 21;
@@ -90,7 +91,7 @@
             this.btnCustomerLookup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerLookup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerLookup.Location = new System.Drawing.Point(301, 33);
-            this.btnCustomerLookup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCustomerLookup.Margin = new System.Windows.Forms.Padding(4);
             this.btnCustomerLookup.Name = "btnCustomerLookup";
             this.btnCustomerLookup.Size = new System.Drawing.Size(133, 62);
             this.btnCustomerLookup.TabIndex = 0;
@@ -104,7 +105,7 @@
             this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCustomer.Location = new System.Drawing.Point(456, 33);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(133, 62);
             this.btnAddCustomer.TabIndex = 1;
@@ -122,9 +123,9 @@
             this.gbSale.Enabled = false;
             this.gbSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSale.Location = new System.Drawing.Point(24, 113);
-            this.gbSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbSale.Margin = new System.Windows.Forms.Padding(4);
             this.gbSale.Name = "gbSale";
-            this.gbSale.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbSale.Padding = new System.Windows.Forms.Padding(4);
             this.gbSale.Size = new System.Drawing.Size(1213, 581);
             this.gbSale.TabIndex = 4;
             this.gbSale.TabStop = false;
@@ -141,9 +142,9 @@
             this.gbTotal.Controls.Add(this.label6);
             this.gbTotal.Controls.Add(this.txtTax);
             this.gbTotal.Location = new System.Drawing.Point(899, 37);
-            this.gbTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbTotal.Margin = new System.Windows.Forms.Padding(4);
             this.gbTotal.Name = "gbTotal";
-            this.gbTotal.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbTotal.Padding = new System.Windows.Forms.Padding(4);
             this.gbTotal.Size = new System.Drawing.Size(307, 537);
             this.gbTotal.TabIndex = 25;
             this.gbTotal.TabStop = false;
@@ -176,7 +177,7 @@
             this.txtSubtotal.BackColor = System.Drawing.SystemColors.Window;
             this.txtSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.Location = new System.Drawing.Point(124, 34);
-            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSubtotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.ReadOnly = true;
             this.txtSubtotal.Size = new System.Drawing.Size(159, 26);
@@ -189,7 +190,7 @@
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.Red;
             this.txtTotal.Location = new System.Drawing.Point(124, 133);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(159, 26);
@@ -202,7 +203,7 @@
             this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckout.Location = new System.Drawing.Point(21, 382);
-            this.btnCheckout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckout.Name = "btnCheckout";
             this.btnCheckout.Size = new System.Drawing.Size(267, 148);
             this.btnCheckout.TabIndex = 8;
@@ -216,7 +217,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(20, 204);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(267, 148);
             this.btnCancel.TabIndex = 7;
@@ -240,7 +241,7 @@
             this.txtTax.BackColor = System.Drawing.SystemColors.Window;
             this.txtTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTax.Location = new System.Drawing.Point(124, 84);
-            this.txtTax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTax.Margin = new System.Windows.Forms.Padding(4);
             this.txtTax.Name = "txtTax";
             this.txtTax.ReadOnly = true;
             this.txtTax.Size = new System.Drawing.Size(159, 26);
@@ -261,9 +262,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cbArtist);
             this.groupBox1.Location = new System.Drawing.Point(27, 37);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(864, 537);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
@@ -284,7 +285,7 @@
             this.btnAddCart.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCart.Location = new System.Drawing.Point(137, 247);
-            this.btnAddCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(267, 62);
             this.btnAddCart.TabIndex = 6;
@@ -306,7 +307,7 @@
             // 
             this.lvCart.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvCart.Location = new System.Drawing.Point(31, 341);
-            this.lvCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvCart.Margin = new System.Windows.Forms.Padding(4);
             this.lvCart.MultiSelect = false;
             this.lvCart.Name = "lvCart";
             this.lvCart.Scrollable = false;
@@ -329,7 +330,7 @@
             // 
             this.txtAlbumPrice.BackColor = System.Drawing.SystemColors.Window;
             this.txtAlbumPrice.Location = new System.Drawing.Point(112, 164);
-            this.txtAlbumPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAlbumPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtAlbumPrice.Name = "txtAlbumPrice";
             this.txtAlbumPrice.ReadOnly = true;
             this.txtAlbumPrice.Size = new System.Drawing.Size(132, 26);
@@ -341,7 +342,7 @@
             this.cbAlbum.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbAlbum.FormattingEnabled = true;
             this.cbAlbum.Location = new System.Drawing.Point(112, 102);
-            this.cbAlbum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAlbum.Margin = new System.Windows.Forms.Padding(4);
             this.cbAlbum.Name = "cbAlbum";
             this.cbAlbum.Size = new System.Drawing.Size(399, 28);
             this.cbAlbum.TabIndex = 3;
@@ -350,7 +351,7 @@
             // numQuantity
             // 
             this.numQuantity.Location = new System.Drawing.Point(379, 164);
-            this.numQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.numQuantity.Name = "numQuantity";
             this.numQuantity.Size = new System.Drawing.Size(133, 26);
             this.numQuantity.TabIndex = 5;
@@ -358,8 +359,9 @@
             // 
             // pbArtwork
             // 
+            this.pbArtwork.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbArtwork.ErrorImage")));
             this.pbArtwork.Location = new System.Drawing.Point(537, 25);
-            this.pbArtwork.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbArtwork.Margin = new System.Windows.Forms.Padding(4);
             this.pbArtwork.Name = "pbArtwork";
             this.pbArtwork.Size = new System.Drawing.Size(307, 283);
             this.pbArtwork.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -382,7 +384,7 @@
             this.cbArtist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbArtist.FormattingEnabled = true;
             this.cbArtist.Location = new System.Drawing.Point(112, 41);
-            this.cbArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbArtist.Margin = new System.Windows.Forms.Padding(4);
             this.cbArtist.Name = "cbArtist";
             this.cbArtist.Size = new System.Drawing.Size(399, 28);
             this.cbArtist.TabIndex = 2;
@@ -412,7 +414,7 @@
             this.Controls.Add(this.txtCustomer);
             this.Controls.Add(this.btnCustomerLookup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "formCheckout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

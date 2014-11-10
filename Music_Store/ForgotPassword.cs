@@ -43,6 +43,7 @@ namespace Music_Store
             }
             else
             {
+                //Get relevant information from employee table
                 using (SQLiteConnection conn = ConnectionManager.getConnection())
                 {
                     SQLiteCommand cmd = conn.CreateCommand();
@@ -71,12 +72,15 @@ namespace Music_Store
         static int securityAttempts = 0;
         private void checkButton_Click(object sender, EventArgs e)
         {
+            //If a user fails to acquire a password after 4 attempts, display an error message, and exit the function
             if (securityAttempts > 3)
             {
                 MessageBox.Show("You have done this too many times.", "Security Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                checkButton.Enabled = false;
                 return;
             }
 
+            //If the answer is correct, enable sending email
             string answerToCheck = answerBox.Text;
             if (answerToCheck == securityAnswer)
             {
