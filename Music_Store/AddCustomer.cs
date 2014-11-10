@@ -37,6 +37,8 @@ namespace Music_Store
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            //If any of the fields are left blank, show error message.
+            //Otherwise, Get and Set current customer ID, then close
             if (txtCustomerFirstName.Text.Trim().Length != 0 && txtCustomerLastName.Text.Trim().Length != 0
                 && txtCustomerEmail.Text.Trim().Length != 0 && txtCustomerPhone.Text.Trim().Length != 0)
             {
@@ -45,6 +47,8 @@ namespace Music_Store
 
                 checkout.setCustomerID(ConnectionManager.GetCustomerIDFromCreatedCustomer(txtCustomerFirstName.Text.Trim(), txtCustomerLastName.Text.Trim()));
                 lblError.Visible = false;
+                MessageBox.Show("Customer added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
@@ -52,7 +56,7 @@ namespace Music_Store
                 lblError.Visible = true;
             }
 
-            this.Close();
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

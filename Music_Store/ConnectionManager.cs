@@ -107,7 +107,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Artist ORDER BY Name";
+                cmd.CommandText = "SELECT DISTINCT * FROM Artist ORDER BY Name";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -122,7 +122,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Album WHERE ArtistId = '" + artistID + "' ORDER BY Title";
+                cmd.CommandText = "SELECT DISTINCT * FROM Album WHERE ArtistId = '" + artistID + "' ORDER BY Title";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -137,7 +137,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Genre ORDER BY Name";
+                cmd.CommandText = "SELECT DISTINCT * FROM Genre ORDER BY Name";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -152,7 +152,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Security_Questions";
+                cmd.CommandText = "SELECT DISTINCT * FROM Security_Questions";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -160,7 +160,7 @@ namespace Music_Store
             return dt;
         }
 
-//Gridview/Listview datasources
+        //Gridview/Listview datasources
         public static DataTable CustomerView()
         {
             SQLiteDataAdapter ad;
@@ -168,8 +168,8 @@ namespace Music_Store
             using(SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select customer.firstName as 'First Name', customer.lastName as 'Last Name', " + 
-                    "customer.emailAddress as 'Email Address', customer.phoneNumber as 'Phone #'from customer order by customer.firstName";
+                cmd.CommandText = "SELECT customer.firstName AS 'First Name', customer.lastName AS 'Last Name', " + 
+                    "customer.emailAddress AS 'Email Address', customer.phoneNumber AS 'Phone #'FROM customer ORDER BY customer.firstName";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -184,7 +184,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select Artist.name as 'Artist', count(Album.albumID) as '# Albums' from Artist " + 
+                cmd.CommandText = "SELECT DISTINCT Artist.name AS 'Artist', COUNT(Album.albumID) AS '# Albums' FROM Artist " + 
                     "join Album on Artist.artistID = Album.artistId group by Artist.name";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
@@ -200,8 +200,8 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select Album.title as 'Album', Artist.name as 'Artist', Genre.name as 'Genre',  Album.price, Album.quantity " +
-                    "from Artist join Album on Artist.artistID = Album.artistId join Genre on Album.genreId = Genre.genreID order by Artist.name";
+                cmd.CommandText = "SELECT DISTINCT Album.title AS 'Album', Artist.name AS 'Artist', Genre.name AS 'Genre',  Album.price, Album.quantity " +
+                    "FROM Artist JOIN Album ON Artist.artistID = Album.artistId JOIN Genre ON Album.genreId = Genre.genreID ORDER BY Artist.name";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
@@ -216,7 +216,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select Genre.name as 'Genre', Genre.desc as 'Description' from Genre order by Genre.name";
+                cmd.CommandText = "SELECT DISTINCT Genre.name AS 'Genre', Genre.desc AS 'Description' FROM Genre ORDER BY Genre.name";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }

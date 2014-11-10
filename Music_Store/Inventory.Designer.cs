@@ -126,7 +126,7 @@
             this.tcInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcInventory.Location = new System.Drawing.Point(0, 0);
-            this.tcInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tcInventory.Margin = new System.Windows.Forms.Padding(4);
             this.tcInventory.Name = "tcInventory";
             this.tcInventory.SelectedIndex = 0;
             this.tcInventory.Size = new System.Drawing.Size(1312, 815);
@@ -139,9 +139,9 @@
             this.tabArtist.Controls.Add(this.gbAddArtist);
             this.tabArtist.Controls.Add(this.gvArtist);
             this.tabArtist.Location = new System.Drawing.Point(4, 29);
-            this.tabArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabArtist.Margin = new System.Windows.Forms.Padding(4);
             this.tabArtist.Name = "tabArtist";
-            this.tabArtist.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabArtist.Padding = new System.Windows.Forms.Padding(4);
             this.tabArtist.Size = new System.Drawing.Size(1304, 782);
             this.tabArtist.TabIndex = 0;
             this.tabArtist.Text = "Artists";
@@ -166,9 +166,9 @@
             this.gbAddArtist.Controls.Add(this.txtArtistName);
             this.gbAddArtist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAddArtist.Location = new System.Drawing.Point(879, 7);
-            this.gbAddArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddArtist.Margin = new System.Windows.Forms.Padding(4);
             this.gbAddArtist.Name = "gbAddArtist";
-            this.gbAddArtist.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddArtist.Padding = new System.Windows.Forms.Padding(4);
             this.gbAddArtist.Size = new System.Drawing.Size(412, 181);
             this.gbAddArtist.TabIndex = 1;
             this.gbAddArtist.TabStop = false;
@@ -179,7 +179,7 @@
             this.btnAddArtist.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddArtist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddArtist.Location = new System.Drawing.Point(253, 91);
-            this.btnAddArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddArtist.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddArtist.Name = "btnAddArtist";
             this.btnAddArtist.Size = new System.Drawing.Size(133, 62);
             this.btnAddArtist.TabIndex = 1;
@@ -200,7 +200,7 @@
             // txtArtistName
             // 
             this.txtArtistName.Location = new System.Drawing.Point(159, 48);
-            this.txtArtistName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArtistName.Margin = new System.Windows.Forms.Padding(4);
             this.txtArtistName.Name = "txtArtistName";
             this.txtArtistName.Size = new System.Drawing.Size(245, 26);
             this.txtArtistName.TabIndex = 0;
@@ -217,7 +217,7 @@
             this.gvArtist.ContextMenuStrip = this.menuArtist;
             this.gvArtist.Dock = System.Windows.Forms.DockStyle.Left;
             this.gvArtist.Location = new System.Drawing.Point(4, 4);
-            this.gvArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvArtist.Margin = new System.Windows.Forms.Padding(4);
             this.gvArtist.MultiSelect = false;
             this.gvArtist.Name = "gvArtist";
             this.gvArtist.ReadOnly = true;
@@ -256,9 +256,9 @@
             this.tabAlbums.Controls.Add(this.gbAddAlbum);
             this.tabAlbums.Controls.Add(this.gvAlbums);
             this.tabAlbums.Location = new System.Drawing.Point(4, 29);
-            this.tabAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAlbums.Margin = new System.Windows.Forms.Padding(4);
             this.tabAlbums.Name = "tabAlbums";
-            this.tabAlbums.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAlbums.Padding = new System.Windows.Forms.Padding(4);
             this.tabAlbums.Size = new System.Drawing.Size(1304, 782);
             this.tabAlbums.TabIndex = 1;
             this.tabAlbums.Text = "Albums";
@@ -290,9 +290,9 @@
             this.gbAddAlbum.Controls.Add(this.label3);
             this.gbAddAlbum.Controls.Add(this.txtAlbumName);
             this.gbAddAlbum.Location = new System.Drawing.Point(879, 9);
-            this.gbAddAlbum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddAlbum.Margin = new System.Windows.Forms.Padding(4);
             this.gbAddAlbum.Name = "gbAddAlbum";
-            this.gbAddAlbum.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddAlbum.Padding = new System.Windows.Forms.Padding(4);
             this.gbAddAlbum.Size = new System.Drawing.Size(417, 390);
             this.gbAddAlbum.TabIndex = 4;
             this.gbAddAlbum.TabStop = false;
@@ -301,7 +301,7 @@
             // udAlbumQty
             // 
             this.udAlbumQty.Location = new System.Drawing.Point(151, 234);
-            this.udAlbumQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.udAlbumQty.Margin = new System.Windows.Forms.Padding(4);
             this.udAlbumQty.Minimum = new decimal(new int[] {
             1,
             0,
@@ -320,7 +320,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(84, 86);
+            this.label6.Location = new System.Drawing.Point(76, 85);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 20);
@@ -330,7 +330,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(84, 185);
+            this.label5.Location = new System.Drawing.Point(77, 184);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 20);
@@ -340,7 +340,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 234);
+            this.label4.Location = new System.Drawing.Point(54, 236);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 20);
@@ -350,7 +350,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 135);
+            this.label2.Location = new System.Drawing.Point(70, 135);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
@@ -360,7 +360,7 @@
             // txtAlbumPrice
             // 
             this.txtAlbumPrice.Location = new System.Drawing.Point(151, 181);
-            this.txtAlbumPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAlbumPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtAlbumPrice.Name = "txtAlbumPrice";
             this.txtAlbumPrice.Size = new System.Drawing.Size(92, 26);
             this.txtAlbumPrice.TabIndex = 3;
@@ -371,8 +371,8 @@
             this.cbAlbumGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbAlbumGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbAlbumGenre.FormattingEnabled = true;
-            this.cbAlbumGenre.Location = new System.Drawing.Point(163, 132);
-            this.cbAlbumGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAlbumGenre.Location = new System.Drawing.Point(151, 135);
+            this.cbAlbumGenre.Margin = new System.Windows.Forms.Padding(4);
             this.cbAlbumGenre.Name = "cbAlbumGenre";
             this.cbAlbumGenre.Size = new System.Drawing.Size(233, 28);
             this.cbAlbumGenre.TabIndex = 2;
@@ -382,8 +382,8 @@
             this.cbAlbumArtist.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbAlbumArtist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbAlbumArtist.FormattingEnabled = true;
-            this.cbAlbumArtist.Location = new System.Drawing.Point(163, 82);
-            this.cbAlbumArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAlbumArtist.Location = new System.Drawing.Point(151, 82);
+            this.cbAlbumArtist.Margin = new System.Windows.Forms.Padding(4);
             this.cbAlbumArtist.Name = "cbAlbumArtist";
             this.cbAlbumArtist.Size = new System.Drawing.Size(233, 28);
             this.cbAlbumArtist.TabIndex = 1;
@@ -393,7 +393,7 @@
             this.btnAddAlbum.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAlbum.Location = new System.Drawing.Point(264, 302);
-            this.btnAddAlbum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddAlbum.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAlbum.Name = "btnAddAlbum";
             this.btnAddAlbum.Size = new System.Drawing.Size(133, 62);
             this.btnAddAlbum.TabIndex = 5;
@@ -413,8 +413,8 @@
             // 
             // txtAlbumName
             // 
-            this.txtAlbumName.Location = new System.Drawing.Point(151, 36);
-            this.txtAlbumName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAlbumName.Location = new System.Drawing.Point(151, 34);
+            this.txtAlbumName.Margin = new System.Windows.Forms.Padding(4);
             this.txtAlbumName.Name = "txtAlbumName";
             this.txtAlbumName.Size = new System.Drawing.Size(245, 26);
             this.txtAlbumName.TabIndex = 0;
@@ -430,7 +430,7 @@
             this.gvAlbums.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvAlbums.Dock = System.Windows.Forms.DockStyle.Left;
             this.gvAlbums.Location = new System.Drawing.Point(4, 4);
-            this.gvAlbums.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvAlbums.Margin = new System.Windows.Forms.Padding(4);
             this.gvAlbums.MultiSelect = false;
             this.gvAlbums.Name = "gvAlbums";
             this.gvAlbums.ReadOnly = true;
@@ -446,9 +446,9 @@
             this.tabGenre.Controls.Add(this.gbAddGenre);
             this.tabGenre.Controls.Add(this.gvGenres);
             this.tabGenre.Location = new System.Drawing.Point(4, 29);
-            this.tabGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGenre.Margin = new System.Windows.Forms.Padding(4);
             this.tabGenre.Name = "tabGenre";
-            this.tabGenre.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGenre.Padding = new System.Windows.Forms.Padding(4);
             this.tabGenre.Size = new System.Drawing.Size(1304, 782);
             this.tabGenre.TabIndex = 2;
             this.tabGenre.Text = "Genres";
@@ -474,9 +474,9 @@
             this.gbAddGenre.Controls.Add(this.label7);
             this.gbAddGenre.Controls.Add(this.txtGenreName);
             this.gbAddGenre.Location = new System.Drawing.Point(879, 9);
-            this.gbAddGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddGenre.Margin = new System.Windows.Forms.Padding(4);
             this.gbAddGenre.Name = "gbAddGenre";
-            this.gbAddGenre.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddGenre.Padding = new System.Windows.Forms.Padding(4);
             this.gbAddGenre.Size = new System.Drawing.Size(417, 315);
             this.gbAddGenre.TabIndex = 3;
             this.gbAddGenre.TabStop = false;
@@ -485,7 +485,7 @@
             // txtGenreDesc
             // 
             this.txtGenreDesc.Location = new System.Drawing.Point(153, 92);
-            this.txtGenreDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGenreDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreDesc.Multiline = true;
             this.txtGenreDesc.Name = "txtGenreDesc";
             this.txtGenreDesc.Size = new System.Drawing.Size(245, 115);
@@ -494,19 +494,19 @@
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(40, 96);
+            this.lblDesc.Location = new System.Drawing.Point(36, 95);
             this.lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(95, 20);
+            this.lblDesc.Size = new System.Drawing.Size(100, 20);
             this.lblDesc.TabIndex = 3;
-            this.lblDesc.Text = "Description";
+            this.lblDesc.Text = "Description:";
             // 
             // btnAddGenre
             // 
             this.btnAddGenre.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddGenre.Location = new System.Drawing.Point(267, 233);
-            this.btnAddGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddGenre.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddGenre.Name = "btnAddGenre";
             this.btnAddGenre.Size = new System.Drawing.Size(133, 62);
             this.btnAddGenre.TabIndex = 2;
@@ -520,14 +520,14 @@
             this.label7.Location = new System.Drawing.Point(27, 37);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 20);
+            this.label7.Size = new System.Drawing.Size(109, 20);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Genre Name";
+            this.label7.Text = "Genre Name:";
             // 
             // txtGenreName
             // 
-            this.txtGenreName.Location = new System.Drawing.Point(153, 33);
-            this.txtGenreName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGenreName.Location = new System.Drawing.Point(153, 34);
+            this.txtGenreName.Margin = new System.Windows.Forms.Padding(4);
             this.txtGenreName.Name = "txtGenreName";
             this.txtGenreName.Size = new System.Drawing.Size(245, 26);
             this.txtGenreName.TabIndex = 0;
@@ -543,7 +543,7 @@
             this.gvGenres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvGenres.Dock = System.Windows.Forms.DockStyle.Left;
             this.gvGenres.Location = new System.Drawing.Point(4, 4);
-            this.gvGenres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvGenres.Margin = new System.Windows.Forms.Padding(4);
             this.gvGenres.MultiSelect = false;
             this.gvGenres.Name = "gvGenres";
             this.gvGenres.ReadOnly = true;
@@ -559,9 +559,9 @@
             this.tabCustomer.Controls.Add(this.gbAddCustomer);
             this.tabCustomer.Controls.Add(this.gvCustomers);
             this.tabCustomer.Location = new System.Drawing.Point(4, 29);
-            this.tabCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.tabCustomer.Name = "tabCustomer";
-            this.tabCustomer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabCustomer.Padding = new System.Windows.Forms.Padding(4);
             this.tabCustomer.Size = new System.Drawing.Size(1304, 782);
             this.tabCustomer.TabIndex = 3;
             this.tabCustomer.Text = "Customers";
@@ -591,9 +591,9 @@
             this.gbAddCustomer.Controls.Add(this.label8);
             this.gbAddCustomer.Controls.Add(this.txtCustomerFirstName);
             this.gbAddCustomer.Location = new System.Drawing.Point(879, 9);
-            this.gbAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.gbAddCustomer.Name = "gbAddCustomer";
-            this.gbAddCustomer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddCustomer.Padding = new System.Windows.Forms.Padding(4);
             this.gbAddCustomer.Size = new System.Drawing.Size(417, 353);
             this.gbAddCustomer.TabIndex = 5;
             this.gbAddCustomer.TabStop = false;
@@ -601,8 +601,8 @@
             // 
             // txtCustomerEmail
             // 
-            this.txtCustomerEmail.Location = new System.Drawing.Point(140, 185);
-            this.txtCustomerEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerEmail.Location = new System.Drawing.Point(136, 182);
+            this.txtCustomerEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerEmail.Name = "txtCustomerEmail";
             this.txtCustomerEmail.Size = new System.Drawing.Size(241, 26);
             this.txtCustomerEmail.TabIndex = 3;
@@ -619,8 +619,8 @@
             // 
             // txtCustomerPhone
             // 
-            this.txtCustomerPhone.Location = new System.Drawing.Point(140, 132);
-            this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerPhone.Location = new System.Drawing.Point(136, 132);
+            this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.Size = new System.Drawing.Size(241, 26);
             this.txtCustomerPhone.TabIndex = 2;
@@ -637,8 +637,8 @@
             // 
             // txtCustomerLastName
             // 
-            this.txtCustomerLastName.Location = new System.Drawing.Point(140, 82);
-            this.txtCustomerLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerLastName.Location = new System.Drawing.Point(136, 83);
+            this.txtCustomerLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerLastName.Name = "txtCustomerLastName";
             this.txtCustomerLastName.Size = new System.Drawing.Size(241, 26);
             this.txtCustomerLastName.TabIndex = 1;
@@ -646,7 +646,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 86);
+            this.label1.Location = new System.Drawing.Point(26, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 20);
@@ -658,7 +658,7 @@
             this.btnAddCustomer.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCustomer.Location = new System.Drawing.Point(249, 273);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(133, 62);
             this.btnAddCustomer.TabIndex = 4;
@@ -679,7 +679,7 @@
             // txtCustomerFirstName
             // 
             this.txtCustomerFirstName.Location = new System.Drawing.Point(136, 33);
-            this.txtCustomerFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerFirstName.Name = "txtCustomerFirstName";
             this.txtCustomerFirstName.Size = new System.Drawing.Size(245, 26);
             this.txtCustomerFirstName.TabIndex = 0;
@@ -696,7 +696,7 @@
             this.gvCustomers.Dock = System.Windows.Forms.DockStyle.Left;
             this.gvCustomers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gvCustomers.Location = new System.Drawing.Point(4, 4);
-            this.gvCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvCustomers.Margin = new System.Windows.Forms.Padding(4);
             this.gvCustomers.MultiSelect = false;
             this.gvCustomers.Name = "gvCustomers";
             this.gvCustomers.ReadOnly = true;
@@ -711,9 +711,9 @@
             this.tabEmployee.Controls.Add(this.gbAddEmployee);
             this.tabEmployee.Controls.Add(this.gvEmployees);
             this.tabEmployee.Location = new System.Drawing.Point(4, 29);
-            this.tabEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.tabEmployee.Name = "tabEmployee";
-            this.tabEmployee.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabEmployee.Padding = new System.Windows.Forms.Padding(4);
             this.tabEmployee.Size = new System.Drawing.Size(1304, 782);
             this.tabEmployee.TabIndex = 4;
             this.tabEmployee.Text = "Employees";
@@ -749,9 +749,9 @@
             this.gbAddEmployee.Controls.Add(this.label13);
             this.gbAddEmployee.Controls.Add(this.btnAddEmployee);
             this.gbAddEmployee.Location = new System.Drawing.Point(879, 9);
-            this.gbAddEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.gbAddEmployee.Name = "gbAddEmployee";
-            this.gbAddEmployee.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbAddEmployee.Padding = new System.Windows.Forms.Padding(4);
             this.gbAddEmployee.Size = new System.Drawing.Size(417, 583);
             this.gbAddEmployee.TabIndex = 7;
             this.gbAddEmployee.TabStop = false;
@@ -760,7 +760,7 @@
             // txtEmployeeAnswer
             // 
             this.txtEmployeeAnswer.Location = new System.Drawing.Point(23, 336);
-            this.txtEmployeeAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeeAnswer.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeAnswer.Name = "txtEmployeeAnswer";
             this.txtEmployeeAnswer.Size = new System.Drawing.Size(363, 26);
             this.txtEmployeeAnswer.TabIndex = 5;
@@ -779,7 +779,7 @@
             // 
             this.cbEmployeSeqQuestions.FormattingEnabled = true;
             this.cbEmployeSeqQuestions.Location = new System.Drawing.Point(23, 249);
-            this.cbEmployeSeqQuestions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEmployeSeqQuestions.Margin = new System.Windows.Forms.Padding(4);
             this.cbEmployeSeqQuestions.Name = "cbEmployeSeqQuestions";
             this.cbEmployeSeqQuestions.Size = new System.Drawing.Size(363, 28);
             this.cbEmployeSeqQuestions.TabIndex = 4;
@@ -807,7 +807,7 @@
             // txtEmployeeFirstName
             // 
             this.txtEmployeeFirstName.Location = new System.Drawing.Point(136, 33);
-            this.txtEmployeeFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeeFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeFirstName.Name = "txtEmployeeFirstName";
             this.txtEmployeeFirstName.Size = new System.Drawing.Size(249, 26);
             this.txtEmployeeFirstName.TabIndex = 0;
@@ -825,7 +825,7 @@
             // txtEmployeeLastName
             // 
             this.txtEmployeeLastName.Location = new System.Drawing.Point(136, 86);
-            this.txtEmployeeLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeeLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeeLastName.Name = "txtEmployeeLastName";
             this.txtEmployeeLastName.Size = new System.Drawing.Size(249, 26);
             this.txtEmployeeLastName.TabIndex = 1;
@@ -834,7 +834,7 @@
             // 
             this.chkEmployeeAdmin.AutoSize = true;
             this.chkEmployeeAdmin.Location = new System.Drawing.Point(136, 516);
-            this.chkEmployeeAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkEmployeeAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.chkEmployeeAdmin.Name = "chkEmployeeAdmin";
             this.chkEmployeeAdmin.Size = new System.Drawing.Size(18, 17);
             this.chkEmployeeAdmin.TabIndex = 7;
@@ -844,7 +844,7 @@
             // 
             this.dtDemployeeHireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDemployeeHireDate.Location = new System.Drawing.Point(136, 432);
-            this.dtDemployeeHireDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtDemployeeHireDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtDemployeeHireDate.Name = "dtDemployeeHireDate";
             this.dtDemployeeHireDate.Size = new System.Drawing.Size(249, 26);
             this.dtDemployeeHireDate.TabIndex = 6;
@@ -872,7 +872,7 @@
             // txtEmployeePass
             // 
             this.txtEmployeePass.Location = new System.Drawing.Point(136, 139);
-            this.txtEmployeePass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeePass.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmployeePass.Name = "txtEmployeePass";
             this.txtEmployeePass.PasswordChar = '*';
             this.txtEmployeePass.Size = new System.Drawing.Size(249, 26);
@@ -881,7 +881,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(29, 143);
+            this.label13.Location = new System.Drawing.Point(36, 142);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 20);
@@ -893,7 +893,7 @@
             this.btnAddEmployee.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmployee.Location = new System.Drawing.Point(209, 492);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(140, 62);
             this.btnAddEmployee.TabIndex = 8;
@@ -912,7 +912,7 @@
             this.gvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvEmployees.Dock = System.Windows.Forms.DockStyle.Left;
             this.gvEmployees.Location = new System.Drawing.Point(4, 4);
-            this.gvEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.gvEmployees.MultiSelect = false;
             this.gvEmployees.Name = "gvEmployees";
             this.gvEmployees.ReadOnly = true;
@@ -927,7 +927,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 815);
             this.Controls.Add(this.tcInventory);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "formInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

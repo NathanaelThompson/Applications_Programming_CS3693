@@ -40,7 +40,7 @@
             this.btnSeach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSeach.BackColor = System.Drawing.Color.PaleGreen;
             this.btnSeach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeach.Location = new System.Drawing.Point(321, 14);
+            this.btnSeach.Location = new System.Drawing.Point(429, 14);
             this.btnSeach.Margin = new System.Windows.Forms.Padding(4);
             this.btnSeach.Name = "btnSeach";
             this.btnSeach.Size = new System.Drawing.Size(100, 62);
@@ -55,7 +55,7 @@
             this.label1.Location = new System.Drawing.Point(16, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Phone Number:";
             // 
@@ -63,10 +63,10 @@
             // 
             this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(132, 33);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(149, 33);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(161, 23);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(252, 26);
             this.txtPhoneNumber.TabIndex = 0;
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
@@ -81,7 +81,7 @@
             this.lvSearchResults.Margin = new System.Windows.Forms.Padding(4);
             this.lvSearchResults.MultiSelect = false;
             this.lvSearchResults.Name = "lvSearchResults";
-            this.lvSearchResults.Size = new System.Drawing.Size(408, 155);
+            this.lvSearchResults.Size = new System.Drawing.Size(516, 155);
             this.lvSearchResults.TabIndex = 3;
             this.lvSearchResults.UseCompatibleStateImageBehavior = false;
             this.lvSearchResults.View = System.Windows.Forms.View.Details;
@@ -93,7 +93,7 @@
             this.lblError.ForeColor = System.Drawing.Color.Red;
             this.lblError.Location = new System.Drawing.Point(16, 73);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(109, 17);
+            this.lblError.Size = new System.Drawing.Size(130, 20);
             this.lblError.TabIndex = 4;
             this.lblError.Text = "[Error Message]";
             this.lblError.Visible = false;
@@ -101,9 +101,9 @@
             // formCustomerSearch
             // 
             this.AcceptButton = this.btnSeach;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 262);
+            this.ClientSize = new System.Drawing.Size(542, 262);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lvSearchResults);
             this.Controls.Add(this.txtPhoneNumber);

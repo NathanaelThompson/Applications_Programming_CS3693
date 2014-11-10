@@ -74,10 +74,10 @@
             // lblLogInStatus
             // 
             this.lblLogInStatus.AutoSize = true;
-            this.lblLogInStatus.Location = new System.Drawing.Point(505, 27);
+            this.lblLogInStatus.Location = new System.Drawing.Point(491, 28);
             this.lblLogInStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogInStatus.Name = "lblLogInStatus";
-            this.lblLogInStatus.Size = new System.Drawing.Size(166, 17);
+            this.lblLogInStatus.Size = new System.Drawing.Size(196, 20);
             this.lblLogInStatus.TabIndex = 3;
             this.lblLogInStatus.Text = "Logged In As [username]";
             // 
@@ -89,7 +89,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(700, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(700, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,13 +98,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miClose});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(103, 22);
+            this.miClose.Size = new System.Drawing.Size(114, 24);
             this.miClose.Text = "Close";
             this.miClose.Click += new System.EventHandler(this.miClose_Click);
             // 
@@ -115,27 +115,27 @@
             this.miInventory,
             this.miSearch});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // miCheckout
             // 
             this.miCheckout.Name = "miCheckout";
-            this.miCheckout.Size = new System.Drawing.Size(128, 22);
+            this.miCheckout.Size = new System.Drawing.Size(146, 24);
             this.miCheckout.Text = "Checkout ";
             this.miCheckout.Click += new System.EventHandler(this.miCheckout_Click);
             // 
             // miInventory
             // 
             this.miInventory.Name = "miInventory";
-            this.miInventory.Size = new System.Drawing.Size(128, 22);
+            this.miInventory.Size = new System.Drawing.Size(146, 24);
             this.miInventory.Text = "Inventory";
             this.miInventory.Click += new System.EventHandler(this.miInventory_Click);
             // 
             // miSearch
             // 
             this.miSearch.Name = "miSearch";
-            this.miSearch.Size = new System.Drawing.Size(128, 22);
+            this.miSearch.Size = new System.Drawing.Size(146, 24);
             this.miSearch.Text = "Search DB";
             this.miSearch.Click += new System.EventHandler(this.miSearch_Click);
             // 
@@ -168,7 +168,7 @@
             // 
             // formDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 541);
             this.Controls.Add(this.btnReports);

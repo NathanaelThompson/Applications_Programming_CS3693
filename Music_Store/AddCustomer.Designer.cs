@@ -43,9 +43,9 @@
             // 
             // txtCustomerEmail
             // 
-            this.txtCustomerEmail.Location = new System.Drawing.Point(391, 70);
+            this.txtCustomerEmail.Location = new System.Drawing.Point(410, 67);
             this.txtCustomerEmail.Name = "txtCustomerEmail";
-            this.txtCustomerEmail.Size = new System.Drawing.Size(182, 23);
+            this.txtCustomerEmail.Size = new System.Drawing.Size(182, 26);
             this.txtCustomerEmail.TabIndex = 12;
             // 
             // label10
@@ -53,15 +53,15 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(336, 70);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 17);
+            this.label10.Size = new System.Drawing.Size(56, 20);
             this.label10.TabIndex = 16;
             this.label10.Text = "Email:";
             // 
             // txtCustomerPhone
             // 
-            this.txtCustomerPhone.Location = new System.Drawing.Point(103, 70);
+            this.txtCustomerPhone.Location = new System.Drawing.Point(114, 70);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
-            this.txtCustomerPhone.Size = new System.Drawing.Size(182, 23);
+            this.txtCustomerPhone.Size = new System.Drawing.Size(182, 26);
             this.txtCustomerPhone.TabIndex = 11;
             // 
             // label9
@@ -69,15 +69,15 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(33, 73);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 17);
+            this.label9.Size = new System.Drawing.Size(75, 20);
             this.label9.TabIndex = 15;
             this.label9.Text = "Phone #:";
             // 
             // txtCustomerLastName
             // 
-            this.txtCustomerLastName.Location = new System.Drawing.Point(391, 28);
+            this.txtCustomerLastName.Location = new System.Drawing.Point(410, 28);
             this.txtCustomerLastName.Name = "txtCustomerLastName";
-            this.txtCustomerLastName.Size = new System.Drawing.Size(182, 23);
+            this.txtCustomerLastName.Size = new System.Drawing.Size(182, 26);
             this.txtCustomerLastName.TabIndex = 9;
             // 
             // label1
@@ -85,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(308, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "Last Name:";
             // 
@@ -104,17 +104,17 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 31);
+            this.label8.Location = new System.Drawing.Point(11, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.Size = new System.Drawing.Size(97, 20);
             this.label8.TabIndex = 10;
             this.label8.Text = "First Name:";
             // 
             // txtCustomerFirstName
             // 
-            this.txtCustomerFirstName.Location = new System.Drawing.Point(103, 28);
+            this.txtCustomerFirstName.Location = new System.Drawing.Point(114, 28);
             this.txtCustomerFirstName.Name = "txtCustomerFirstName";
-            this.txtCustomerFirstName.Size = new System.Drawing.Size(185, 23);
+            this.txtCustomerFirstName.Size = new System.Drawing.Size(185, 26);
             this.txtCustomerFirstName.TabIndex = 8;
             // 
             // btnCancel
@@ -135,16 +135,16 @@
             this.lblError.ForeColor = System.Drawing.Color.Red;
             this.lblError.Location = new System.Drawing.Point(24, 117);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(109, 17);
+            this.lblError.Size = new System.Drawing.Size(130, 20);
             this.lblError.TabIndex = 18;
             this.lblError.Text = "[Error Message]";
             this.lblError.Visible = false;
             // 
             // formAddCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 214);
+            this.ClientSize = new System.Drawing.Size(674, 224);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtCustomerEmail);
@@ -158,7 +158,7 @@
             this.Controls.Add(this.txtCustomerFirstName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "formAddCustomer";
             this.Text = "AddCustomer";
