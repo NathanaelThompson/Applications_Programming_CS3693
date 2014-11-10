@@ -316,6 +316,7 @@ namespace Music_Store
             }
         }
 
+       
         public static string AlbumPrice(string albumID)
         {
             using (SQLiteConnection conn = getConnection())
@@ -358,7 +359,18 @@ namespace Music_Store
                     return false;
             }
         }
-
+        public static bool checkCredentials(string username)
+        {
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT COUNT(*) FROM Employee WHERE LoginID = '" + username + "'";
+                if (Int32.Parse(cmd.ExecuteScalar().ToString()) == 1)
+                    return true;
+                else
+                    return false;
+            }
+        }
         public static bool checkEmployeeUsername(string username)
         {
             SQLiteDataAdapter ad;
@@ -376,6 +388,8 @@ namespace Music_Store
             }
             return false;
         }
+        
 
     }
+    
 }
