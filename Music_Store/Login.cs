@@ -43,5 +43,16 @@ namespace Music_Store
             forgotPasswordForm.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtUserName.Text = "guest";
+            txtPassword.Text = "password";
+            ConnectionManager.checkCredentials(txtUserName.Text, txtPassword.Text);
+            dashboard = new formDashboard("Guest", this);
+            dashboard.Show();
+            this.Hide();
+            lblErrorMessage.Visible = false;
+        }
+
     }
 }

@@ -275,7 +275,7 @@ namespace Music_Store
             {
                 SQLiteCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "select IsAdmin from Employee where LoginID = '" + employee + "'";
-                int result = Int32.Parse(cmd.ExecuteScalar().ToString());
+                 int result = Int32.Parse(cmd.ExecuteScalar().ToString());
                 if (result == 1)
                     return true;
                 else
