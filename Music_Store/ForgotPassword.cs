@@ -65,6 +65,7 @@ namespace Music_Store
                     answerBox.Enabled = true;
                     checkButton.Enabled = true;
                     secretQuestionLabel.Text = securityQuestion;
+                    secretQuestionLabel.Visible = true;
                 }
             }
         }

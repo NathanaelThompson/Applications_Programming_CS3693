@@ -415,8 +415,40 @@ namespace Music_Store
 
             return income;
         }
-        
 
+        public static DataTable PopularGenres()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select genre.name as 'Genre', count(genre.name) as 'Genres Albums Sold'  from Cart " + 
+                    "join Album on cart.albumId = album.albumID join Genre on album.genreId " + 
+                    "= genre.genreID group by Genre.name order by count(genre.name) desc";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable PopularArtists()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select artist.name as 'Artist', count(artist.name) as 'Artists Albums Sold'  from Cart " +
+                    "join Album on cart.albumId = album.albumID join Artist on Album.artistId = artist.artistID " +
+                    "group by artist.name order by count(artist.name) desc";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }   
     }
     
 }

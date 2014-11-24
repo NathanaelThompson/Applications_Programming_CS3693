@@ -55,6 +55,7 @@
             this.searchDGV.Location = new System.Drawing.Point(0, 196);
             this.searchDGV.Margin = new System.Windows.Forms.Padding(4);
             this.searchDGV.Name = "searchDGV";
+            this.searchDGV.RowHeadersVisible = false;
             this.searchDGV.Size = new System.Drawing.Size(936, 508);
             this.searchDGV.TabIndex = 0;
             // 
@@ -97,7 +98,7 @@
             this.searchBox.Location = new System.Drawing.Point(151, 82);
             this.searchBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(265, 26);
+            this.searchBox.Size = new System.Drawing.Size(265, 23);
             this.searchBox.TabIndex = 8;
             // 
             // lblSearchTerm
@@ -106,7 +107,7 @@
             this.lblSearchTerm.Location = new System.Drawing.Point(32, 85);
             this.lblSearchTerm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchTerm.Name = "lblSearchTerm";
-            this.lblSearchTerm.Size = new System.Drawing.Size(111, 20);
+            this.lblSearchTerm.Size = new System.Drawing.Size(94, 17);
             this.lblSearchTerm.TabIndex = 7;
             this.lblSearchTerm.Text = "Search Term:";
             // 
@@ -116,7 +117,7 @@
             this.rbAlbums.Location = new System.Drawing.Point(248, 37);
             this.rbAlbums.Margin = new System.Windows.Forms.Padding(4);
             this.rbAlbums.Name = "rbAlbums";
-            this.rbAlbums.Size = new System.Drawing.Size(86, 24);
+            this.rbAlbums.Size = new System.Drawing.Size(72, 21);
             this.rbAlbums.TabIndex = 6;
             this.rbAlbums.TabStop = true;
             this.rbAlbums.Text = "Albums";
@@ -128,7 +129,7 @@
             this.rbGenre.Location = new System.Drawing.Point(342, 37);
             this.rbGenre.Margin = new System.Windows.Forms.Padding(4);
             this.rbGenre.Name = "rbGenre";
-            this.rbGenre.Size = new System.Drawing.Size(85, 24);
+            this.rbGenre.Size = new System.Drawing.Size(73, 21);
             this.rbGenre.TabIndex = 5;
             this.rbGenre.TabStop = true;
             this.rbGenre.Text = "Genres";
@@ -140,7 +141,7 @@
             this.rbOrder.Location = new System.Drawing.Point(435, 38);
             this.rbOrder.Margin = new System.Windows.Forms.Padding(4);
             this.rbOrder.Name = "rbOrder";
-            this.rbOrder.Size = new System.Drawing.Size(82, 24);
+            this.rbOrder.Size = new System.Drawing.Size(70, 21);
             this.rbOrder.TabIndex = 4;
             this.rbOrder.TabStop = true;
             this.rbOrder.Text = "Orders";
@@ -152,7 +153,7 @@
             this.rbCustomer.Location = new System.Drawing.Point(525, 37);
             this.rbCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.rbCustomer.Name = "rbCustomer";
-            this.rbCustomer.Size = new System.Drawing.Size(112, 24);
+            this.rbCustomer.Size = new System.Drawing.Size(93, 21);
             this.rbCustomer.TabIndex = 3;
             this.rbCustomer.TabStop = true;
             this.rbCustomer.Text = "Customers";
@@ -164,7 +165,7 @@
             this.rbEmployee.Location = new System.Drawing.Point(645, 37);
             this.rbEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.rbEmployee.Name = "rbEmployee";
-            this.rbEmployee.Size = new System.Drawing.Size(112, 24);
+            this.rbEmployee.Size = new System.Drawing.Size(95, 21);
             this.rbEmployee.TabIndex = 2;
             this.rbEmployee.TabStop = true;
             this.rbEmployee.Text = "Employees";
@@ -176,7 +177,7 @@
             this.rbArtist.Location = new System.Drawing.Point(161, 37);
             this.rbArtist.Margin = new System.Windows.Forms.Padding(4);
             this.rbArtist.Name = "rbArtist";
-            this.rbArtist.Size = new System.Drawing.Size(79, 24);
+            this.rbArtist.Size = new System.Drawing.Size(65, 21);
             this.rbArtist.TabIndex = 1;
             this.rbArtist.TabStop = true;
             this.rbArtist.Text = "Artists";
@@ -188,7 +189,7 @@
             this.lblSearchFor.Location = new System.Drawing.Point(46, 39);
             this.lblSearchFor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchFor.Name = "lblSearchFor";
-            this.lblSearchFor.Size = new System.Drawing.Size(97, 20);
+            this.lblSearchFor.Size = new System.Drawing.Size(82, 17);
             this.lblSearchFor.TabIndex = 0;
             this.lblSearchFor.Text = "Search For:";
             // 
@@ -198,20 +199,20 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(936, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(936, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // formSearchScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 704);
             this.Controls.Add(this.gbSeachBox);

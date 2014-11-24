@@ -61,11 +61,9 @@
             this.passwordForgotLayout1.Controls.Add(this.forgotPasswordUsernameTextBox);
             this.passwordForgotLayout1.Controls.Add(this.label1);
             this.passwordForgotLayout1.Controls.Add(this.passwordForgotContinueButton1);
-            this.passwordForgotLayout1.Location = new System.Drawing.Point(16, 15);
-            this.passwordForgotLayout1.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordForgotLayout1.Location = new System.Drawing.Point(12, 12);
             this.passwordForgotLayout1.Name = "passwordForgotLayout1";
-            this.passwordForgotLayout1.Padding = new System.Windows.Forms.Padding(4);
-            this.passwordForgotLayout1.Size = new System.Drawing.Size(483, 260);
+            this.passwordForgotLayout1.Size = new System.Drawing.Size(362, 211);
             this.passwordForgotLayout1.TabIndex = 0;
             this.passwordForgotLayout1.TabStop = false;
             this.passwordForgotLayout1.Text = "Enter User Name";
@@ -73,9 +71,10 @@
             // sendButton
             // 
             this.sendButton.Enabled = false;
-            this.sendButton.Location = new System.Drawing.Point(341, 203);
+            this.sendButton.Location = new System.Drawing.Point(256, 165);
+            this.sendButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sendButton.Name = "sendButton";
-            this.sendButton.Size = new System.Drawing.Size(120, 28);
+            this.sendButton.Size = new System.Drawing.Size(90, 23);
             this.sendButton.TabIndex = 10;
             this.sendButton.Text = "Send Password";
             this.sendButton.UseVisualStyleBackColor = true;
@@ -84,35 +83,39 @@
             // emailBox
             // 
             this.emailBox.Enabled = false;
-            this.emailBox.Location = new System.Drawing.Point(99, 206);
+            this.emailBox.Location = new System.Drawing.Point(74, 167);
+            this.emailBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(224, 22);
+            this.emailBox.Size = new System.Drawing.Size(169, 20);
             this.emailBox.TabIndex = 9;
             // 
             // answerBox
             // 
             this.answerBox.Enabled = false;
-            this.answerBox.Location = new System.Drawing.Point(99, 156);
+            this.answerBox.Location = new System.Drawing.Point(74, 127);
+            this.answerBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.answerBox.Name = "answerBox";
-            this.answerBox.Size = new System.Drawing.Size(224, 22);
+            this.answerBox.Size = new System.Drawing.Size(169, 20);
             this.answerBox.TabIndex = 8;
             // 
             // answerLbl
             // 
             this.answerLbl.AutoSize = true;
             this.answerLbl.Enabled = false;
-            this.answerLbl.Location = new System.Drawing.Point(35, 159);
+            this.answerLbl.Location = new System.Drawing.Point(26, 129);
+            this.answerLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.answerLbl.Name = "answerLbl";
-            this.answerLbl.Size = new System.Drawing.Size(58, 17);
+            this.answerLbl.Size = new System.Drawing.Size(45, 13);
             this.answerLbl.TabIndex = 7;
             this.answerLbl.Text = "Answer:";
             // 
             // checkButton
             // 
             this.checkButton.Enabled = false;
-            this.checkButton.Location = new System.Drawing.Point(341, 153);
+            this.checkButton.Location = new System.Drawing.Point(256, 124);
+            this.checkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkButton.Name = "checkButton";
-            this.checkButton.Size = new System.Drawing.Size(120, 28);
+            this.checkButton.Size = new System.Drawing.Size(90, 23);
             this.checkButton.TabIndex = 6;
             this.checkButton.Text = "Check Answer";
             this.checkButton.UseVisualStyleBackColor = true;
@@ -122,19 +125,22 @@
             // 
             this.secretQuestionLabel.AutoSize = true;
             this.secretQuestionLabel.Enabled = false;
-            this.secretQuestionLabel.Location = new System.Drawing.Point(127, 105);
+            this.secretQuestionLabel.Location = new System.Drawing.Point(95, 85);
+            this.secretQuestionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.secretQuestionLabel.Name = "secretQuestionLabel";
-            this.secretQuestionLabel.Size = new System.Drawing.Size(40, 17);
+            this.secretQuestionLabel.Size = new System.Drawing.Size(53, 13);
             this.secretQuestionLabel.TabIndex = 5;
-            this.secretQuestionLabel.Text = "-null-";
+            this.secretQuestionLabel.Text = "[question]";
+            this.secretQuestionLabel.Visible = false;
             // 
             // sqLabel
             // 
             this.sqLabel.AutoSize = true;
             this.sqLabel.Enabled = false;
-            this.sqLabel.Location = new System.Drawing.Point(7, 105);
+            this.sqLabel.Location = new System.Drawing.Point(5, 85);
+            this.sqLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.sqLabel.Name = "sqLabel";
-            this.sqLabel.Size = new System.Drawing.Size(114, 17);
+            this.sqLabel.Size = new System.Drawing.Size(86, 13);
             this.sqLabel.TabIndex = 4;
             this.sqLabel.Text = "Secret Question:";
             // 
@@ -142,9 +148,10 @@
             // 
             this.emailLabel.AutoSize = true;
             this.emailLabel.Enabled = false;
-            this.emailLabel.Location = new System.Drawing.Point(45, 209);
+            this.emailLabel.Location = new System.Drawing.Point(34, 170);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(46, 17);
+            this.emailLabel.Size = new System.Drawing.Size(35, 13);
             this.emailLabel.TabIndex = 1;
             this.emailLabel.Text = "Email:";
             // 
@@ -152,36 +159,32 @@
             // 
             this.forgotPasswordErrorLabel.AutoSize = true;
             this.forgotPasswordErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.forgotPasswordErrorLabel.Location = new System.Drawing.Point(96, 122);
-            this.forgotPasswordErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.forgotPasswordErrorLabel.Location = new System.Drawing.Point(72, 99);
             this.forgotPasswordErrorLabel.Name = "forgotPasswordErrorLabel";
-            this.forgotPasswordErrorLabel.Size = new System.Drawing.Size(0, 17);
+            this.forgotPasswordErrorLabel.Size = new System.Drawing.Size(0, 13);
             this.forgotPasswordErrorLabel.TabIndex = 3;
             // 
             // forgotPasswordUsernameTextBox
             // 
-            this.forgotPasswordUsernameTextBox.Location = new System.Drawing.Point(99, 49);
-            this.forgotPasswordUsernameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.forgotPasswordUsernameTextBox.Location = new System.Drawing.Point(74, 40);
             this.forgotPasswordUsernameTextBox.Name = "forgotPasswordUsernameTextBox";
-            this.forgotPasswordUsernameTextBox.Size = new System.Drawing.Size(224, 22);
+            this.forgotPasswordUsernameTextBox.Size = new System.Drawing.Size(169, 20);
             this.forgotPasswordUsernameTextBox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name:";
             // 
             // passwordForgotContinueButton1
             // 
-            this.passwordForgotContinueButton1.Location = new System.Drawing.Point(341, 46);
-            this.passwordForgotContinueButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordForgotContinueButton1.Location = new System.Drawing.Point(256, 37);
             this.passwordForgotContinueButton1.Name = "passwordForgotContinueButton1";
-            this.passwordForgotContinueButton1.Size = new System.Drawing.Size(120, 28);
+            this.passwordForgotContinueButton1.Size = new System.Drawing.Size(90, 23);
             this.passwordForgotContinueButton1.TabIndex = 0;
             this.passwordForgotContinueButton1.Text = "Continue";
             this.passwordForgotContinueButton1.UseVisualStyleBackColor = true;
@@ -190,21 +193,21 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(527, 61);
+            this.pictureBox1.Location = new System.Drawing.Point(395, 50);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 154);
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // ForgotPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(710, 297);
+            this.ClientSize = new System.Drawing.Size(566, 241);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwordForgotLayout1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forgot Password";

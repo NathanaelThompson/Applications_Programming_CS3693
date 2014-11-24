@@ -103,3 +103,4 @@ D:\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.Prop
 D:\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.ReportGenerator.resources
 D:\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formSearchScreen.resources
 D:\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csproj.GenerateResource.Cache
+C:\Users\Chaeson Smith\Documents\Visual Studio 2013\Projects\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.ReportGenerator.resources

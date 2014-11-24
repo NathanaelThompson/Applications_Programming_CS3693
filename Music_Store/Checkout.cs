@@ -167,7 +167,7 @@ namespace Music_Store
             string customerID = txtCustomer.Text;
             int cartID = ProcessCart();
             string employeeID = ConnectionManager.GetEmployeeID(currentUser);
-            string Total = txtTotal.Text;
+            string Total = txtTotal.Text.Substring(1, txtTotal.Text.Length - 1);
             string orderDate = DateTime.Now.Date.ToString("MM/dd/yyyy");
             ConnectionManager.AddNewOrder(customerID, cartID.ToString(), employeeID, Total, orderDate);
             MessageBox.Show("Order Processed");

@@ -59,7 +59,6 @@ namespace Music_Store
         }
         private void btnReports_Click(object sender, EventArgs e)
         {
-            rpg = new ReportGenerator();
             rpg.Show();
         }
         private void miClose_Click(object sender, EventArgs e)
