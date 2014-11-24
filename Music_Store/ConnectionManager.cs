@@ -388,6 +388,33 @@ namespace Music_Store
             }
             return false;
         }
+
+        public static Decimal grossIncome()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+
+            Decimal income = 0;
+
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT Total From MusicOrder";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            for (int i = 0; i < dt.Rows.Count;i++ )
+            {
+                string t = dt.Rows[i].ItemArray[0].ToString();
+                t = t.Trim('$');
+                Decimal temp = Decimal.Parse(t);
+
+                income += temp;
+            }
+
+            return income;
+        }
         
 
     }

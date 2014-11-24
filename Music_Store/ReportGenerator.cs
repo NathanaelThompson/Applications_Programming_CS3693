@@ -12,6 +12,7 @@ namespace Music_Store
 {
     public partial class ReportGenerator : Form
     {
+        
         public ReportGenerator()
         {
             InitializeComponent();
@@ -36,12 +37,18 @@ namespace Music_Store
 
         private void generateButton_Click(object sender, EventArgs e)
         {
+            if(gIncomeCB.Checked)
+            {
+                Decimal grossIncome = ConnectionManager.grossIncome();
 
+            }
         }
 
         private void emailButton_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }

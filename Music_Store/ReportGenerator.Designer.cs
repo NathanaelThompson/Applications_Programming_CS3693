@@ -50,18 +50,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 42);
+            this.label1.Location = new System.Drawing.Point(29, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(390, 17);
+            this.label1.Size = new System.Drawing.Size(292, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "What should be included in this report? (check all that apply)";
             // 
             // gIncomeCB
             // 
             this.gIncomeCB.AutoSize = true;
-            this.gIncomeCB.Location = new System.Drawing.Point(42, 78);
+            this.gIncomeCB.Location = new System.Drawing.Point(32, 63);
+            this.gIncomeCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gIncomeCB.Name = "gIncomeCB";
-            this.gIncomeCB.Size = new System.Drawing.Size(117, 21);
+            this.gIncomeCB.Size = new System.Drawing.Size(91, 17);
             this.gIncomeCB.TabIndex = 2;
             this.gIncomeCB.Text = "Gross Income";
             this.gIncomeCB.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             // nIncomeCB
             // 
             this.nIncomeCB.AutoSize = true;
-            this.nIncomeCB.Location = new System.Drawing.Point(42, 105);
+            this.nIncomeCB.Location = new System.Drawing.Point(32, 85);
+            this.nIncomeCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nIncomeCB.Name = "nIncomeCB";
-            this.nIncomeCB.Size = new System.Drawing.Size(101, 21);
+            this.nIncomeCB.Size = new System.Drawing.Size(81, 17);
             this.nIncomeCB.TabIndex = 3;
             this.nIncomeCB.Text = "Net Income";
             this.nIncomeCB.UseVisualStyleBackColor = true;
@@ -79,9 +82,10 @@
             // expenseCB
             // 
             this.expenseCB.AutoSize = true;
-            this.expenseCB.Location = new System.Drawing.Point(169, 78);
+            this.expenseCB.Location = new System.Drawing.Point(127, 63);
+            this.expenseCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.expenseCB.Name = "expenseCB";
-            this.expenseCB.Size = new System.Drawing.Size(91, 21);
+            this.expenseCB.Size = new System.Drawing.Size(72, 17);
             this.expenseCB.TabIndex = 4;
             this.expenseCB.Text = "Expenses";
             this.expenseCB.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@
             // numAlbumsCB
             // 
             this.numAlbumsCB.AutoSize = true;
-            this.numAlbumsCB.Location = new System.Drawing.Point(169, 105);
+            this.numAlbumsCB.Location = new System.Drawing.Point(127, 85);
+            this.numAlbumsCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numAlbumsCB.Name = "numAlbumsCB";
-            this.numAlbumsCB.Size = new System.Drawing.Size(214, 21);
+            this.numAlbumsCB.Size = new System.Drawing.Size(163, 17);
             this.numAlbumsCB.TabIndex = 5;
             this.numAlbumsCB.Text = "Total Number of Albums Sold";
             this.numAlbumsCB.UseVisualStyleBackColor = true;
@@ -99,9 +104,10 @@
             // popArtistsCB
             // 
             this.popArtistsCB.AutoSize = true;
-            this.popArtistsCB.Location = new System.Drawing.Point(389, 78);
+            this.popArtistsCB.Location = new System.Drawing.Point(292, 63);
+            this.popArtistsCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.popArtistsCB.Name = "popArtistsCB";
-            this.popArtistsCB.Size = new System.Drawing.Size(156, 21);
+            this.popArtistsCB.Size = new System.Drawing.Size(119, 17);
             this.popArtistsCB.TabIndex = 6;
             this.popArtistsCB.Text = "Most Popular Artists";
             this.popArtistsCB.UseVisualStyleBackColor = true;
@@ -109,18 +115,20 @@
             // popGenresCB
             // 
             this.popGenresCB.AutoSize = true;
-            this.popGenresCB.Location = new System.Drawing.Point(389, 105);
+            this.popGenresCB.Location = new System.Drawing.Point(292, 85);
+            this.popGenresCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.popGenresCB.Name = "popGenresCB";
-            this.popGenresCB.Size = new System.Drawing.Size(164, 21);
+            this.popGenresCB.Size = new System.Drawing.Size(125, 17);
             this.popGenresCB.TabIndex = 7;
             this.popGenresCB.Text = "Most Popular Genres";
             this.popGenresCB.UseVisualStyleBackColor = true;
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(419, 163);
+            this.generateButton.Location = new System.Drawing.Point(314, 132);
+            this.generateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(134, 28);
+            this.generateButton.Size = new System.Drawing.Size(100, 23);
             this.generateButton.TabIndex = 8;
             this.generateButton.Text = "Generate Report";
             this.generateButton.UseVisualStyleBackColor = true;
@@ -130,18 +138,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(39, 238);
+            this.label2.Location = new System.Drawing.Point(29, 193);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Email:";
             // 
             // emailButton
             // 
             this.emailButton.Enabled = false;
-            this.emailButton.Location = new System.Drawing.Point(419, 232);
+            this.emailButton.Location = new System.Drawing.Point(314, 188);
+            this.emailButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailButton.Name = "emailButton";
-            this.emailButton.Size = new System.Drawing.Size(134, 28);
+            this.emailButton.Size = new System.Drawing.Size(100, 23);
             this.emailButton.TabIndex = 10;
             this.emailButton.Text = "Email Report";
             this.emailButton.UseVisualStyleBackColor = true;
@@ -150,24 +160,27 @@
             // emailBox
             // 
             this.emailBox.Enabled = false;
-            this.emailBox.Location = new System.Drawing.Point(91, 235);
+            this.emailBox.Location = new System.Drawing.Point(68, 191);
+            this.emailBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(322, 22);
+            this.emailBox.Size = new System.Drawing.Size(242, 20);
             this.emailBox.TabIndex = 11;
             // 
             // pdfPreviewer
             // 
-            this.pdfPreviewer.Location = new System.Drawing.Point(639, 42);
-            this.pdfPreviewer.MinimumSize = new System.Drawing.Size(20, 20);
+            this.pdfPreviewer.Location = new System.Drawing.Point(479, 34);
+            this.pdfPreviewer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pdfPreviewer.MinimumSize = new System.Drawing.Size(15, 16);
             this.pdfPreviewer.Name = "pdfPreviewer";
-            this.pdfPreviewer.Size = new System.Drawing.Size(831, 683);
+            this.pdfPreviewer.Size = new System.Drawing.Size(623, 555);
             this.pdfPreviewer.TabIndex = 12;
             // 
             // helpButton
             // 
-            this.helpButton.Location = new System.Drawing.Point(12, 694);
+            this.helpButton.Location = new System.Drawing.Point(9, 564);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(93, 31);
+            this.helpButton.Size = new System.Drawing.Size(70, 25);
             this.helpButton.TabIndex = 13;
             this.helpButton.Text = "Help";
             this.helpButton.UseVisualStyleBackColor = true;
@@ -175,9 +188,10 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(540, 694);
+            this.closeButton.Location = new System.Drawing.Point(405, 564);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(93, 31);
+            this.closeButton.Size = new System.Drawing.Size(70, 25);
             this.closeButton.TabIndex = 14;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -187,17 +201,18 @@
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(210, 421);
+            this.pictureBox1.Location = new System.Drawing.Point(158, 342);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 154);
+            this.pictureBox1.Size = new System.Drawing.Size(116, 125);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
             // ReportGenerator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1492, 737);
+            this.ClientSize = new System.Drawing.Size(1119, 599);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.helpButton);
@@ -213,6 +228,7 @@
             this.Controls.Add(this.nIncomeCB);
             this.Controls.Add(this.gIncomeCB);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ReportGenerator";
             this.Text = "Report Generator";
             this.Load += new System.EventHandler(this.ReportGenerator_Load);
