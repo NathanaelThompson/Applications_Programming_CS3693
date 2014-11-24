@@ -33,8 +33,21 @@ namespace Music_Store
         private void generateButton_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
+            if (rbGrossSales.Checked)
+                dt = ConnectionManager.GrossSales();
+            else if (rbMonthlySales.Checked)
+                dt = ConnectionManager.MonthlySales(DateTime.Now.ToString("MM"));
+            else if (rbMostPopGenre.Checked)
+                dt = ConnectionManager.PopularGenres();
+            else if (rbMostPopArtist.Checked)
+                dt = ConnectionManager.PopularArtists();
+            else if (rbEmployees.Checked)
+                dt = ConnectionManager.EmployeeSales();
+            else if (rbCustomers.Checked)
+                dt = ConnectionManager.CustomerSales();
+            else if (rbMostPopAlbum.Checked)
+                dt = ConnectionManager.PopularAlbums();
 
-            
             gvReports.DataSource = dt;
         }
 

@@ -41,15 +41,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbGrossSales = new System.Windows.Forms.RadioButton();
             this.rbMonthlySales = new System.Windows.Forms.RadioButton();
-            this.rbTopEmployee = new System.Windows.Forms.RadioButton();
-            this.rbBottomEmployee = new System.Windows.Forms.RadioButton();
+            this.rbEmployees = new System.Windows.Forms.RadioButton();
             this.rbMostPopGenre = new System.Windows.Forms.RadioButton();
-            this.rbLeastPopArtist = new System.Windows.Forms.RadioButton();
-            this.rbLeastPopGenre = new System.Windows.Forms.RadioButton();
             this.rbMostPopArtist = new System.Windows.Forms.RadioButton();
             this.rbMostPopAlbum = new System.Windows.Forms.RadioButton();
-            this.rbLeastPopAlbum = new System.Windows.Forms.RadioButton();
-            this.rbMostActiveCustomer = new System.Windows.Forms.RadioButton();
+            this.rbCustomers = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvReports)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -66,7 +62,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(196, 118);
+            this.generateButton.Location = new System.Drawing.Point(195, 90);
             this.generateButton.Margin = new System.Windows.Forms.Padding(2);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(100, 23);
@@ -120,7 +116,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(442, 562);
+            this.closeButton.Location = new System.Drawing.Point(424, 562);
             this.closeButton.Margin = new System.Windows.Forms.Padding(2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(70, 25);
@@ -143,29 +139,25 @@
             // gvReports
             // 
             this.gvReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvReports.Location = new System.Drawing.Point(534, 12);
+            this.gvReports.Location = new System.Drawing.Point(500, 12);
             this.gvReports.Name = "gvReports";
             this.gvReports.RowHeadersVisible = false;
-            this.gvReports.Size = new System.Drawing.Size(516, 575);
+            this.gvReports.Size = new System.Drawing.Size(550, 575);
             this.gvReports.TabIndex = 16;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbMostActiveCustomer);
+            this.groupBox1.Controls.Add(this.rbCustomers);
             this.groupBox1.Controls.Add(this.rbMostPopAlbum);
-            this.groupBox1.Controls.Add(this.rbLeastPopAlbum);
-            this.groupBox1.Controls.Add(this.rbLeastPopGenre);
             this.groupBox1.Controls.Add(this.rbMostPopArtist);
-            this.groupBox1.Controls.Add(this.rbLeastPopArtist);
             this.groupBox1.Controls.Add(this.rbMostPopGenre);
-            this.groupBox1.Controls.Add(this.rbBottomEmployee);
             this.groupBox1.Controls.Add(this.generateButton);
-            this.groupBox1.Controls.Add(this.rbTopEmployee);
+            this.groupBox1.Controls.Add(this.rbEmployees);
             this.groupBox1.Controls.Add(this.rbMonthlySales);
             this.groupBox1.Controls.Add(this.rbGrossSales);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(516, 157);
+            this.groupBox1.Size = new System.Drawing.Size(482, 128);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "What should be including in the report?";
@@ -192,60 +184,30 @@
             this.rbMonthlySales.Text = "Monthly Sales";
             this.rbMonthlySales.UseVisualStyleBackColor = true;
             // 
-            // rbTopEmployee
+            // rbEmployees
             // 
-            this.rbTopEmployee.AutoSize = true;
-            this.rbTopEmployee.Location = new System.Drawing.Point(105, 31);
-            this.rbTopEmployee.Name = "rbTopEmployee";
-            this.rbTopEmployee.Size = new System.Drawing.Size(127, 17);
-            this.rbTopEmployee.TabIndex = 2;
-            this.rbTopEmployee.Text = "Top-Selling Employee";
-            this.rbTopEmployee.UseVisualStyleBackColor = true;
-            // 
-            // rbBottomEmployee
-            // 
-            this.rbBottomEmployee.AutoSize = true;
-            this.rbBottomEmployee.Location = new System.Drawing.Point(105, 54);
-            this.rbBottomEmployee.Name = "rbBottomEmployee";
-            this.rbBottomEmployee.Size = new System.Drawing.Size(141, 17);
-            this.rbBottomEmployee.TabIndex = 3;
-            this.rbBottomEmployee.Text = "Bottom-Selling Employee";
-            this.rbBottomEmployee.UseVisualStyleBackColor = true;
+            this.rbEmployees.AutoSize = true;
+            this.rbEmployees.Location = new System.Drawing.Point(105, 31);
+            this.rbEmployees.Name = "rbEmployees";
+            this.rbEmployees.Size = new System.Drawing.Size(100, 17);
+            this.rbEmployees.TabIndex = 2;
+            this.rbEmployees.Text = "Employee Sales";
+            this.rbEmployees.UseVisualStyleBackColor = true;
             // 
             // rbMostPopGenre
             // 
             this.rbMostPopGenre.AutoSize = true;
-            this.rbMostPopGenre.Location = new System.Drawing.Point(249, 31);
+            this.rbMostPopGenre.Location = new System.Drawing.Point(211, 31);
             this.rbMostPopGenre.Name = "rbMostPopGenre";
             this.rbMostPopGenre.Size = new System.Drawing.Size(124, 17);
             this.rbMostPopGenre.TabIndex = 4;
             this.rbMostPopGenre.Text = "Most Popular Genres";
             this.rbMostPopGenre.UseVisualStyleBackColor = true;
             // 
-            // rbLeastPopArtist
-            // 
-            this.rbLeastPopArtist.AutoSize = true;
-            this.rbLeastPopArtist.Location = new System.Drawing.Point(379, 54);
-            this.rbLeastPopArtist.Name = "rbLeastPopArtist";
-            this.rbLeastPopArtist.Size = new System.Drawing.Size(121, 17);
-            this.rbLeastPopArtist.TabIndex = 5;
-            this.rbLeastPopArtist.Text = "Least Popular Artists";
-            this.rbLeastPopArtist.UseVisualStyleBackColor = true;
-            // 
-            // rbLeastPopGenre
-            // 
-            this.rbLeastPopGenre.AutoSize = true;
-            this.rbLeastPopGenre.Location = new System.Drawing.Point(379, 31);
-            this.rbLeastPopGenre.Name = "rbLeastPopGenre";
-            this.rbLeastPopGenre.Size = new System.Drawing.Size(127, 17);
-            this.rbLeastPopGenre.TabIndex = 7;
-            this.rbLeastPopGenre.Text = "Least Popular Genres";
-            this.rbLeastPopGenre.UseVisualStyleBackColor = true;
-            // 
             // rbMostPopArtist
             // 
             this.rbMostPopArtist.AutoSize = true;
-            this.rbMostPopArtist.Location = new System.Drawing.Point(249, 54);
+            this.rbMostPopArtist.Location = new System.Drawing.Point(211, 54);
             this.rbMostPopArtist.Name = "rbMostPopArtist";
             this.rbMostPopArtist.Size = new System.Drawing.Size(118, 17);
             this.rbMostPopArtist.TabIndex = 6;
@@ -255,32 +217,22 @@
             // rbMostPopAlbum
             // 
             this.rbMostPopAlbum.AutoSize = true;
-            this.rbMostPopAlbum.Location = new System.Drawing.Point(249, 77);
+            this.rbMostPopAlbum.Location = new System.Drawing.Point(341, 31);
             this.rbMostPopAlbum.Name = "rbMostPopAlbum";
             this.rbMostPopAlbum.Size = new System.Drawing.Size(124, 17);
             this.rbMostPopAlbum.TabIndex = 9;
             this.rbMostPopAlbum.Text = "Most Popular Albums";
             this.rbMostPopAlbum.UseVisualStyleBackColor = true;
             // 
-            // rbLeastPopAlbum
+            // rbCustomers
             // 
-            this.rbLeastPopAlbum.AutoSize = true;
-            this.rbLeastPopAlbum.Location = new System.Drawing.Point(379, 77);
-            this.rbLeastPopAlbum.Name = "rbLeastPopAlbum";
-            this.rbLeastPopAlbum.Size = new System.Drawing.Size(127, 17);
-            this.rbLeastPopAlbum.TabIndex = 8;
-            this.rbLeastPopAlbum.Text = "Least Popular Albums";
-            this.rbLeastPopAlbum.UseVisualStyleBackColor = true;
-            // 
-            // rbMostActiveCustomer
-            // 
-            this.rbMostActiveCustomer.AutoSize = true;
-            this.rbMostActiveCustomer.Location = new System.Drawing.Point(6, 77);
-            this.rbMostActiveCustomer.Name = "rbMostActiveCustomer";
-            this.rbMostActiveCustomer.Size = new System.Drawing.Size(128, 17);
-            this.rbMostActiveCustomer.TabIndex = 10;
-            this.rbMostActiveCustomer.Text = "Most Active Customer";
-            this.rbMostActiveCustomer.UseVisualStyleBackColor = true;
+            this.rbCustomers.AutoSize = true;
+            this.rbCustomers.Location = new System.Drawing.Point(105, 54);
+            this.rbCustomers.Name = "rbCustomers";
+            this.rbCustomers.Size = new System.Drawing.Size(74, 17);
+            this.rbCustomers.TabIndex = 10;
+            this.rbCustomers.Text = "Customers";
+            this.rbCustomers.UseVisualStyleBackColor = true;
             // 
             // ReportGenerator
             // 
@@ -324,15 +276,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView gvReports;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbMostActiveCustomer;
+        private System.Windows.Forms.RadioButton rbCustomers;
         private System.Windows.Forms.RadioButton rbMostPopAlbum;
-        private System.Windows.Forms.RadioButton rbLeastPopAlbum;
-        private System.Windows.Forms.RadioButton rbLeastPopGenre;
         private System.Windows.Forms.RadioButton rbMostPopArtist;
-        private System.Windows.Forms.RadioButton rbLeastPopArtist;
         private System.Windows.Forms.RadioButton rbMostPopGenre;
-        private System.Windows.Forms.RadioButton rbBottomEmployee;
-        private System.Windows.Forms.RadioButton rbTopEmployee;
+        private System.Windows.Forms.RadioButton rbEmployees;
         private System.Windows.Forms.RadioButton rbMonthlySales;
         private System.Windows.Forms.RadioButton rbGrossSales;
     }

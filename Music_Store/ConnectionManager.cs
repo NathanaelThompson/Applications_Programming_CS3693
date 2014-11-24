@@ -389,31 +389,47 @@ namespace Music_Store
             return false;
         }
 
-        public static Decimal grossIncome()
+        public static DataTable GrossSales()
         {
             SQLiteDataAdapter ad;
             DataTable dt = new DataTable();
-
-            Decimal income = 0;
-
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT Total From MusicOrder";
+                cmd.CommandText = "select musicOrder.employeeId from musicOrder " +
+                    "group by musicOrder.employeeId order by sum(musicOrder.total) " +
+                    "desc limit 1";
+                int topEmployee = Int32.Parse(cmd.ExecuteScalar().ToString());
+                cmd.CommandText = "select sum(musicOrder.total) as 'Gross Sales', count(musicOrder.OrderID) " + 
+                    "as 'Number of Sales', (select count(Cart.AlbumId) from Cart) as 'Number of Albums', " + 
+                    "(select employee.loginID from employee where employee.EmployeeID == " + topEmployee + ") " +
+                    "as 'Top Employee To Date' from musicOrder";
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
+            return dt;
+        }
 
-            for (int i = 0; i < dt.Rows.Count;i++ )
+        public static DataTable MonthlySales(string month)
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
             {
-                string t = dt.Rows[i].ItemArray[0].ToString();
-                t = t.Trim('$');
-                Decimal temp = Decimal.Parse(t);
-
-                income += temp;
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select musicOrder.employeeId, sum(musicOrder.total) from musicOrder " +
+                    "where musicorder.orderdate like '" + month + "%' group by musicOrder.employeeId " +
+                    "order by sum(musicOrder.total) desc limit 1";
+                int topEmployee = Int32.Parse(cmd.ExecuteScalar().ToString());
+                cmd.CommandText = "select sum(musicOrder.total) as 'Gross Sales', count(musicOrder.OrderID) " + 
+                    "as 'Number of Sales', (select count(cart.cartID) from Cart join musicOrder on cart.cartID = " +
+                    "musicOrder.cartId where musicOrder.orderdate like '" + month + "%') as 'Number of Albums', " + 
+                    "(select employee.loginID from employee where employee.EmployeeID == " + topEmployee + ") as " + 
+                    "'Top Employee To Date' from musicOrder where musicOrder.orderdate like '" + month + "%'";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
             }
-
-            return income;
+            return dt;
         }
 
         public static DataTable PopularGenres()
@@ -423,7 +439,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select genre.name as 'Genre', count(genre.name) as 'Genres Albums Sold'  from Cart " + 
+                cmd.CommandText = "select genre.name as 'Genre', count(genre.name) as 'Albums Sold'  from Cart " + 
                     "join Album on cart.albumId = album.albumID join Genre on album.genreId " + 
                     "= genre.genreID group by Genre.name order by count(genre.name) desc";
                 ad = new SQLiteDataAdapter(cmd);
@@ -440,7 +456,7 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select artist.name as 'Artist', count(artist.name) as 'Artists Albums Sold'  from Cart " +
+                cmd.CommandText = "select artist.name as 'Artist', count(artist.name) as 'Albums Sold'  from Cart " +
                     "join Album on cart.albumId = album.albumID join Artist on Album.artistId = artist.artistID " +
                     "group by artist.name order by count(artist.name) desc";
                 ad = new SQLiteDataAdapter(cmd);
@@ -448,7 +464,60 @@ namespace Music_Store
             }
 
             return dt;
-        }   
+        }
+
+        public static DataTable PopularAlbums()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select Album.title as 'Album', count(album.title) as 'Albums Sold' " +
+                    "from album join cart on album.albumID = cart.albumId group by album.title " + 
+                    "order by count(album.title) desc";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable EmployeeSales()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select Employee.loginID as 'Employee', sum(musicOrder.total) as " + 
+                    "'Gross Sales', count(musicOrder.OrderID) as 'Number of Sales' from Employee " +
+                    "join musicOrder on employee.employeeID = musicOrder.employeeId group by " + 
+                    "musicOrder.employeeId order by sum(musicOrder.total) desc";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
+
+        public static DataTable CustomerSales()
+        {
+            SQLiteDataAdapter ad;
+            DataTable dt = new DataTable();
+            using (SQLiteConnection conn = getConnection())
+            {
+                SQLiteCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "select customer.lastName as 'Last Name', customer.firstName as 'First Name', " + 
+                    "sum(musicorder.total) as 'Total Spent', count(musicorder.orderid) as 'Total Purchases' " + 
+                    "from customer join musicOrder on customer.customerID = musicOrder.customerId group by " + 
+                    "musicOrder.customerId order by sum(musicOrder.total) desc";
+                ad = new SQLiteDataAdapter(cmd);
+                ad.Fill(dt);
+            }
+
+            return dt;
+        }
     }
     
 }
