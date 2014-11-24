@@ -124,7 +124,7 @@
             this.GuestLogin.TabIndex = 7;
             this.GuestLogin.Text = "Login as Guest";
             this.GuestLogin.UseVisualStyleBackColor = false;
-            this.GuestLogin.Click += new System.EventHandler(this.button1_Click);
+            this.GuestLogin.Click += new System.EventHandler(this.guestLogin_Click);
             // 
             // formLogin
             // 
