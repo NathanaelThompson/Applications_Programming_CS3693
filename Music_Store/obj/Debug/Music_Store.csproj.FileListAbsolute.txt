@@ -129,3 +129,4 @@ C:\Users\tscovill\Documents\GitHub\Applications_Programming_CS3693\Music_Store\o
 C:\Users\tscovill\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.ReportGenerator.resources
 C:\Users\tscovill\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.formSearchScreen.resources
 C:\Users\tscovill\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csproj.GenerateResource.Cache
+C:\Users\nate\Documents\GitHub\Applications_Programming_CS3693\Music_Store\obj\Debug\Music_Store.csprojResolveAssemblyReference.cache
