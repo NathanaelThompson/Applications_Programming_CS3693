@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportGenerator));
             this.label1 = new System.Windows.Forms.Label();
             this.generateButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,8 +35,6 @@
             this.emailBox = new System.Windows.Forms.TextBox();
             this.helpButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gvReports = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbCustomers = new System.Windows.Forms.RadioButton();
             this.rbMostPopAlbum = new System.Windows.Forms.RadioButton();
@@ -46,9 +43,10 @@
             this.rbEmployees = new System.Windows.Forms.RadioButton();
             this.rbMonthlySales = new System.Windows.Forms.RadioButton();
             this.rbGrossSales = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvReports)).BeginInit();
+            this.reportViewer = new System.Windows.Forms.WebBrowser();
+            this.gvReports = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvReports)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,28 +118,6 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(237, 370);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 185);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // gvReports
-            // 
-            this.gvReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvReports.Location = new System.Drawing.Point(667, 15);
-            this.gvReports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gvReports.Name = "gvReports";
-            this.gvReports.RowHeadersVisible = false;
-            this.gvReports.Size = new System.Drawing.Size(733, 708);
-            this.gvReports.TabIndex = 16;
-            this.gvReports.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvReports_CellContentClick);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbCustomers);
@@ -153,9 +129,9 @@
             this.groupBox1.Controls.Add(this.rbMonthlySales);
             this.groupBox1.Controls.Add(this.rbGrossSales);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(643, 158);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
@@ -165,7 +141,7 @@
             // 
             this.rbCustomers.AutoSize = true;
             this.rbCustomers.Location = new System.Drawing.Point(140, 66);
-            this.rbCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbCustomers.Margin = new System.Windows.Forms.Padding(4);
             this.rbCustomers.Name = "rbCustomers";
             this.rbCustomers.Size = new System.Drawing.Size(96, 21);
             this.rbCustomers.TabIndex = 10;
@@ -176,7 +152,7 @@
             // 
             this.rbMostPopAlbum.AutoSize = true;
             this.rbMostPopAlbum.Location = new System.Drawing.Point(455, 38);
-            this.rbMostPopAlbum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMostPopAlbum.Margin = new System.Windows.Forms.Padding(4);
             this.rbMostPopAlbum.Name = "rbMostPopAlbum";
             this.rbMostPopAlbum.Size = new System.Drawing.Size(162, 21);
             this.rbMostPopAlbum.TabIndex = 9;
@@ -187,7 +163,7 @@
             // 
             this.rbMostPopArtist.AutoSize = true;
             this.rbMostPopArtist.Location = new System.Drawing.Point(281, 66);
-            this.rbMostPopArtist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMostPopArtist.Margin = new System.Windows.Forms.Padding(4);
             this.rbMostPopArtist.Name = "rbMostPopArtist";
             this.rbMostPopArtist.Size = new System.Drawing.Size(155, 21);
             this.rbMostPopArtist.TabIndex = 6;
@@ -198,7 +174,7 @@
             // 
             this.rbMostPopGenre.AutoSize = true;
             this.rbMostPopGenre.Location = new System.Drawing.Point(281, 38);
-            this.rbMostPopGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMostPopGenre.Margin = new System.Windows.Forms.Padding(4);
             this.rbMostPopGenre.Name = "rbMostPopGenre";
             this.rbMostPopGenre.Size = new System.Drawing.Size(163, 21);
             this.rbMostPopGenre.TabIndex = 4;
@@ -209,7 +185,7 @@
             // 
             this.rbEmployees.AutoSize = true;
             this.rbEmployees.Location = new System.Drawing.Point(140, 38);
-            this.rbEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.rbEmployees.Name = "rbEmployees";
             this.rbEmployees.Size = new System.Drawing.Size(130, 21);
             this.rbEmployees.TabIndex = 2;
@@ -220,7 +196,7 @@
             // 
             this.rbMonthlySales.AutoSize = true;
             this.rbMonthlySales.Location = new System.Drawing.Point(8, 66);
-            this.rbMonthlySales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbMonthlySales.Margin = new System.Windows.Forms.Padding(4);
             this.rbMonthlySales.Name = "rbMonthlySales";
             this.rbMonthlySales.Size = new System.Drawing.Size(117, 21);
             this.rbMonthlySales.TabIndex = 1;
@@ -232,7 +208,7 @@
             this.rbGrossSales.AutoSize = true;
             this.rbGrossSales.Checked = true;
             this.rbGrossSales.Location = new System.Drawing.Point(9, 38);
-            this.rbGrossSales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbGrossSales.Margin = new System.Windows.Forms.Padding(4);
             this.rbGrossSales.Name = "rbGrossSales";
             this.rbGrossSales.Size = new System.Drawing.Size(106, 21);
             this.rbGrossSales.TabIndex = 0;
@@ -240,14 +216,31 @@
             this.rbGrossSales.Text = "Gross Sales";
             this.rbGrossSales.UseVisualStyleBackColor = true;
             // 
+            // reportViewer
+            // 
+            this.reportViewer.Location = new System.Drawing.Point(696, 15);
+            this.reportViewer.MinimumSize = new System.Drawing.Size(20, 20);
+            this.reportViewer.Name = "reportViewer";
+            this.reportViewer.Size = new System.Drawing.Size(703, 708);
+            this.reportViewer.TabIndex = 11;
+            // 
+            // gvReports
+            // 
+            this.gvReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvReports.Location = new System.Drawing.Point(42, 303);
+            this.gvReports.Name = "gvReports";
+            this.gvReports.RowTemplate.Height = 24;
+            this.gvReports.Size = new System.Drawing.Size(617, 277);
+            this.gvReports.TabIndex = 18;
+            // 
             // ReportGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1411, 737);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gvReports);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.reportViewer);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.emailBox);
@@ -261,10 +254,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report Generator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportGenerator_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvReports)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvReports)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,8 +271,6 @@
         private System.Windows.Forms.TextBox emailBox;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView gvReports;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbCustomers;
         private System.Windows.Forms.RadioButton rbMostPopAlbum;
@@ -289,5 +279,7 @@
         private System.Windows.Forms.RadioButton rbEmployees;
         private System.Windows.Forms.RadioButton rbMonthlySales;
         private System.Windows.Forms.RadioButton rbGrossSales;
+        private System.Windows.Forms.WebBrowser reportViewer;
+        private System.Windows.Forms.DataGridView gvReports;
     }
 }

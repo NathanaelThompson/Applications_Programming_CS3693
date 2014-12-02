@@ -417,9 +417,9 @@ namespace Music_Store
             using (SQLiteConnection conn = getConnection())
             {
                 SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "select musicOrder.employeeId, sum(musicOrder.total) from musicOrder " +
-                    "where musicorder.orderdate like '" + month + "%' group by musicOrder.employeeId " +
-                    "order by sum(musicOrder.total) desc limit 1";
+                cmd.CommandText = "SELECT MusicOrder.EmployeeId, SUM(MusicOrder.Total) FROM MusicOrder " +
+                    "WHERE MusicOrder.OrderDate LIKE '" + month + "' GROUP BY MusicOrder.EmployeeId " +
+                    "ORDER BY SUM(MusicOrder.Total) DESC LIMIT 1";
                 int topEmployee = Int32.Parse(cmd.ExecuteScalar().ToString());
                 cmd.CommandText = "select sum(musicOrder.total) as 'Gross Sales', count(musicOrder.OrderID) " + 
                     "as 'Number of Sales', (select count(cart.cartID) from Cart join musicOrder on cart.cartID = " +
