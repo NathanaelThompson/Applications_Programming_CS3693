@@ -44,6 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTax = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cartDGV = new System.Windows.Forms.DataGridView();
+            this.removeItemCartBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddCart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,14 +57,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbArtist = new System.Windows.Forms.ComboBox();
             this.lblLogInStatus = new System.Windows.Forms.Label();
-            this.removeItemCartBtn = new System.Windows.Forms.Button();
-            this.cartDGV = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             this.gbSale.SuspendLayout();
             this.gbTotal.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArtwork)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCustomer
@@ -252,6 +253,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cartDGV);
             this.groupBox1.Controls.Add(this.removeItemCartBtn);
             this.groupBox1.Controls.Add(this.label3);
@@ -272,7 +274,31 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Album";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cartDGV
+            // 
+            this.cartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cartDGV.Location = new System.Drawing.Point(31, 350);
+            this.cartDGV.Name = "cartDGV";
+            this.cartDGV.RowTemplate.Height = 24;
+            this.cartDGV.Size = new System.Drawing.Size(802, 150);
+            this.cartDGV.TabIndex = 22;
+            // 
+            // removeItemCartBtn
+            // 
+            this.removeItemCartBtn.BackColor = System.Drawing.Color.Salmon;
+            this.removeItemCartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeItemCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeItemCartBtn.Location = new System.Drawing.Point(299, 246);
+            this.removeItemCartBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.removeItemCartBtn.Name = "removeItemCartBtn";
+            this.removeItemCartBtn.Size = new System.Drawing.Size(213, 62);
+            this.removeItemCartBtn.TabIndex = 21;
+            this.removeItemCartBtn.Text = "Remove Item from Cart";
+            this.removeItemCartBtn.UseVisualStyleBackColor = false;
+            this.removeItemCartBtn.Click += new System.EventHandler(this.removeItemCartBtn_Click);
             // 
             // label3
             // 
@@ -393,29 +419,15 @@
             this.lblLogInStatus.TabIndex = 5;
             this.lblLogInStatus.Text = "Logged In As [username]";
             // 
-            // removeItemCartBtn
+            // label5
             // 
-            this.removeItemCartBtn.BackColor = System.Drawing.Color.Salmon;
-            this.removeItemCartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeItemCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeItemCartBtn.Location = new System.Drawing.Point(299, 246);
-            this.removeItemCartBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.removeItemCartBtn.Name = "removeItemCartBtn";
-            this.removeItemCartBtn.Size = new System.Drawing.Size(213, 62);
-            this.removeItemCartBtn.TabIndex = 21;
-            this.removeItemCartBtn.Text = "Remove Item from Cart";
-            this.removeItemCartBtn.UseVisualStyleBackColor = false;
-            this.removeItemCartBtn.Click += new System.EventHandler(this.removeItemCartBtn_Click);
-            // 
-            // cartDGV
-            // 
-            this.cartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cartDGV.Location = new System.Drawing.Point(31, 350);
-            this.cartDGV.Name = "cartDGV";
-            this.cartDGV.RowTemplate.Height = 24;
-            this.cartDGV.Size = new System.Drawing.Size(802, 150);
-            this.cartDGV.TabIndex = 22;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(296, 312);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(322, 17);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "*Select a row to remove before clicking this button";
             // 
             // formCheckout
             // 
@@ -441,9 +453,9 @@
             this.gbTotal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cartDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArtwork)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,5 +491,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button removeItemCartBtn;
         private System.Windows.Forms.DataGridView cartDGV;
+        private System.Windows.Forms.Label label5;
     }
 }

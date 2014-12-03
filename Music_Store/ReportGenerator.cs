@@ -198,11 +198,11 @@ namespace Music_Store
 
             gvReports.DataSource = dt;
             StringBuilder sb = new StringBuilder();
-            
+
             sb.Append("<table border = 1>");
-            
+
             //creates a table containing information added
-            for (int i = 0; i<dt.Rows.Count; i++)
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
                 sb.Append("<tr>");
                 if (i == 0)
@@ -226,8 +226,11 @@ namespace Music_Store
             sb.Append("<p></p><p>--------------------------</p><p></p>");
             int lastIndex = tablesAsStrings.IndexOf(lastElement);
             tablesAsStrings.Insert(lastIndex, sb);
-            MessageBox.Show("Data added to report. Click generate to view the file or continue editing data.",
-                "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (tablesAsStrings.Count <= 3)
+            {
+                MessageBox.Show("Data added to report. Click generate to view the file or continue editing data.",
+                    "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         //adds the information selected to the preview DGV

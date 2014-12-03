@@ -31,7 +31,7 @@ namespace Music_Store
             SQLiteDataAdapter ad;
             DataTable dt;
             if (rbArtist.Checked == true)
-            {
+            {//searches for artists
                 dt = new DataTable();
                 using (SQLiteConnection conn = ConnectionManager.getConnection())
                 {
@@ -43,7 +43,7 @@ namespace Music_Store
                 }
             }
             else if (rbAlbums.Checked == true)
-            {
+            {//searches for albums
                 dt = new DataTable();
                 using (SQLiteConnection conn = ConnectionManager.getConnection())
                 {
@@ -55,7 +55,7 @@ namespace Music_Store
                 }
             }
             else if (rbGenre.Checked == true)
-            {
+            {//searches for genres
                 dt = new DataTable();
                 using (SQLiteConnection conn = ConnectionManager.getConnection())
                 {
@@ -67,7 +67,7 @@ namespace Music_Store
                 }
             }
             else if(rbOrder.Checked == true)
-            {
+            {//searches for orders
                 dt = new DataTable();
                 using (SQLiteConnection conn = ConnectionManager.getConnection())
                 {
@@ -79,7 +79,7 @@ namespace Music_Store
                 }
             }
             else if (rbCustomer.Checked == true)
-            {
+            {//searches for customers
                 dt = new DataTable();
                 using (SQLiteConnection conn = ConnectionManager.getConnection())
                 {
@@ -91,7 +91,7 @@ namespace Music_Store
                 }
             }
             else if (rbEmployee.Checked == true)
-            {
+            {//searches for employees
                 dt = new DataTable();
                 using (SQLiteConnection conn = ConnectionManager.getConnection())
                 {

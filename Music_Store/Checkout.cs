@@ -92,6 +92,7 @@ namespace Music_Store
             foreach(string[] itemArr in itemsInDGVCart)
             {
                 subTotal += double.Parse(itemArr[2].Substring(1, itemArr[2].Length - 1));
+                subTotal *= int.Parse(itemArr[3]);
             }
 
             txtSubtotal.Text = string.Format("{0:C}", subTotal);
@@ -105,7 +106,7 @@ namespace Music_Store
         private void btnAddCart_Click(object sender, EventArgs e)
         {
 
-            if (numQuantity.Value <= 0)
+            if (numQuantity.Value != 0)
             {
                 double amount = double.Parse(txtAlbumPrice.Text.Substring(1, txtAlbumPrice.Text.Length - 1));
 
@@ -113,7 +114,7 @@ namespace Music_Store
                 items[0] = cbArtist.Text;
                 items[1] = cbAlbum.Text;
                 items[2] = string.Format("{0:C}", amount);
-                items[3] = "x " + numQuantity.Value.ToString();
+                items[3] = numQuantity.Value.ToString();
                 items[4] = string.Format("{0:C}", (amount * (int)numQuantity.Value));
                 items[5] = cbAlbum.SelectedValue.ToString();
                 itemsInDGVCart.Add(items);
@@ -217,11 +218,7 @@ namespace Music_Store
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        
         //upon loading, the cart DataGridView gets its columns setup
         private void formCheckout_Load(object sender, EventArgs e)
         {
