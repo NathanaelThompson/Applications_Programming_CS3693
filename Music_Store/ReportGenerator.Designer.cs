@@ -36,6 +36,7 @@
             this.helpButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.previewButton = new System.Windows.Forms.Button();
             this.rbCustomers = new System.Windows.Forms.RadioButton();
             this.rbMostPopAlbum = new System.Windows.Forms.RadioButton();
             this.rbMostPopArtist = new System.Windows.Forms.RadioButton();
@@ -45,6 +46,8 @@
             this.rbGrossSales = new System.Windows.Forms.RadioButton();
             this.reportViewer = new System.Windows.Forms.WebBrowser();
             this.gvReports = new System.Windows.Forms.DataGridView();
+            this.addButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvReports)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +62,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(260, 111);
+            this.generateButton.Location = new System.Drawing.Point(509, 576);
             this.generateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(133, 28);
@@ -71,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 238);
+            this.label2.Location = new System.Drawing.Point(39, 619);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 9;
@@ -79,7 +82,7 @@
             // 
             // emailButton
             // 
-            this.emailButton.Location = new System.Drawing.Point(465, 231);
+            this.emailButton.Location = new System.Drawing.Point(509, 608);
             this.emailButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailButton.Name = "emailButton";
             this.emailButton.Size = new System.Drawing.Size(133, 28);
@@ -90,7 +93,7 @@
             // 
             // emailBox
             // 
-            this.emailBox.Location = new System.Drawing.Point(137, 235);
+            this.emailBox.Location = new System.Drawing.Point(91, 616);
             this.emailBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(321, 22);
@@ -120,11 +123,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.previewButton);
             this.groupBox1.Controls.Add(this.rbCustomers);
             this.groupBox1.Controls.Add(this.rbMostPopAlbum);
             this.groupBox1.Controls.Add(this.rbMostPopArtist);
             this.groupBox1.Controls.Add(this.rbMostPopGenre);
-            this.groupBox1.Controls.Add(this.generateButton);
             this.groupBox1.Controls.Add(this.rbEmployees);
             this.groupBox1.Controls.Add(this.rbMonthlySales);
             this.groupBox1.Controls.Add(this.rbGrossSales);
@@ -136,6 +139,16 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "What should be including in the report?";
+            // 
+            // previewButton
+            // 
+            this.previewButton.Location = new System.Drawing.Point(9, 118);
+            this.previewButton.Name = "previewButton";
+            this.previewButton.Size = new System.Drawing.Size(86, 23);
+            this.previewButton.TabIndex = 13;
+            this.previewButton.Text = "Preview";
+            this.previewButton.UseVisualStyleBackColor = true;
+            this.previewButton.Click += new System.EventHandler(this.previewButton_Click);
             // 
             // rbCustomers
             // 
@@ -227,11 +240,30 @@
             // gvReports
             // 
             this.gvReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvReports.Location = new System.Drawing.Point(42, 303);
+            this.gvReports.Location = new System.Drawing.Point(25, 218);
             this.gvReports.Name = "gvReports";
             this.gvReports.RowTemplate.Height = 24;
             this.gvReports.Size = new System.Drawing.Size(617, 277);
             this.gvReports.TabIndex = 18;
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(25, 501);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(86, 23);
+            this.addButton.TabIndex = 11;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(117, 501);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(87, 23);
+            this.removeButton.TabIndex = 12;
+            this.removeButton.Text = "Remove";
+            this.removeButton.UseVisualStyleBackColor = true;
             // 
             // ReportGenerator
             // 
@@ -239,9 +271,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1411, 737);
             this.Controls.Add(this.gvReports);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.reportViewer);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.generateButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.emailBox);
             this.Controls.Add(this.emailButton);
@@ -254,6 +289,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report Generator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportGenerator_FormClosing);
+            this.Load += new System.EventHandler(this.ReportGenerator_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvReports)).EndInit();
@@ -281,5 +317,8 @@
         private System.Windows.Forms.RadioButton rbGrossSales;
         private System.Windows.Forms.WebBrowser reportViewer;
         private System.Windows.Forms.DataGridView gvReports;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button previewButton;
     }
 }

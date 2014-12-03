@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using System.IO;
 
 namespace Music_Store
 {
@@ -34,27 +35,32 @@ namespace Music_Store
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            if (rbGrossSales.Checked)
-                dt = ConnectionManager.GrossSales();
-            else if (rbMonthlySales.Checked)
-                dt = ConnectionManager.MonthlySales(DateTime.Now.ToString("MM"));
-            else if (rbMostPopGenre.Checked)
-                dt = ConnectionManager.PopularGenres();
-            else if (rbMostPopArtist.Checked)
-                dt = ConnectionManager.PopularArtists();
-            else if (rbEmployees.Checked)
-                dt = ConnectionManager.EmployeeSales();
-            else if (rbCustomers.Checked)
-                dt = ConnectionManager.CustomerSales();
-            else if (rbMostPopAlbum.Checked)
-                dt = ConnectionManager.PopularAlbums();
-
-            gvReports.DataSource = dt;
+            try
+            {
+                using (StreamWriter sw = new StreamWriter("placeholderHtmlFile.html", true))
+                {
+                    foreach (StringBuilder sb in tablesAsStrings)
+                    {
+                        sw.WriteLine(sb.ToString());
+                    }
+                }
+                string filePath = Path.Combine(Application.StartupPath, "placeholderHtmlFile.html");
+                reportViewer.Navigate(filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("", "", MessageBoxButtons.OK);
+            }
         }
 
         private void emailButton_Click(object sender, EventArgs e)
         {
+
+            if (tablesAsStrings.Count <= 2)
+            {
+                MessageBox.Show("You must generate a report before you can email a report.", "Input Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             //Create new mail message and attachment
             MailMessage mail = new MailMessage();
             Attachment attachment = new Attachment("placeholderHtmlFile.html");
@@ -109,6 +115,91 @@ namespace Music_Store
         private void gvReports_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        DataTable dt = new DataTable();
+        List<StringBuilder> tablesAsStrings = new List<StringBuilder>();
+        int tableCount = 0;
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            StringBuilder firstElement, lastElement;
+
+            if (tablesAsStrings.Count == 0)
+            {
+
+                firstElement = new StringBuilder();
+                firstElement.Append("<html><body>");
+                tablesAsStrings.Add(firstElement);
+
+                lastElement = new StringBuilder();
+                lastElement.Append("</body></html>");
+                tablesAsStrings.Add(lastElement);
+            }
+            else
+            {
+                lastElement = tablesAsStrings[tablesAsStrings.Count - 1];
+            }
+            //reportViewer.Navigate("placeholderHtmlFile.html");
+            StringBuilder sb = new StringBuilder();
+            
+            //HtmlElement tableRow = null;
+            //HtmlElement headerElem = null;
+            
+            //HtmlDocument htmlDoc = reportViewer.Document;
+            //HtmlElement tableElem = htmlDoc.CreateElement("TABLE");
+            //htmlDoc.Body.AppendChild(tableElem);
+            
+            //HtmlElement tableHeader = htmlDoc.CreateElement("THEAD");
+            //tableElem.AppendChild(tableHeader);
+            //tableRow = htmlDoc.CreateElement("TR");
+            //tableHeader.AppendChild(tableRow);
+            
+            sb.Append("<table border = 1>");
+            
+            for (int i = 0; i<dt.Rows.Count; i++)
+            {
+                sb.Append("<tr>");
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    sb.Append("<td>");
+                    sb.Append(dt.Rows[i][j].ToString());
+                    sb.Append("</td>");
+                }
+                sb.Append("</tr>");
+            }
+            sb.Append("</table>");
+            
+            int lastIndex = tablesAsStrings.IndexOf(lastElement);
+            tablesAsStrings.Insert(lastIndex, sb);
+            MessageBox.Show("Data added to report. Click generate to view the file or continue editing data.",
+                "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void previewButton_Click(object sender, EventArgs e)
+        {
+            if (rbGrossSales.Checked)
+                dt = ConnectionManager.GrossSales();
+            else if (rbMonthlySales.Checked)
+                dt = ConnectionManager.MonthlySales(DateTime.Now.ToString("MM"));
+            else if (rbMostPopGenre.Checked)
+                dt = ConnectionManager.PopularGenres();
+            else if (rbMostPopArtist.Checked)
+                dt = ConnectionManager.PopularArtists();
+            else if (rbEmployees.Checked)
+                dt = ConnectionManager.EmployeeSales();
+            else if (rbCustomers.Checked)
+                dt = ConnectionManager.CustomerSales();
+            else if (rbMostPopAlbum.Checked)
+                dt = ConnectionManager.PopularAlbums();
+
+            gvReports.DataSource = dt;
+        }
+
+        private void ReportGenerator_Load(object sender, EventArgs e)
+        {
+            string filePath = Path.Combine(Application.StartupPath, "placeholderHtmlFile.html");
+            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
+            {}
         }
 
 
