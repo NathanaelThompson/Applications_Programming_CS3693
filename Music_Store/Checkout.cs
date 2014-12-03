@@ -106,7 +106,7 @@ namespace Music_Store
         private void btnAddCart_Click(object sender, EventArgs e)
         {
 
-            if (numQuantity.Value != 0)
+            if (numQuantity.Value > 0)
             {
                 double amount = double.Parse(txtAlbumPrice.Text.Substring(1, txtAlbumPrice.Text.Length - 1));
 
@@ -120,20 +120,18 @@ namespace Music_Store
                 itemsInDGVCart.Add(items);
 
                 //Processing each item in the itemsInDGVCart list into the cart DGV
-                for (int i = 0; i < itemsInDGVCart.Count; i++)
+                string[] tempItem = itemsInDGVCart[itemsInDGVCart.Count - 1];
+                string[] row = new string[]
                 {
-                    string[] tempItem = itemsInDGVCart[i];
-                    string[] row = new string[]{
-                        tempItem[0].ToString(),
-                        tempItem[1].ToString(),
-                        tempItem[2].ToString(),
-                        tempItem[3].ToString(),
-                        tempItem[4].ToString(),
-                        tempItem[5].ToString()
-                    };
-                    grid = cartDGV;
-                    grid.Rows.Add(row);
-                }
+                    tempItem[0].ToString(),
+                    tempItem[1].ToString(),
+                    tempItem[2].ToString(),
+                    tempItem[3].ToString(),
+                    tempItem[4].ToString(),
+                    tempItem[5].ToString()
+                };
+                grid = cartDGV;
+                grid.Rows.Add(row);
 
                 //asserts a minimum quantity and updates totals
                 numQuantity.Value = 1;
