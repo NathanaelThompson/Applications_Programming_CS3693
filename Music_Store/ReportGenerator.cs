@@ -139,26 +139,55 @@ namespace Music_Store
             {
                 lastElement = tablesAsStrings[tablesAsStrings.Count - 1];
             }
-            //reportViewer.Navigate("placeholderHtmlFile.html");
+
+            if (rbGrossSales.Checked)
+                dt = ConnectionManager.GrossSales();
+            else if (rbMonthlySales.Checked)
+                dt = ConnectionManager.MonthlySales(DateTime.Now.ToString("MM"));
+            else if (rbMostPopGenre.Checked)
+                dt = ConnectionManager.PopularGenres();
+            else if (rbMostPopArtist.Checked)
+                dt = ConnectionManager.PopularArtists();
+            else if (rbEmployees.Checked)
+            {
+                dt = ConnectionManager.EmployeeSales();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Gross Sales"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Gross Sales"] = moneyFormatted;
+                }
+            }
+            else if (rbCustomers.Checked)
+            {
+                dt = ConnectionManager.CustomerSales();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Total Spent"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Total Spent"] = moneyFormatted;
+                }
+            }
+            else if (rbMostPopAlbum.Checked)
+                dt = ConnectionManager.PopularAlbums();
+
+            gvReports.DataSource = dt;
             StringBuilder sb = new StringBuilder();
-            
-            //HtmlElement tableRow = null;
-            //HtmlElement headerElem = null;
-            
-            //HtmlDocument htmlDoc = reportViewer.Document;
-            //HtmlElement tableElem = htmlDoc.CreateElement("TABLE");
-            //htmlDoc.Body.AppendChild(tableElem);
-            
-            //HtmlElement tableHeader = htmlDoc.CreateElement("THEAD");
-            //tableElem.AppendChild(tableHeader);
-            //tableRow = htmlDoc.CreateElement("TR");
-            //tableHeader.AppendChild(tableRow);
             
             sb.Append("<table border = 1>");
             
             for (int i = 0; i<dt.Rows.Count; i++)
             {
                 sb.Append("<tr>");
+                if (i == 0)
+                {
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        sb.Append("<th>" + dt.Columns[j].ColumnName);
+                    }
+                    sb.Append("</tr>");
+                    sb.Append("<tr>");
+                }
                 for (int j = 0; j < dt.Columns.Count; j++)
                 {
                     sb.Append("<td>");
@@ -168,7 +197,7 @@ namespace Music_Store
                 sb.Append("</tr>");
             }
             sb.Append("</table>");
-            
+            sb.Append("<p></p><p>--------------------------</p><p></p>");
             int lastIndex = tablesAsStrings.IndexOf(lastElement);
             tablesAsStrings.Insert(lastIndex, sb);
             MessageBox.Show("Data added to report. Click generate to view the file or continue editing data.",
@@ -186,9 +215,25 @@ namespace Music_Store
             else if (rbMostPopArtist.Checked)
                 dt = ConnectionManager.PopularArtists();
             else if (rbEmployees.Checked)
+            {
                 dt = ConnectionManager.EmployeeSales();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Gross Sales"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Gross Sales"] = moneyFormatted;
+                }
+            }
             else if (rbCustomers.Checked)
+            {
                 dt = ConnectionManager.CustomerSales();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Total Spent"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Total Spent"] = moneyFormatted;
+                }
+            }
             else if (rbMostPopAlbum.Checked)
                 dt = ConnectionManager.PopularAlbums();
 
@@ -198,8 +243,23 @@ namespace Music_Store
         private void ReportGenerator_Load(object sender, EventArgs e)
         {
             string filePath = Path.Combine(Application.StartupPath, "placeholderHtmlFile.html");
-            using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
-            {}
+            using (StreamWriter sw = new StreamWriter(filePath, false))
+            {
+                sw.Write("");
+            }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            
+            string filePath = Path.Combine(Application.StartupPath, "placeholderHtmlFile.html");
+
+            using (StreamWriter sw = new StreamWriter(filePath, false))
+            {
+                sw.Write("");
+            }
+            tablesAsStrings.Clear();
+            reportViewer.Refresh();
         }
 
 

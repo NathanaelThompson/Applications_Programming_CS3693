@@ -47,7 +47,7 @@
             this.reportViewer = new System.Windows.Forms.WebBrowser();
             this.gvReports = new System.Windows.Forms.DataGridView();
             this.addButton = new System.Windows.Forms.Button();
-            this.removeButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvReports)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(509, 576);
+            this.generateButton.Location = new System.Drawing.Point(509, 581);
             this.generateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(133, 28);
@@ -82,7 +82,7 @@
             // 
             // emailButton
             // 
-            this.emailButton.Location = new System.Drawing.Point(509, 608);
+            this.emailButton.Location = new System.Drawing.Point(509, 613);
             this.emailButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailButton.Name = "emailButton";
             this.emailButton.Size = new System.Drawing.Size(133, 28);
@@ -96,7 +96,7 @@
             this.emailBox.Location = new System.Drawing.Point(91, 616);
             this.emailBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(321, 22);
+            this.emailBox.Size = new System.Drawing.Size(361, 22);
             this.emailBox.TabIndex = 11;
             // 
             // helpButton
@@ -239,6 +239,7 @@
             // 
             // gvReports
             // 
+            this.gvReports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvReports.Location = new System.Drawing.Point(25, 218);
             this.gvReports.Name = "gvReports";
@@ -256,22 +257,24 @@
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // removeButton
+            // clearButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(117, 501);
-            this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(87, 23);
-            this.removeButton.TabIndex = 12;
-            this.removeButton.Text = "Remove";
-            this.removeButton.UseVisualStyleBackColor = true;
+            this.clearButton.Location = new System.Drawing.Point(509, 645);
+            this.clearButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(133, 28);
+            this.clearButton.TabIndex = 19;
+            this.clearButton.Text = "Clear Report";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // ReportGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1411, 737);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.gvReports);
-            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.reportViewer);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.groupBox1);
@@ -317,8 +320,8 @@
         private System.Windows.Forms.RadioButton rbGrossSales;
         private System.Windows.Forms.WebBrowser reportViewer;
         private System.Windows.Forms.DataGridView gvReports;
-        private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button previewButton;
+        private System.Windows.Forms.Button clearButton;
     }
 }
