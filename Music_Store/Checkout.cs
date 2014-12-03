@@ -27,12 +27,6 @@ namespace Music_Store
             currentUser = username;
             lblLogInStatus.ForeColor = Color.Red;
 
-            lvCart.Columns.Add("Arist", 225);
-            lvCart.Columns.Add("Album", 225);
-            lvCart.Columns.Add("Price", 50);
-            lvCart.Columns.Add("Quantity", 50);
-            lvCart.Columns.Add("Total Price", 50);
-
             numQuantity.Minimum = 1;
             numQuantity.Value = 1;
         }
@@ -91,25 +85,30 @@ namespace Music_Store
             getAlbumArtwork(cbAlbum.SelectedValue.ToString());
         }
 
+        //just like the function says, updates the totals of the order
         private void UpdateTotals()
         {
             double subTotal = 0.0;
-            foreach(ListViewItem item in lvCart.Items)
+            foreach(string[] itemArr in itemsInDGVCart)
             {
-                subTotal += double.Parse(item.SubItems[2].Text.Substring(1, item.SubItems[2].Text.Length - 1));
+                subTotal += double.Parse(itemArr[2].Substring(1, itemArr[2].Length - 1));
             }
 
             txtSubtotal.Text = string.Format("{0:C}", subTotal);
             txtTax.Text = string.Format("{0:C}", (0.07 * subTotal));
             txtTotal.Text = string.Format("{0:C}", subTotal + (subTotal*0.07));
         }
+        List<string[]> itemsInDGVCart = new List<string[]>();
+        DataGridView grid = new DataGridView();
 
+        //attempt to add an item to the customer's cart
         private void btnAddCart_Click(object sender, EventArgs e)
         {
-            if (numQuantity.Value != 0)
+
+            if (numQuantity.Value <= 0)
             {
                 double amount = double.Parse(txtAlbumPrice.Text.Substring(1, txtAlbumPrice.Text.Length - 1));
-                
+
                 string[] items = new string[6];
                 items[0] = cbArtist.Text;
                 items[1] = cbAlbum.Text;
@@ -117,24 +116,47 @@ namespace Music_Store
                 items[3] = "x " + numQuantity.Value.ToString();
                 items[4] = string.Format("{0:C}", (amount * (int)numQuantity.Value));
                 items[5] = cbAlbum.SelectedValue.ToString();
+                itemsInDGVCart.Add(items);
 
-                ListViewItem lvItem = new ListViewItem(items);
-                lvCart.Items.Add(lvItem);
+                //Processing each item in the itemsInDGVCart list into the cart DGV
+                for (int i = 0; i < itemsInDGVCart.Count; i++)
+                {
+                    string[] tempItem = itemsInDGVCart[i];
+                    string[] row = new string[]{
+                        tempItem[0].ToString(),
+                        tempItem[1].ToString(),
+                        tempItem[2].ToString(),
+                        tempItem[3].ToString(),
+                        tempItem[4].ToString(),
+                        tempItem[5].ToString()
+                    };
+                    grid = cartDGV;
+                    grid.Rows.Add(row);
+                }
+
+                //asserts a minimum quantity and updates totals
                 numQuantity.Value = 1;
                 UpdateTotals();
             }
+            else
+            {
+                //if there is too extreme of a number for quantity, this displays to the user
+                MessageBox.Show("Album quantity too high or low.", "Input Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        //adds the items to the cart
         private int ProcessCart()
         {
             int currentCart = ConnectionManager.CartCount() + 1;
-            foreach(ListViewItem item in lvCart.Items)
+            foreach(string[] itemArr in itemsInDGVCart)
             {
-                int qty = Int32.Parse(item.SubItems[3].Text.Substring(2,item.SubItems[3].Text.Length - 2));
+                int qty = Int32.Parse(itemArr[3].Substring(2,itemArr[3].Length - 2));
                 for (int i = 0; i < qty; i++)
                 {
-                    ConnectionManager.AddToCart(currentCart.ToString(), item.SubItems[5].Text);
-                    ConnectionManager.UpdateQuantity(item.SubItems[5].Text);
+                    ConnectionManager.AddToCart(currentCart.ToString(), itemArr[5].ToString());
+                    ConnectionManager.UpdateQuantity(itemArr[5].ToString());
                 }
             }
             return currentCart;
@@ -143,8 +165,10 @@ namespace Music_Store
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ClearFields();
+
         }
 
+        //clears information from the checkout screen
         private void ClearFields()
         {
             txtAlbumPrice.Clear();
@@ -156,12 +180,15 @@ namespace Music_Store
             cbArtist.SelectedIndex = 0;
             initAlbums(cbArtist.SelectedValue.ToString());
 
-            lvCart.Items.Clear();
+            cartDGV.Rows.Clear();
+            cartDGV.Refresh();
+            itemsInDGVCart.Clear();
             numQuantity.Value = 1;
 
             gbSale.Enabled = false;
         }
 
+        //on checkout, this processes the cart and adds the cart to the database, clears the fields, then closes the form
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             string customerID = txtCustomer.Text;
@@ -178,6 +205,33 @@ namespace Music_Store
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             addCustomer.Show();
+        }
+
+        //removes items from the cart, and the cart DataGridView
+        private void removeItemCartBtn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in cartDGV.SelectedRows)
+            {
+                itemsInDGVCart.RemoveAt(item.Index);
+                cartDGV.Rows.RemoveAt(item.Index);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        //upon loading, the cart DataGridView gets its columns setup
+        private void formCheckout_Load(object sender, EventArgs e)
+        {
+            cartDGV.ColumnCount = 6;
+            cartDGV.Columns[0].Name = "Artist";
+            cartDGV.Columns[1].Name = "Album";
+            cartDGV.Columns[2].Name = "Cost";
+            cartDGV.Columns[3].Name = "Quantity";
+            cartDGV.Columns[4].Name = "Subtotal";
+            cartDGV.Columns[5].Name = "Album ID";
         }
     }
 }

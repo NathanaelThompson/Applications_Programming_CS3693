@@ -48,6 +48,7 @@
             this.gvReports = new System.Windows.Forms.DataGridView();
             this.addButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
+            this.printButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvReports)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(509, 581);
+            this.generateButton.Location = new System.Drawing.Point(509, 549);
             this.generateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(133, 28);
@@ -268,11 +269,23 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // printButton
+            // 
+            this.printButton.Location = new System.Drawing.Point(509, 581);
+            this.printButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(133, 28);
+            this.printButton.TabIndex = 20;
+            this.printButton.Text = "Print Report";
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            // 
             // ReportGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1411, 737);
+            this.Controls.Add(this.printButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.gvReports);
             this.Controls.Add(this.reportViewer);
@@ -323,5 +336,6 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button previewButton;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button printButton;
     }
 }

@@ -47,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddCart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lvCart = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAlbumPrice = new System.Windows.Forms.TextBox();
             this.cbAlbum = new System.Windows.Forms.ComboBox();
@@ -56,11 +55,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbArtist = new System.Windows.Forms.ComboBox();
             this.lblLogInStatus = new System.Windows.Forms.Label();
+            this.removeItemCartBtn = new System.Windows.Forms.Button();
+            this.cartDGV = new System.Windows.Forms.DataGridView();
             this.gbSale.SuspendLayout();
             this.gbTotal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArtwork)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCustomer
@@ -216,7 +218,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Salmon;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(20, 204);
+            this.btnCancel.Location = new System.Drawing.Point(21, 203);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(267, 148);
@@ -250,10 +252,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cartDGV);
+            this.groupBox1.Controls.Add(this.removeItemCartBtn);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnAddCart);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lvCart);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtAlbumPrice);
             this.groupBox1.Controls.Add(this.cbAlbum);
@@ -269,6 +272,7 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Album";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label3
             // 
@@ -284,10 +288,10 @@
             // 
             this.btnAddCart.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAddCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCart.Location = new System.Drawing.Point(137, 247);
+            this.btnAddCart.Location = new System.Drawing.Point(31, 246);
             this.btnAddCart.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(267, 62);
+            this.btnAddCart.Size = new System.Drawing.Size(213, 62);
             this.btnAddCart.TabIndex = 6;
             this.btnAddCart.Text = "Add to Cart";
             this.btnAddCart.UseVisualStyleBackColor = false;
@@ -302,19 +306,6 @@
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Album:";
-            // 
-            // lvCart
-            // 
-            this.lvCart.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lvCart.Location = new System.Drawing.Point(31, 341);
-            this.lvCart.Margin = new System.Windows.Forms.Padding(4);
-            this.lvCart.MultiSelect = false;
-            this.lvCart.Name = "lvCart";
-            this.lvCart.Scrollable = false;
-            this.lvCart.Size = new System.Drawing.Size(812, 187);
-            this.lvCart.TabIndex = 20;
-            this.lvCart.UseCompatibleStateImageBehavior = false;
-            this.lvCart.View = System.Windows.Forms.View.Details;
             // 
             // label2
             // 
@@ -402,6 +393,30 @@
             this.lblLogInStatus.TabIndex = 5;
             this.lblLogInStatus.Text = "Logged In As [username]";
             // 
+            // removeItemCartBtn
+            // 
+            this.removeItemCartBtn.BackColor = System.Drawing.Color.Salmon;
+            this.removeItemCartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeItemCartBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeItemCartBtn.Location = new System.Drawing.Point(299, 246);
+            this.removeItemCartBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.removeItemCartBtn.Name = "removeItemCartBtn";
+            this.removeItemCartBtn.Size = new System.Drawing.Size(213, 62);
+            this.removeItemCartBtn.TabIndex = 21;
+            this.removeItemCartBtn.Text = "Remove Item from Cart";
+            this.removeItemCartBtn.UseVisualStyleBackColor = false;
+            this.removeItemCartBtn.Click += new System.EventHandler(this.removeItemCartBtn_Click);
+            // 
+            // cartDGV
+            // 
+            this.cartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cartDGV.Location = new System.Drawing.Point(31, 350);
+            this.cartDGV.Name = "cartDGV";
+            this.cartDGV.RowTemplate.Height = 24;
+            this.cartDGV.Size = new System.Drawing.Size(802, 150);
+            this.cartDGV.TabIndex = 22;
+            // 
             // formCheckout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -420,6 +435,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Checkout";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCheckout_FormClosing);
+            this.Load += new System.EventHandler(this.formCheckout_Load);
             this.gbSale.ResumeLayout(false);
             this.gbTotal.ResumeLayout(false);
             this.gbTotal.PerformLayout();
@@ -427,6 +443,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArtwork)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,7 +468,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbAlbum;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView lvCart;
         private System.Windows.Forms.TextBox txtTax;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -461,5 +477,7 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.GroupBox gbTotal;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button removeItemCartBtn;
+        private System.Windows.Forms.DataGridView cartDGV;
     }
 }

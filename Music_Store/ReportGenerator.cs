@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using System.IO;
+using System.Diagnostics;
 
 namespace Music_Store
 {
@@ -29,12 +30,14 @@ namespace Music_Store
         private void helpButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Select an option above, then click generate report."+
-                "\nThe section on the right side of this form will allow you to preview"+
-                "\nthe pdf generated from this report.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "\nThe section on the left side of this form will allow you to preview"+
+                "\nthe information generated for this report." + 
+                "\n\nAdd any information necessary, then click 'Generate Report'.", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void generateButton_Click(object sender, EventArgs e)
         {
+            //generates the html report line by line here
             try
             {
                 using (StreamWriter sw = new StreamWriter("placeholderHtmlFile.html", true))
@@ -44,12 +47,13 @@ namespace Music_Store
                         sw.WriteLine(sb.ToString());
                     }
                 }
+                //upon writing the file, the viewer should navigate to new file
                 string filePath = Path.Combine(Application.StartupPath, "placeholderHtmlFile.html");
                 reportViewer.Navigate(filePath);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("", "", MessageBoxButtons.OK);
+                MessageBox.Show("File error, exit this form and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -119,11 +123,11 @@ namespace Music_Store
 
         DataTable dt = new DataTable();
         List<StringBuilder> tablesAsStrings = new List<StringBuilder>();
-        int tableCount = 0;
         private void addButton_Click(object sender, EventArgs e)
         {
             StringBuilder firstElement, lastElement;
 
+            //if this is the first table to add, add some basic html stuff at the beginning and end of the file
             if (tablesAsStrings.Count == 0)
             {
 
@@ -140,10 +144,29 @@ namespace Music_Store
                 lastElement = tablesAsStrings[tablesAsStrings.Count - 1];
             }
 
+            //getting the necessary information to add
             if (rbGrossSales.Checked)
+            {
                 dt = ConnectionManager.GrossSales();
+                //asserts a currency format where necessary
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Gross Sales ($)"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Gross Sales ($)"] = moneyFormatted;
+                }
+            }
             else if (rbMonthlySales.Checked)
+            {
                 dt = ConnectionManager.MonthlySales(DateTime.Now.ToString("MM"));
+                //asserts a currency format where necessary
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Gross Sales ($)"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Gross Sales ($)"] = moneyFormatted;
+                }
+            }
             else if (rbMostPopGenre.Checked)
                 dt = ConnectionManager.PopularGenres();
             else if (rbMostPopArtist.Checked)
@@ -151,21 +174,23 @@ namespace Music_Store
             else if (rbEmployees.Checked)
             {
                 dt = ConnectionManager.EmployeeSales();
+                //asserts a currency format where necessary
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string moneyToFormat = dt.Rows[i]["Gross Sales"].ToString();
+                    string moneyToFormat = dt.Rows[i]["Gross Sales ($)"].ToString();
                     double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
-                    dt.Rows[i]["Gross Sales"] = moneyFormatted;
+                    dt.Rows[i]["Gross Sales ($)"] = moneyFormatted;
                 }
             }
             else if (rbCustomers.Checked)
             {
                 dt = ConnectionManager.CustomerSales();
+                //asserts a currency format where necessary
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string moneyToFormat = dt.Rows[i]["Total Spent"].ToString();
+                    string moneyToFormat = dt.Rows[i]["Total Spent ($)"].ToString();
                     double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
-                    dt.Rows[i]["Total Spent"] = moneyFormatted;
+                    dt.Rows[i]["Total Spent ($)"] = moneyFormatted;
                 }
             }
             else if (rbMostPopAlbum.Checked)
@@ -176,6 +201,7 @@ namespace Music_Store
             
             sb.Append("<table border = 1>");
             
+            //creates a table containing information added
             for (int i = 0; i<dt.Rows.Count; i++)
             {
                 sb.Append("<tr>");
@@ -204,12 +230,31 @@ namespace Music_Store
                 "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //adds the information selected to the preview DGV
         private void previewButton_Click(object sender, EventArgs e)
         {
             if (rbGrossSales.Checked)
+            {
                 dt = ConnectionManager.GrossSales();
+                //asserts a currency format where necessary
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Gross Sales ($)"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Gross Sales ($)"] = moneyFormatted;
+                }
+            }
             else if (rbMonthlySales.Checked)
+            {
                 dt = ConnectionManager.MonthlySales(DateTime.Now.ToString("MM"));
+                //asserts a currency format where necessary
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    string moneyToFormat = dt.Rows[i]["Gross Sales ($)"].ToString();
+                    double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
+                    dt.Rows[i]["Gross Sales ($)"] = moneyFormatted;
+                }
+            }
             else if (rbMostPopGenre.Checked)
                 dt = ConnectionManager.PopularGenres();
             else if (rbMostPopArtist.Checked)
@@ -217,21 +262,23 @@ namespace Music_Store
             else if (rbEmployees.Checked)
             {
                 dt = ConnectionManager.EmployeeSales();
+                //asserts a currency format where necessary
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string moneyToFormat = dt.Rows[i]["Gross Sales"].ToString();
+                    string moneyToFormat = dt.Rows[i]["Gross Sales ($)"].ToString();
                     double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
-                    dt.Rows[i]["Gross Sales"] = moneyFormatted;
+                    dt.Rows[i]["Gross Sales ($)"] = moneyFormatted;
                 }
             }
             else if (rbCustomers.Checked)
             {
                 dt = ConnectionManager.CustomerSales();
+                //asserts a currency format where necessary
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    string moneyToFormat = dt.Rows[i]["Total Spent"].ToString();
+                    string moneyToFormat = dt.Rows[i]["Total Spent ($)"].ToString();
                     double moneyFormatted = Math.Round(double.Parse(moneyToFormat), 2);
-                    dt.Rows[i]["Total Spent"] = moneyFormatted;
+                    dt.Rows[i]["Total Spent ($)"] = moneyFormatted;
                 }
             }
             else if (rbMostPopAlbum.Checked)
@@ -239,7 +286,8 @@ namespace Music_Store
 
             gvReports.DataSource = dt;
         }
-
+        
+        //upon loading, clear the report file
         private void ReportGenerator_Load(object sender, EventArgs e)
         {
             string filePath = Path.Combine(Application.StartupPath, "placeholderHtmlFile.html");
@@ -249,6 +297,8 @@ namespace Music_Store
             }
         }
 
+
+        //clear the report file and the web browser
         private void clearButton_Click(object sender, EventArgs e)
         {
             
@@ -260,6 +310,30 @@ namespace Music_Store
             }
             tablesAsStrings.Clear();
             reportViewer.Refresh();
+        }
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            //After the print button is clicked,
+            //a new process is created which
+            //should find the first available printer
+            //and print the pdf from there.
+            try
+            {
+                Process printProcess = new Process();
+                printProcess.StartInfo = new ProcessStartInfo()
+                {
+                    CreateNoWindow = true,
+                    Verb = "print",
+                    FileName = Path.Combine(Application.StartupPath, "placeholderHtmlFile.html")
+                };
+                printProcess.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No printer found. Please try again.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

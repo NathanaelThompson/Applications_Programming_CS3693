@@ -407,6 +407,7 @@ namespace Music_Store
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
+            dt.Columns[0].ColumnName = "Gross Sales ($)";
             return dt;
         }
 
@@ -418,7 +419,7 @@ namespace Music_Store
             {
                 SQLiteCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT MusicOrder.EmployeeId, SUM(MusicOrder.Total) FROM MusicOrder " +
-                    "WHERE MusicOrder.OrderDate LIKE '" + month + "' GROUP BY MusicOrder.EmployeeId " +
+                    "WHERE MusicOrder.OrderDate LIKE '%" + month + "%' GROUP BY MusicOrder.EmployeeId " +
                     "ORDER BY SUM(MusicOrder.Total) DESC LIMIT 1";
                 int topEmployee = Int32.Parse(cmd.ExecuteScalar().ToString());
                 cmd.CommandText = "select sum(musicOrder.total) as 'Gross Sales', count(musicOrder.OrderID) " + 
@@ -429,6 +430,7 @@ namespace Music_Store
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
+            dt.Columns[0].ColumnName = "Gross Sales ($)";
             return dt;
         }
 
@@ -497,7 +499,7 @@ namespace Music_Store
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
-
+            dt.Columns[1].ColumnName = "Gross Sales ($)";
             return dt;
         }
 
@@ -515,7 +517,7 @@ namespace Music_Store
                 ad = new SQLiteDataAdapter(cmd);
                 ad.Fill(dt);
             }
-
+            dt.Columns[2].ColumnName = "Total Spent ($)";
             return dt;
         }
     }
