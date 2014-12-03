@@ -153,7 +153,7 @@ namespace Music_Store
             int currentCart = ConnectionManager.CartCount() + 1;
             foreach(string[] itemArr in itemsInDGVCart)
             {
-                int qty = Int32.Parse(itemArr[3].Substring(2,itemArr[3].Length - 2));
+                int qty = Int32.Parse(itemArr[3]);
                 for (int i = 0; i < qty; i++)
                 {
                     ConnectionManager.AddToCart(currentCart.ToString(), itemArr[5].ToString());
